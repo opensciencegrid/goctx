@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- WARNING: Eclipse auto-generated file.
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. -->
-<project basedir="." default="build" name="goctx">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="goctx">
     <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse/goc"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
     <path id="goctx.classpath">
-        <pathelement location="bin"/>
+        <pathelement location="build"/>
         <pathelement location="lib/commons-lang-2.3.jar"/>
         <pathelement location="lib/mysql-connector-java-5.1.13-bin.jar"/>
         <pathelement location="lib/axis2-1.5/activation-1.1.jar"/>
@@ -87,8 +87,8 @@
         <pathelement location="lib/commons-codec-1.5.jar"/>
     </path>
     <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
+        <mkdir dir="build"/>
+        <copy includeemptydirs="false" todir="build">
             <fileset dir="src">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
@@ -96,14 +96,14 @@
         </copy>
     </target>
     <target name="clean">
-        <delete dir="bin"/>
+        <delete dir="build"/>
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="goctx.classpath"/>
         </javac>
@@ -121,27 +121,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="Accept CA cert">
-        <java classname="edu.iu.grid.tx.InstallCert" failonerror="true" fork="yes">
-            <arg line="${argument1}"/>
-            <classpath refid="goctx.classpath"/>
-        </java>
-    </target>
-    <target name="AccessorTest">
-        <java classname="edu.iu.grid.tx.AccessorTest" failonerror="true" fork="yes">
-            <classpath refid="goctx.classpath"/>
-        </java>
-    </target>
-    <target name="GOC-TX Run">
-        <java classname="edu.iu.grid.tx.Main" failonerror="true" fork="yes">
-            <classpath refid="goctx.classpath"/>
-        </java>
-    </target>
-    <target name="GOC-TX TestRun">
-        <java classname="edu.iu.grid.tx.Main" failonerror="true" fork="yes">
-            <arg line="override xxx"/>
-            <classpath refid="goctx.classpath"/>
-        </java>
     </target>
 </project>
