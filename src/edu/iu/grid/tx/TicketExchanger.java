@@ -134,7 +134,11 @@ public class TicketExchanger {
 	
 	public String parseSourceTicketID(String subject) {
 		logger.debug("Parsing Source Ticket ID from Email Header: " + subject);
-		return source.parseTicketID(subject);
+		if(source != null) {
+			return source.parseTicketID(subject);
+		} 
+		logger.debug("source ticketing system is not set.. this is probably a test");
+		return null;
 	}
 	
 	public void run()
