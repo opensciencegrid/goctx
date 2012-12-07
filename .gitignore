@@ -1,8 +1,1 @@
-bin
-goctx.conf
-generate*.sh
-run.sh
-build.sh
-jssecacerts
-src/edu/iu/grid/tx/custom
-src/edu/iu/grid/tx/AccessorTest.java
+build
