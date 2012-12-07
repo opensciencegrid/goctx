@@ -387,35 +387,6 @@ public class ServiceNowAccessor implements TicketAccessor {
 		stub._getServiceClient().getOptions().setProperty(org.apache.axis2.transport.http.HTTPConstants.CHUNKED, Boolean.FALSE);	
 		ticket_stub._getServiceClient().getOptions().setProperty(org.apache.axis2.transport.http.HTTPConstants.SO_TIMEOUT, new Integer(60*1000));
 		ticket_stub._getServiceClient().getOptions().setProperty(org.apache.axis2.transport.http.HTTPConstants.CONNECTION_TIMEOUT, new Integer(60*1000));
-
-		
-		/*
-		//create datahandler for attachment
-		DataHandler attachment_handler = new DataHandler(new DataSource() {
-			@Override
-			public String getContentType() {
-				return attachment.content_type;
-			}
-
-			@Override
-			public InputStream getInputStream() throws IOException {
-				return new FileInputStream(attachment.file);
-			}
-
-			@Override
-			public String getName() {
-				// TODO Auto-generated method stub
-				return attachment.name;
-			}
-
-			@Override
-			public OutputStream getOutputStream() throws IOException {
-				// TODO Auto-generated method stub
-				return null;
-			}
-			
-		});
-		*/
 				
 		//load then entire thing into memory - bits at a time
 		byte[] all = new byte[(int)attachment.file.length()];

@@ -3,6 +3,7 @@
 	<name>goctx</name>
 	<comment></comment>
 	<projects>
+		<project>goctx-custom</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

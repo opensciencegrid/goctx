@@ -16,9 +16,11 @@ public class SyncModel {
     
 	public SyncModel() throws SQLException
 	{
-		String url = Main.getConf().getProperty("txdb_url");
+		String url = TicketExchanger.getConf().getProperty("txdb_url");
 		logger.debug("Attempting to connect to Sync DB: " + url);
-		con = DriverManager.getConnection(url,Main.getConf().getProperty("txdb_user"), Main.getConf().getProperty("txdb_pass"));
+		con = DriverManager.getConnection(url,
+				TicketExchanger.getConf().getProperty("txdb_user"), 
+				TicketExchanger.getConf().getProperty("txdb_pass"));
 		logger.debug("Successfully connected");
 	}
 	public void close()

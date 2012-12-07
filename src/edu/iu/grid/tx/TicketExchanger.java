@@ -1,8 +1,13 @@
 package edu.iu.grid.tx;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Properties;
 
 import javax.activation.MimetypesFileTypeMap;
 
@@ -11,15 +16,32 @@ import org.apache.log4j.Logger;
 import edu.iu.grid.tx.accessor.Attachment;
 import edu.iu.grid.tx.accessor.TicketAccessor;
 import edu.iu.grid.tx.converter.TicketConverter;
-import edu.iu.grid.tx.custom.Factory;
 import edu.iu.grid.tx.ticket.Ticket;
 
 public class TicketExchanger {
+	
+	static String version = "1.29";
 	
 	static Logger logger = Logger.getLogger(TicketExchanger.class);
 	
 	private String tx_id;
 	public String getTXID() { return tx_id; }
+	private IFactory factory;
+	
+	private static Properties conf = null;
+	public static Properties getConf() {
+		if(conf != null) return conf;
+		
+		try {
+			conf = new Properties();
+			conf.load(new FileInputStream("goctx.conf"));
+			return conf;
+		} catch (Exception e1) {
+			logger.error("Failed to load goctx.conf: ", e1);
+			System.exit(1);
+		}
+		return null;
+	}
 	
 	private String source_ticket_id;
 	public void setTicketID(String id) { source_ticket_id = id; }
@@ -29,18 +51,71 @@ public class TicketExchanger {
 	
 	SyncModel model;
 	
-	public TicketExchanger(String id) throws SQLException {
-		tx_id = id;
-		model = new SyncModel();
+	public TicketExchanger(String tx_id, IFactory factory) throws SQLException {
+		this.tx_id = tx_id;
+		this.factory = factory;
+		
+		this.model = new SyncModel();
+		
+		logger.debug("GOCTX TicketExchanger Version " + version);
+	}
+	
+	static public TicketExchanger createInstanceFromEmail(BufferedReader reader, IFactory factory) throws Exception {
+		String line;
+		HashMap<String, String> headers = new HashMap<String, String>();
+		
+		//Parse email
+		Boolean header = true;
+		try {
+			line = reader.readLine(); //ignore the first line
+			line = reader.readLine();
+			while ( line!=null ) {
+				line = line.trim();
+				logger.debug("\t"+line);
+				if(header) {
+					  //detect header end
+					  if(line.length() == 0) {
+						  header = false;
+						  continue;
+					  }
+					  //process header line
+					  int pos = line.indexOf(':');
+					  if(pos != -1) {
+						  headers.put(line.substring(0, pos), line.substring(pos+1,line.length()).trim());
+					  }
+				}
+				line = reader.readLine();
+			}
+		} catch (IOException e) {
+			logger.error("Failed to parse email", e);
+		}
+		
+		//Get instance key from Delivered-To: 
+		String to = headers.get("Delivered-To");
+		if(to == null) {
+			throw new Exception("Couldn't find Delivered-To field.");
+		}
+		String address = to.split("@")[0];
+		String []extension = address.split("\\+");
+		String tx_key = extension[1];
+		if(extension.length == 1) {
+			throw new Exception("Delivered-To address [" + to + "] does not contain extension.");
+		} else {
+			//create instance and set ticket id
+			TicketExchanger tx = factory.createInstance(tx_key);
+			String subject = headers.get("Subject");
+			tx.setTicketIDFromSubject(subject);
+			return tx;
+		}
 	}
 	
 	private TicketAccessor source;
 	public void setSourceAccessor(TicketAccessor s) { source = s; };
-	TicketAccessor getSource() { return source; }
+	public TicketAccessor getSource() { return source; }
 	
 	private TicketAccessor destination;
 	public void setDestinationAccessor(TicketAccessor s) { destination = s; };	
-	TicketAccessor getDestination() { return destination; }
+	public TicketAccessor getDestination() { return destination; }
 	
 	private TicketConverter converter;
 	public void setConverter(TicketConverter c) { converter = c; };
@@ -62,8 +137,12 @@ public class TicketExchanger {
 		return source.parseTicketID(subject);
 	}
 	
-	void run()
+	public void run()
 	{	
+		if(tx_id.equals("test")) {
+			logger.debug("test tx_id received");
+		}
+		
 		logger.debug("Start Processing TX: " + tx_id);
 		logger.debug("Source Accessor: " + source.getClass().getName());
 		logger.debug("Destination Accessor: " + destination.getClass().getName());
@@ -164,7 +243,7 @@ public class TicketExchanger {
 					if(dest_sync_timestamp.compareTo(dest_old_ticket.getUpdatetime()) < 0) {
 						logger.debug("Destination timestamp is later than sync timestamp - we need to update the source ticket as well as dest");
 						
-						TicketConverter reverse_converter = Factory.chooseAndInstantiateConverter(destination, source);
+						TicketConverter reverse_converter = factory.chooseAndInstantiateConverter(destination, source);
 						Ticket source_new_ticket = reverse_converter.convert(dest_old_ticket);
 						source_new_ticket.setTicketID(source_ticket_id);
 						
