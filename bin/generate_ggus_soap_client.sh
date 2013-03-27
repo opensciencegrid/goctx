@@ -30,7 +30,7 @@ wget --no-check-certificate -O /tmp/ggus.attachment.$prefix.wsdl $url/Grid_Attac
 #wget --no-check-certificate -O /tmp/ggus.attachment.$prefix.wsdl https://ggus.eu/unlinked/grid_att.php
 
 echo "generating client stub (you need to download 2 wsdls if necessary)"
-wsdl2java.sh -ssi -or -uri /tmp/ggus.helpdesk.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
-wsdl2java.sh -ssi -or -uri /tmp/ggus.history.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
-wsdl2java.sh -ssi -or -uri /tmp/ggus.attachment.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
+wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.helpdesk.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
+wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.history.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
+wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.attachment.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
 

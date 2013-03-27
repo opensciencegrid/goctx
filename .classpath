@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/commons-lang-2.3.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.13-bin.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/axiom-api-1.2.8.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/axiom-dom-1.2.8.jar"/>
@@ -51,7 +50,6 @@
 	<classpathentry kind="lib" path="lib/axis2-1.5/jettison-1.0-RC2.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/jibx-bind-1.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/jibx-run-1.2.1.jar"/>
-	<classpathentry kind="lib" path="lib/axis2-1.5/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/mail-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/mex-1.5.jar"/>
 	<classpathentry kind="lib" path="lib/axis2-1.5/neethi-2.0.4.jar"/>
@@ -76,5 +74,7 @@
 	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/commons-beanutils-1.8.3.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.13-bin.jar"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>
