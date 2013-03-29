@@ -59,3 +59,13 @@ Create an alias for the GOC-TX account to receive mail. Add this to /etc/aliases
         tx: |/usr/local/goctx/run.sh
 
 # newaliases
+
+...
+
+Build GOC-TX jar:
+
+ant jar
+
+Install on system (not working yet):
+
+ant install 
