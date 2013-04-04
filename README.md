@@ -30,6 +30,18 @@ Installation Detail
 
 Installation instructions are for CentOS 6.3. Other distributions may vary.
 
+git clone git://github.com/soichih/goctx.git 
+cd goctx 
+git checkout mpackard
+ant install 
+
+That will install in /opt/goctx-${version}
+
+(To install in a different location, run: 'ant -Dinstall.dir=/some/other/directory install'.)
+
+
+
+
 Here we use Postfix for mail service. Configure it to allow for sending and receiving mail. Also your firewall should allow both incoming and outgoing mail to this server.
 
 Install mysql-server, git:
