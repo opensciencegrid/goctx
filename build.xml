@@ -96,6 +96,7 @@
     </target>
     <target name="clean">
         <delete dir="build"/>
+        <delete dir="dist"/>
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
@@ -120,5 +121,16 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target depends="init" name="build-cli">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="goctx.classpath"/>
+        </javac>
+    </target>
+    <target depends="build-cli" name="build-jar">
+        <mkdir dir="dist"/>
+        <jar destfile="dist/goctx.jar" basedir="build"/>
     </target>
 </project>
