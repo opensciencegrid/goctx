@@ -5,11 +5,11 @@
 #see https://groups.google.com/d/msg/osggocdev/8uLQG1Ez3g4/GkFixtgblOEJ
 
 #echo "downloding wsdls - don't forget to remove the urn: for GGUS 7.5 as of 5/9/2011"
-#prefix=7.5.dev
-#url=https://train-ars.ggus.eu/arsys/WSDL/public/train-ars
+prefix=7.5.dev
+url=https://train-ars.ggus.eu/arsys/WSDL/public/train-ars
 
-prefix=7.5.prod
-url=https://prod-ars.ggus.eu/arsys/WSDL/public/prod-ars
+#prefix=7.5.prod
+#url=https://prod-ars.ggus.eu/arsys/WSDL/public/prod-ars
 
 #wget --no-check-certificate -O /tmp/ggus.helpdesk.$prefix.wsdl $url/Grid_HelpDesk
 wget --no-check-certificate -O /tmp/ggus.helpdesk.$prefix.wsdl $url/GGUS

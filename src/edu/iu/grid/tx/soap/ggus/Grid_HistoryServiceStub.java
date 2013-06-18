@@ -115,7 +115,7 @@
      */
     public Grid_HistoryServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=Grid_History" );
+                    this(configurationContext,"https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=Grid_History" );
                 
     }
 
@@ -124,7 +124,7 @@
      */
     public Grid_HistoryServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=Grid_History" );
+                    this("https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=Grid_History" );
                 
     }
 
@@ -745,7 +745,7 @@
         }
         return false;
     }
-     //https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=Grid_History
+     //https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=Grid_History
         public static class AuthenticationInfo
         implements org.apache.axis2.databinding.ADBBean{
         /* This type was generated from the piece of schema that had

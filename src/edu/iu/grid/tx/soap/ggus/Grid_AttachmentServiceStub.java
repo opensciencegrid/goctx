@@ -151,7 +151,7 @@
      */
     public Grid_AttachmentServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=Grid_Attachment" );
+                    this(configurationContext,"https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=Grid_Attachment" );
                 
     }
 
@@ -160,7 +160,7 @@
      */
     public Grid_AttachmentServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=Grid_Attachment" );
+                    this("https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=Grid_Attachment" );
                 
     }
 
@@ -1645,7 +1645,7 @@
         }
         return false;
     }
-     //https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=Grid_Attachment
+     //https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=Grid_Attachment
         public static class SetTransferFlag
         implements org.apache.axis2.databinding.ADBBean{
         

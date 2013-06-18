@@ -151,7 +151,7 @@
      */
     public GGUSServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=GGUS" );
+                    this(configurationContext,"https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=GGUS" );
                 
     }
 
@@ -160,7 +160,7 @@
      */
     public GGUSServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=GGUS" );
+                    this("https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=GGUS" );
                 
     }
 
@@ -1645,7 +1645,7 @@
         }
         return false;
     }
-     //https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=GGUS
+     //https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=GGUS
         public static class GHD_Parent_Child_RelationType
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -3093,6 +3093,50 @@
                                }
                             
 
+                        /**
+                        * field for GHD_ETA
+                        */
+
+                        
+                                    protected java.util.Calendar localGHD_ETA ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localGHD_ETATracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.util.Calendar
+                           */
+                           public  java.util.Calendar getGHD_ETA(){
+                               return localGHD_ETA;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param GHD_ETA
+                               */
+                               public void setGHD_ETA(java.util.Calendar param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localGHD_ETATracker = true;
+                                       } else {
+                                          localGHD_ETATracker = false;
+                                              
+                                       }
+                                   
+                                            this.localGHD_ETA=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -3996,6 +4040,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localGHD_ETATracker){
+                                    namespace = "urn:GGUS";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"GHD_ETA", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"GHD_ETA");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("GHD_ETA");
+                                    }
+                                
+
+                                          if (localGHD_ETA==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("GHD_ETA cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_ETA));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              }
                     xmlWriter.writeEndElement();
                
@@ -4317,6 +4395,15 @@
                                  
                                          elementList.add(localGHD_Origin_SG==null?null:
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_Origin_SG));
+                                    } if (localGHD_ETATracker){
+                                      elementList.add(new javax.xml.namespace.QName("urn:GGUS",
+                                                                      "GHD_ETA"));
+                                 
+                                        if (localGHD_ETA != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_ETA));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("GHD_ETA cannot be null!!");
+                                        }
                                     }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -4994,6 +5081,24 @@
                                            reader.getElementText(); // throw away text nodes if any.
                                        }
                                       
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("urn:GGUS","GHD_ETA").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setGHD_ETA(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDateTime(content));
+                                              
                                         reader.next();
                                     
                               }  // End of if for expected property start element
@@ -10738,6 +10843,50 @@
                                }
                             
 
+                        /**
+                        * field for GHD_ETA
+                        */
+
+                        
+                                    protected java.util.Calendar localGHD_ETA ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localGHD_ETATracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.util.Calendar
+                           */
+                           public  java.util.Calendar getGHD_ETA(){
+                               return localGHD_ETA;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param GHD_ETA
+                               */
+                               public void setGHD_ETA(java.util.Calendar param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localGHD_ETATracker = true;
+                                       } else {
+                                          localGHD_ETATracker = false;
+                                              
+                                       }
+                                   
+                                            this.localGHD_ETA=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -11607,6 +11756,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localGHD_ETATracker){
+                                    namespace = "urn:GGUS";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"GHD_ETA", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"GHD_ETA");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("GHD_ETA");
+                                    }
+                                
+
+                                          if (localGHD_ETA==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("GHD_ETA cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_ETA));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              }
                     xmlWriter.writeEndElement();
                
@@ -11957,6 +12140,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_Origin_SG));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("GHD_Origin_SG cannot be null!!");
+                                        }
+                                    } if (localGHD_ETATracker){
+                                      elementList.add(new javax.xml.namespace.QName("urn:GGUS",
+                                                                      "GHD_ETA"));
+                                 
+                                        if (localGHD_ETA != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_ETA));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("GHD_ETA cannot be null!!");
                                         }
                                     }
 
@@ -12500,6 +12692,24 @@
                                     
                                               object.setGHD_Origin_SG(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("urn:GGUS","GHD_ETA").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setGHD_ETA(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDateTime(content));
                                               
                                         reader.next();
                                     
@@ -18271,6 +18481,9 @@
                                     public static final java.lang.String _SAVANNAH =
                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString("SAVANNAH");
                                 
+                                    public static final java.lang.String _Default6 =
+                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("Default6");
+                                
                                     public static final java.lang.String _Default7 =
                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString("Default7");
                                 
@@ -18279,9 +18492,6 @@
                                 
                                     public static final java.lang.String _Default9 =
                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString("Default9");
-                                
-                                    public static final java.lang.String _SECURITY =
-                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("SECURITY");
                                 
                                 public static final GHD_Ticket_TypeType USER =
                                     new GHD_Ticket_TypeType(_USER,true);
@@ -18301,6 +18511,9 @@
                                 public static final GHD_Ticket_TypeType SAVANNAH =
                                     new GHD_Ticket_TypeType(_SAVANNAH,true);
                             
+                                public static final GHD_Ticket_TypeType Default6 =
+                                    new GHD_Ticket_TypeType(_Default6,true);
+                            
                                 public static final GHD_Ticket_TypeType Default7 =
                                     new GHD_Ticket_TypeType(_Default7,true);
                             
@@ -18309,9 +18522,6 @@
                             
                                 public static final GHD_Ticket_TypeType Default9 =
                                     new GHD_Ticket_TypeType(_Default9,true);
-                            
-                                public static final GHD_Ticket_TypeType SECURITY =
-                                    new GHD_Ticket_TypeType(_SECURITY,true);
                             
 
                                 public java.lang.String getValue() { return localGHD_Ticket_TypeType;}
@@ -21891,6 +22101,50 @@
                                }
                             
 
+                        /**
+                        * field for GHD_Public_Diary
+                        */
+
+                        
+                                    protected java.lang.String localGHD_Public_Diary ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localGHD_Public_DiaryTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getGHD_Public_Diary(){
+                               return localGHD_Public_Diary;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param GHD_Public_Diary
+                               */
+                               public void setGHD_Public_Diary(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localGHD_Public_DiaryTracker = true;
+                                       } else {
+                                          localGHD_Public_DiaryTracker = true;
+                                              
+                                       }
+                                   
+                                            this.localGHD_Public_Diary=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -22664,6 +22918,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localGHD_Public_DiaryTracker){
+                                    namespace = "urn:GGUS";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"GHD_Public_Diary", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"GHD_Public_Diary");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("GHD_Public_Diary");
+                                    }
+                                
+
+                                          if (localGHD_Public_Diary==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localGHD_Public_Diary);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              }
                     xmlWriter.writeEndElement();
                
@@ -22959,6 +23247,12 @@
                                  
                                          elementList.add(localGHD_Related_Issue==null?null:
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_Related_Issue));
+                                    } if (localGHD_Public_DiaryTracker){
+                                      elementList.add(new javax.xml.namespace.QName("urn:GGUS",
+                                                                      "GHD_Public_Diary"));
+                                 
+                                         elementList.add(localGHD_Public_Diary==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGHD_Public_Diary));
                                     }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -23523,6 +23817,33 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setGHD_Related_Issue(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("urn:GGUS","GHD_Public_Diary").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setGHD_Public_Diary(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {
