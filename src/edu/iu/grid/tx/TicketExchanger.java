@@ -145,6 +145,9 @@ public class TicketExchanger {
 	{	
 		if(tx_id.equals("test")) {
 			logger.debug("test tx_id received");
+
+			//anything nice to test?
+			return;
 		}
 		
 		logger.debug("Start Processing TX: " + tx_id);
