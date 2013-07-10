@@ -139,6 +139,7 @@
         <copy file="dist/goctx.jar" todir="${install.dir}/lib"/>
         <copy file="share/goctx.properties.example" todir="${install.dir}/etc"/>
         <copy file="share/run_goctx.sh" todir="${install.dir}/bin"/>
+        <chmod file="${install.dir}/bin/run_goctx.sh" perm="755"/>
     </target>
 
 </project>
