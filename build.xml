@@ -133,12 +133,15 @@
         <mkdir dir="${install.dir}/bin"/>
         <mkdir dir="${install.dir}/etc"/>
         <mkdir dir="${install.dir}/lib"/>
+        <mkdir dir="${install.dir}/share"/>
+        <copy todir="${install.dir}/share">
+            <fileset dir="share"/>
+        </copy>
         <copy todir="${install.dir}/lib">
             <fileset dir="lib"/>
         </copy>
         <copy file="dist/goctx.jar" todir="${install.dir}/lib"/>
-        <copy file="share/goctx.properties.example" todir="${install.dir}/etc"/>
-        <copy file="share/run_goctx.sh" todir="${install.dir}/bin"/>
+        <copy file="bin/run_goctx.sh" todir="${install.dir}/bin"/>
         <chmod file="${install.dir}/bin/run_goctx.sh" perm="755"/>
     </target>
 

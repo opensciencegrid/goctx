@@ -43,7 +43,7 @@ Installation instructions are for CentOS 6.3. Other distributions may vary.
 
 That will install in /opt/goctx
 
-(To install in a different location, run: 'ant -Dinstall.dir=/some/other/directory install'.)
+(To install in a different location, run: `ant -Dinstall.dir=/some/other/directory install`.)
 
 We use Postfix for mail service. Configure it to allow for sending and receiving mail. Also your firewall should allow both incoming and outgoing mail to this server.
 
