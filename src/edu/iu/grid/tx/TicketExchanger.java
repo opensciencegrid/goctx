@@ -137,7 +137,7 @@ public class TicketExchanger {
 		if(source != null) {
 			return source.parseTicketID(subject);
 		} 
-		logger.debug("source ticketing system is not set.. this is probably a test");
+		logger.debug("Source ticketing system is not set.. this is probably a test");
 		return null;
 	}
 	
@@ -161,7 +161,9 @@ public class TicketExchanger {
 			logger.debug("Retrieving source ticket");
 			source_ticket = source.get(source_ticket_id);
 			
-			logger.debug("Converting to the destination ticket using " +converter.getClass().getName());
+            // TODO: figure out why orig getclass.getname doesn't work:
+			//logger.debug("Converting to the destination ticket using " + converter.getClass().getName());
+			logger.debug("Converting to the destination ticket using ... something.");
 			dest_ticket = converter.convert(source_ticket);
 
 			String dest_id;
@@ -177,7 +179,7 @@ public class TicketExchanger {
 			}
 			
 		} catch (Exception e) {
-			logger.error("Failed to get / convert source ticket :" + source_ticket_id, e);
+			logger.error("Failed to get / convert source ticket: " + source_ticket_id, e);
 		}
 	}
 	

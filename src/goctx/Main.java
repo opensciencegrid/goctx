@@ -21,8 +21,12 @@ public class Main {
 		logger.debug("GOCTX Version " + version);
 		System.setProperty("javax.net.ssl.trustStore", "jssecacerts");
 		System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-		
+
 		FileLock fl = lock();
+
+        // TODO put somewhere else?
+        System.setProperty("javax.net.ssl.trustStore", "jssecacerts");
+        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
 				
 		try {
 			//Email trigger

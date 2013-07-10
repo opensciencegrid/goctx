@@ -54,12 +54,12 @@ public class RTAccessor implements TicketAccessor {
 	
 	ArrayList<SimpleDateFormat> dfs = new ArrayList<SimpleDateFormat>();
 	
-	public RTAccessor(String _baseuri, String _user, String _password, String _default_queue, boolean basic_auth) throws AxisFault {
+	public RTAccessor(String _baseuri, String _user, String _password, String _default_queue, boolean _basic_auth) throws AxisFault {
 		this.baseuri = _baseuri;
 		this.user = _user;
 		this.password = _password;
 		this.default_queue = _default_queue;
-		this.basic_auth = basic_auth;
+		this.basic_auth = _basic_auth;
 		
 		//date format to try parsing with
 		//https://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html
@@ -576,7 +576,7 @@ public class RTAccessor implements TicketAccessor {
 			while(in.ready()) {
 				message.append(in.readLine());
 			}
-			throw new Exception("RT returned non-OK stauts code : " + status + " for request path : " + post.getPath() + "\n" + message.toString());
+			throw new Exception("RT returned non-OK status code : " + status + " for request path : " + post.getPath() + "\n" + message.toString());
 		}
 
 		return in;
@@ -584,10 +584,11 @@ public class RTAccessor implements TicketAccessor {
 	
 	public String parseTicketID(String subject) {
 		//Parses : "[triage #6] Ticket title"
-		int start = subject.indexOf("#")+1;
-		int end = subject.indexOf("]");
-		String id = subject.substring(start, end);
-		return id;
+		logger.debug("parseTicketID subject:" + subject);
+        int start = subject.indexOf("#")+1;
+        int end = subject.indexOf("]");
+        String id = subject.substring(start, end);
+        return id;
 	}
 	
 	public StringBuffer getCustomFields(RTTicket ticket) {

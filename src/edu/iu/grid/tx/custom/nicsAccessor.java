@@ -8,10 +8,9 @@ import edu.iu.grid.tx.accessor.RTAccessor;
 import edu.iu.grid.tx.ticket.RTTicket;
 import edu.iu.grid.tx.ticket.Ticket;
 
-public class XSEDEAccessor extends RTAccessor {
+public class nicsAccessor extends RTAccessor {
 
-	public XSEDEAccessor(String baseuri, String user, String password,
-			String default_queue) throws AxisFault {
+	public nicsAccessor(String baseuri, String user, String password, String default_queue, Boolean basic_auth) throws AxisFault {
 		super(baseuri, user, password, default_queue, true);
 		// TODO Auto-generated constructor stub
 	}
@@ -30,7 +29,7 @@ public class XSEDEAccessor extends RTAccessor {
 	
 	public RTTicket get(String id) {
 		RTTicket ticket = super.get(id);
-		ticket.setOriginNote("XSEDE Ticket: Queue=" + ticket.getQueue() + " ID=" + ticket.getTicketID());
+		ticket.setOriginNote("NICS Ticket: Queue=" + ticket.getQueue() + " ID=" + ticket.getTicketID());
 		return ticket;
 	}
 
