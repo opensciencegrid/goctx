@@ -17,15 +17,13 @@ fi
 
 usage="This script is expecting as input the full text of a single email, including full headers."
 
-if [ -t 0 ]; then
+if [ -t 0 ]
+then
     echo $usage
     echo "No input provided. Exiting."
     exit 1
-else
-    while read email
-    do 
-        #echo $email | $JAVA_HOME/bin/java -cp $GOCTX_HOME/lib:$GOCTX_HOME/etc goctx.Main
-        echo $email
-    done
 fi
+
+email=`cat`
+echo "$email" | $JAVA_HOME/bin/java -cp $GOCTX_HOME/lib/*:$GOCTX_HOME/lib/axis2-1.5/* goctx.Main
 

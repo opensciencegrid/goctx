@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.activation.MimetypesFileTypeMap;
 
@@ -20,8 +23,8 @@ import edu.iu.grid.tx.ticket.Ticket;
 
 public class TicketExchanger {
 	
-	static String version = "1.29";
-	
+	static String version = "1.31";
+
 	static Logger logger = Logger.getLogger(TicketExchanger.class);
 	
 	private String tx_id;
@@ -29,20 +32,23 @@ public class TicketExchanger {
 	private IFactory factory;
 	
 	private static Properties conf = null;
+    // TODO: fix this path junk:
+    private static String properties_file = "/opt/goctx/etc/goctx.properties";
+
 	public static Properties getConf() {
 		if(conf != null) return conf;
 		
 		try {
 			conf = new Properties();
-			conf.load(new FileInputStream("goctx.conf"));
+			conf.load(new FileInputStream(properties_file));
 			return conf;
 		} catch (Exception e1) {
-			logger.error("Failed to load goctx.conf: ", e1);
+			logger.error("Failed to load " + properties_file + ": ", e1);
 			System.exit(1);
 		}
 		return null;
 	}
-	
+
 	private String source_ticket_id;
 	public void setTicketID(String id) { source_ticket_id = id; }
 	public void setTicketIDFromSubject(String subject) {
@@ -64,12 +70,12 @@ public class TicketExchanger {
 		String line;
 		HashMap<String, String> headers = new HashMap<String, String>();
 		
+        // TODO rework this to better detect email stuff. -mpackard
 		//Parse email
 		Boolean header = true;
 		try {
-			line = reader.readLine(); //ignore the first line
-			line = reader.readLine();
-			while ( line!=null ) {
+            line = reader.readLine();
+			while ( (line = reader.readLine()) != null ) {
 				line = line.trim();
 				logger.debug("\t"+line);
 				if(header) {
@@ -84,11 +90,21 @@ public class TicketExchanger {
 						  headers.put(line.substring(0, pos), line.substring(pos+1,line.length()).trim());
 					  }
 				}
-				line = reader.readLine();
+				//line = reader.readLine();
 			}
+            reader.close();
+
 		} catch (IOException e) {
 			logger.error("Failed to parse email", e);
 		}
+
+        // mikedebug 
+        Set set = headers.keySet();
+        Iterator itr = set.iterator();
+        while( itr.hasNext()) {
+            Object element = itr.next();
+            logger.debug("mikedebug120: " + element + " = " + headers.get(element));
+        }
 		
 		//Get instance key from Delivered-To: 
 		String to = headers.get("Delivered-To");

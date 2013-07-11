@@ -12,7 +12,6 @@
     <property name="install.dir" value="/opt/goctx"/>
     <path id="goctx.classpath">
         <pathelement location="build"/>
-        <!-- <pathelement location="lib/goctx.jar"/> -->
         <pathelement location="lib/json-lib-2.4-jdk15.jar"/>
         <pathelement location="lib/ehcache-1.5.0.jar"/>
         <pathelement location="lib/ezmorph-1.0.jar"/>
