@@ -16,6 +16,8 @@ import javax.activation.MimetypesFileTypeMap;
 
 import org.apache.log4j.Logger;
 
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import edu.iu.grid.tx.accessor.Attachment;
 import edu.iu.grid.tx.accessor.TicketAccessor;
 import edu.iu.grid.tx.converter.TicketConverter;
@@ -33,7 +35,8 @@ public class TicketExchanger {
 	
 	private static Properties conf = null;
     // TODO: fix this path junk:
-    private static String properties_file = "/opt/goctx/etc/goctx.properties";
+    //private static String properties_file = "/opt/goctx/etc/goctx.properties";
+    private static String properties_file = System.getProperty("config", "goctx.default.properties");
 
 	public static Properties getConf() {
 		if(conf != null) return conf;
@@ -70,6 +73,11 @@ public class TicketExchanger {
 		String line;
 		HashMap<String, String> headers = new HashMap<String, String>();
 		
+        // TODO remove
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.trustStore"));
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.keyStore"));
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.trustStorePassword"));
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.keyStorePassword"));
         // TODO rework this to better detect email stuff. -mpackard
 		//Parse email
 		Boolean header = true;

@@ -141,7 +141,11 @@
         </copy>
         <copy file="dist/goctx.jar" todir="${install.dir}/lib"/>
         <copy file="bin/run_goctx.sh" todir="${install.dir}/bin"/>
+        <replace file="${install.dir}/bin/run_goctx.sh" token="@@install_dir@@" value="${install.dir}"/>
         <chmod file="${install.dir}/bin/run_goctx.sh" perm="755"/>
+        <copy file="bin/set_certs.sh" todir="${install.dir}/bin"/>
+        <replace file="${install.dir}/bin/set_certs.sh" token="@@install_dir@@" value="${install.dir}"/>
+        <chmod file="${install.dir}/bin/set_certs.sh" perm="755"/>
     </target>
 
 </project>

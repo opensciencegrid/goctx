@@ -15,17 +15,14 @@ then
   exit 1
 fi
 
-usage="This script is expecting as input the full text of a single email, including full headers."
+usage="This script is expecting as input a single fqdn."
 
-if [ -t 0 ]
+if [ -z $1 ]
 then
     echo $usage
     echo "No input provided. Exiting."
     exit 1
 fi
 
-email=`cat`
-echo "$email" | $JAVA_HOME/bin/java -Djavax.net.ssl.trustStore=$GOCTX_HOME/etc/jssecacerts -Dconfig=$GOCTX_HOME/etc/goctx.properties -cp $GOCTX_HOME/lib/*:$GOCTX_HOME/lib/axis2-1.5/* goctx.Main
-
-
+$JAVA_HOME/bin/java -cp $GOCTX_HOME/lib/*:$GOCTX_HOME/lib/axis2-1.5/* goctx.InstallCert $1 
 

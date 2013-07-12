@@ -22,7 +22,7 @@ public class Main {
 	{
 
         // Load up properties file
-        String properties_file= System.getProperty("config", "goctx.default.properties");
+        String properties_file = System.getProperty("config", "goctx.default.properties");
 
         Properties properties = new Properties();
         try {
@@ -40,6 +40,12 @@ public class Main {
 		logger.debug("GOCTX Version " + version);
 
         // TODO put somewhere else?
+		System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
+		System.setProperty("javax.net.ssl.keyStorePassword", "changeit");
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.trustStore"));
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.keyStore"));
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.trustStorePassword"));
+        logger.debug("mikedebug240: " + System.getProperty("javax.net.ssl.keyStorePassword"));
 		//System.setProperty("javax.net.ssl.trustStore", "jssecacerts");
 		//System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
 
