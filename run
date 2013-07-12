@@ -1,0 +1,187 @@
+2013-07-12 10:37:30,579 DEBUG main@0 goctx.Main - xsede_accessor_username => mpackard
+2013-07-12 10:37:30,580 DEBUG main@1 goctx.Main - sdsc_accessor_password => 12345
+2013-07-12 10:37:30,580 DEBUG main@1 goctx.Main - nics_accessor_password => 12345
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - txdb_url => jdbc:mysql:loadbalance://bogus,localhost:3306/goctx?loadBalanceBlacklistTimeout=5000&characterEncoding=UTF-8&characterSetResults=UTF-8
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - goctx_fqdn => goctx01.tacc.utexas.edu 
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - nics_accessor_username => goc
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - sdsc_accessor_username => goc
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - tacc_accessor_url => https://consult.tacc.utexas.edu/REST/1.0/
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - javax.net.ssl.trustStorePassword => changeit
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - tacc_accessor_password => dMtbaotBN9eEl98hsm6LQ1Z4z
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - txdb_user => goctx
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - txdb_pass => 06eVanAs5DHDKRn
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - tacc_accessor_username => goctx
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - sdsc_accessor_url => https://footprints.sdsc.edu/
+2013-07-12 10:37:30,581 DEBUG main@2 goctx.Main - nics_accessor_url => https://phage.nics.utk.edu/REST/1.0/
+2013-07-12 10:37:30,582 DEBUG main@3 goctx.Main - goctx_filelock_path => /tmp/goctx.lock
+2013-07-12 10:37:30,582 DEBUG main@3 goctx.Main - javax.net.ssl.trustStore => /opt/goctx/etc/jssecacerts
+2013-07-12 10:37:30,582 DEBUG main@3 goctx.Main - xsede_accessor_url => https://phage.nics.utk.edu/REST/1.0/
+2013-07-12 10:37:30,582 DEBUG main@3 goctx.Main - xsede_accessor_password => Mothra17.
+2013-07-12 10:37:30,582 DEBUG main@3 goctx.Main - GOCTX Version 1.31
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	From: "Mike Packard via RT" <help@tickets.xsede.org>
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Delivered-To: tx+xsede_tacc@rt03.tacc.utexas.edu
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Subject: [phage.nics.utk.edu #2305] Mpackard test ticket, ignore
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Reply-To: help@tickets.xsede.org
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	In-Reply-To: <CADMemN7c7cH2f3wC7aiAYeVoCQi+GQe5FJKfWMQfJTYTCNDngQ@mail.gmail.com>
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	References: <RT-Ticket-2305@xsede.org>
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	<CADMemN7c7cH2f3wC7aiAYeVoCQi+GQe5FJKfWMQfJTYTCNDngQ@mail.gmail.com>
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Message-ID: <rt-4.0.9-23332-1369776374-641.2305-6-0@xsede.org>
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Precedence: bulk
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	X-RT-Loop-Prevention: tickets.xsede.org
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	RT-Ticket: tickets.xsede.org #2305
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Managed-BY: RT 4.0.9 (http://www.bestpractical.com/rt/)
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	RT-Originator: mpackard@tacc.utexas.edu
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	To: mrghort@gmail.com
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	MIME-Version: 1.0
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Content-Transfer-Encoding: 8bit
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Content-Type: text/plain; charset="utf-8"
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	X-RT-Original-Encoding: utf-8
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	Date: Tue, 28 May 2013 16:26:14 -0500
+2013-07-12 10:37:30,596 DEBUG main@17 edu.iu.grid.tx.TicketExchanger - 	
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - 	
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - 	On Tue May 28 16:01:57 2013, mrghort@gmail.com wrote:
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - 	> Mpackard test ticket, ignore
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - 	
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - 	
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - 	response
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: X-RT-Original-Encoding = utf-8
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: MIME-Version = 1.0
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: Message-ID = <rt-4.0.9-23332-1369776374-641.2305-6-0@xsede.org>
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: Subject = [phage.nics.utk.edu #2305] Mpackard test ticket, ignore
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: Content-Transfer-Encoding = 8bit
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: To = mrghort@gmail.com
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: X-RT-Loop-Prevention = tickets.xsede.org
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: RT-Originator = mpackard@tacc.utexas.edu
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: Managed-BY = RT 4.0.9 (http://www.bestpractical.com/rt/)
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: RT-Ticket = tickets.xsede.org #2305
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: Delivered-To = tx+xsede_tacc@rt03.tacc.utexas.edu
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: Precedence = bulk
+2013-07-12 10:37:30,597 DEBUG main@18 edu.iu.grid.tx.TicketExchanger - mikedebug120: Date = Tue, 28 May 2013 16:26:14 -0500
+2013-07-12 10:37:30,598 DEBUG main@19 edu.iu.grid.tx.TicketExchanger - mikedebug120: References = <RT-Ticket-2305@xsede.org>
+2013-07-12 10:37:30,598 DEBUG main@19 edu.iu.grid.tx.TicketExchanger - mikedebug120: In-Reply-To = <CADMemN7c7cH2f3wC7aiAYeVoCQi+GQe5FJKfWMQfJTYTCNDngQ@mail.gmail.com>
+2013-07-12 10:37:30,598 DEBUG main@19 edu.iu.grid.tx.TicketExchanger - mikedebug120: Content-Type = text/plain; charset="utf-8"
+2013-07-12 10:37:30,598 DEBUG main@19 edu.iu.grid.tx.TicketExchanger - mikedebug120: From = "Mike Packard via RT" <help@tickets.xsede.org>
+2013-07-12 10:37:30,598 DEBUG main@19 edu.iu.grid.tx.TicketExchanger - mikedebug120: Reply-To = help@tickets.xsede.org
+2013-07-12 10:37:30,599 DEBUG main@20 edu.iu.grid.tx.SyncModel - Attempting to connect to Sync DB: jdbc:mysql:loadbalance://bogus,localhost:3306/goctx?loadBalanceBlacklistTimeout=5000&characterEncoding=UTF-8&characterSetResults=UTF-8
+2013-07-12 10:37:31,015 DEBUG main@436 edu.iu.grid.tx.SyncModel - Successfully connected
+2013-07-12 10:37:31,015 DEBUG main@436 edu.iu.grid.tx.TicketExchanger - GOCTX TicketExchanger Version 1.31
+2013-07-12 10:37:31,015 DEBUG main@436 edu.iu.grid.tx.custom.Factory - tx_key: xsede_tacc
+2013-07-12 10:37:31,015 DEBUG main@436 edu.iu.grid.tx.custom.Factory - mikedebug090: java.lang.String
+2013-07-12 10:37:31,021 DEBUG main@442 edu.iu.grid.tx.custom.Factory - source: edu.iu.grid.tx.custom.xsedeAccessor@6513cf0
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.custom.Factory - dest: edu.iu.grid.tx.custom.taccAccessor@3f77b3cd
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.custom.Factory - rev: tx+tacc_xsede@goctx01.tacc.utexas.edu 
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.TicketExchanger - Parsing Source Ticket ID from Email Header: [phage.nics.utk.edu #2305] Mpackard test ticket, ignore
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.accessor.RTAccessor - parseTicketID subject:[phage.nics.utk.edu #2305] Mpackard test ticket, ignore
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.TicketExchanger - Start Processing TX: xsede_tacc
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.TicketExchanger - Source Accessor: edu.iu.grid.tx.custom.xsedeAccessor
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.TicketExchanger - Destination Accessor: edu.iu.grid.tx.custom.taccAccessor
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.TicketExchanger - Source Ticket ID: 2305
+2013-07-12 10:37:31,022 DEBUG main@443 edu.iu.grid.tx.TicketExchanger - Retrieving source ticket
+2013-07-12 10:37:31,091 DEBUG main@512 org.apache.commons.httpclient.HttpClient - Java version: 1.6.0_24
+2013-07-12 10:37:31,091 DEBUG main@512 org.apache.commons.httpclient.HttpClient - Java vendor: Sun Microsystems Inc.
+2013-07-12 10:37:31,091 DEBUG main@512 org.apache.commons.httpclient.HttpClient - Java class path: /opt/goctx/lib/axis2-kernel-1.5.jar:/opt/goctx/lib/ehcache-1.5.0.jar:/opt/goctx/lib/json-lib-2.4-jdk15.jar:/opt/goctx/lib/mysql-connector-java-5.1.13-bin.jar:/opt/goctx/lib/commons-collections-3.2.1.jar:/opt/goctx/lib/commons-lang-2.3.jar:/opt/goctx/lib/mail-1.4.jar:/opt/goctx/lib/commons-codec-1.5.jar:/opt/goctx/lib/commons-beanutils-1.8.3.jar:/opt/goctx/lib/ezmorph-1.0.jar:/opt/goctx/lib/commons-httpclient-3.1.jar:/opt/goctx/lib/log4j-1.2.15.jar:/opt/goctx/lib/goctx.jar:/opt/goctx/lib/axis2-1.5/axis2-jaxws-1.5.jar:/opt/goctx/lib/axis2-1.5/geronimo-ws-metadata_2.0_spec-1.1.2.jar:/opt/goctx/lib/axis2-1.5/axis2-clustering-1.5.jar:/opt/goctx/lib/axis2-1.5/jibx-bind-1.2.1.jar:/opt/goctx/lib/axis2-1.5/axis2-codegen-1.5.jar:/opt/goctx/lib/axis2-1.5/xalan-2.7.0.jar:/opt/goctx/lib/axis2-1.5/axis2-json-1.5.jar:/opt/goctx/lib/axis2-1.5/axis2-kernel-1.5.jar:/opt/goctx/lib/axis2-1.5/axis2-transport-local-1.5.jar:/opt/goctx/lib/axis2-1.5/smack-3.0.4.jar:/opt/goctx/lib/axis2-1.5/axis2-adb-codegen-1.5.jar:/opt/goctx/lib/axis2-1.5/commons-logging.jar:/opt/goctx/lib/axis2-1.5/wsdl4j-1.6.2.jar:/opt/goctx/lib/axis2-1.5/activation-1.1.jar:/opt/goctx/lib/axis2-1.5/geronimo-saaj_1.3_spec-1.0.1.jar:/opt/goctx/lib/axis2-1.5/soapmonitor-1.5.jar:/opt/goctx/lib/axis2-1.5/axiom-impl-1.2.8.jar:/opt/goctx/lib/axis2-1.5/axis2-xmlbeans-1.5.jar:/opt/goctx/lib/axis2-1.5/mex-1.5.jar:/opt/goctx/lib/axis2-1.5/commons-io-1.4.jar:/opt/goctx/lib/axis2-1.5/xml-apis-1.3.02.jar:/opt/goctx/lib/axis2-1.5/mail-1.4.jar:/opt/goctx/lib/axis2-1.5/geronimo-annotation_1.0_spec-1.1.jar:/opt/goctx/lib/axis2-1.5/jaxrpc.jar:/opt/goctx/lib/axis2-1.5/axis2-metadata-1.5.jar:/opt/goctx/lib/axis2-1.5/wsdl4j.jar:/opt/goctx/lib/axis2-1.5/jibx-run-1.2.1.jar:/opt/goctx/lib/axis2-1.5/jettison-1.0-RC2.jar:/opt/goctx/lib/axis2-1.5/xmlbeans-2.3.0.jar:/opt/goctx/lib/axis2-1.5/axis2-mtompolicy-1.5.jar:/opt/goctx/lib/axis2-1.5/axis2-adb-1.5.jar:/opt/goctx/lib/axis2-1.5/jalopy-1.5rc3.jar:/opt/goctx/lib/axis2-1.5/smackx-3.0.4.jar:/opt/goctx/lib/axis2-1.5/XmlSchema-1.4.3.jar:/opt/goctx/lib/axis2-1.5/commons-httpclient-3.1.jar:/opt/goctx/lib/axis2-1.5/axiom-api-1.2.8.jar:/opt/goctx/lib/axis2-1.5/neethi-2.0.4.jar:/opt/goctx/lib/axis2-1.5/axis2-java2wsdl-1.5.jar:/opt/goctx/lib/axis2-1.5/bcel-5.1.jar:/opt/goctx/lib/axis2-1.5/axis2-spring-1.5.jar:/opt/goctx/lib/axis2-1.5/axis2-corba-1.5.jar:/opt/goctx/lib/axis2-1.5/commons-fileupload-1.2.jar:/opt/goctx/lib/axis2-1.5/woden-api-1.0M8.jar:/opt/goctx/lib/axis2-1.5/jaxb-impl-2.1.7.jar:/opt/goctx/lib/axis2-1.5/axis2-jibx-1.5.jar:/opt/goctx/lib/axis2-1.5/axis2-jaxbri-1.5.jar:/opt/goctx/lib/axis2-1.5/axis2-fastinfoset-1.5.jar:/opt/goctx/lib/axis2-1.5/axis2-transport-http-1.5.jar:/opt/goctx/lib/axis2-1.5/saaj.jar:/opt/goctx/lib/axis2-1.5/wstx-asl-3.2.4.jar:/opt/goctx/lib/axis2-1.5/axis.jar:/opt/goctx/lib/axis2-1.5/httpcore-4.0.jar:/opt/goctx/lib/axis2-1.5/woden-impl-dom-1.0M8.jar:/opt/goctx/lib/axis2-1.5/geronimo-jaxws_2.1_spec-1.0.jar:/opt/goctx/lib/axis2-1.5/commons-codec-1.3.jar:/opt/goctx/lib/axis2-1.5/geronimo-stax-api_1.0_spec-1.0.1.jar:/opt/goctx/lib/axis2-1.5/commons-discovery-0.2.jar:/opt/goctx/lib/axis2-1.5/jaxen-1.1.1.jar:/opt/goctx/lib/axis2-1.5/commons-logging-1.1.1.jar:/opt/goctx/lib/axis2-1.5/xercesImpl-2.6.2.jar:/opt/goctx/lib/axis2-1.5/jaxb-xjc-2.1.7.jar:/opt/goctx/lib/axis2-1.5/axis2-ant-plugin-1.5.jar:/opt/goctx/lib/axis2-1.5/xml-resolver-1.2.jar:/opt/goctx/lib/axis2-1.5/jaxb-api-2.1.jar:/opt/goctx/lib/axis2-1.5/axiom-dom-1.2.8.jar
+2013-07-12 10:37:31,096 DEBUG main@517 org.apache.commons.httpclient.HttpClient - Operating system name: Linux
+2013-07-12 10:37:31,096 DEBUG main@517 org.apache.commons.httpclient.HttpClient - Operating system architecture: amd64
+2013-07-12 10:37:31,096 DEBUG main@517 org.apache.commons.httpclient.HttpClient - Operating system version: 2.6.32-358.11.1.el6.x86_64
+2013-07-12 10:37:31,108 DEBUG main@529 org.apache.commons.httpclient.HttpClient - SUN 1.6: SUN (DSA key/parameter generation; DSA signing; SHA-1, MD5 digests; SecureRandom; X.509 certificates; JKS keystore; PKIX CertPathValidator; PKIX CertPathBuilder; LDAP, Collection CertStores, JavaPolicy Policy; JavaLoginConfig Configuration)
+2013-07-12 10:37:31,108 DEBUG main@529 org.apache.commons.httpclient.HttpClient - SunRsaSign 1.7: Sun RSA signature provider
+2013-07-12 10:37:31,109 DEBUG main@530 org.apache.commons.httpclient.HttpClient - SunJSSE 1.6: Sun JSSE provider(PKCS12, SunX509 key/trust factories, SSLv3, TLSv1)
+2013-07-12 10:37:31,109 DEBUG main@530 org.apache.commons.httpclient.HttpClient - SunJCE 1.7: SunJCE Provider (implements RSA, DES, Triple DES, AES, Blowfish, ARCFOUR, RC2, PBE, Diffie-Hellman, HMAC)
+2013-07-12 10:37:31,109 DEBUG main@530 org.apache.commons.httpclient.HttpClient - SunJGSS 1.0: Sun (Kerberos v5, SPNEGO)
+2013-07-12 10:37:31,109 DEBUG main@530 org.apache.commons.httpclient.HttpClient - SunSASL 1.5: Sun SASL provider(implements client mechanisms for: DIGEST-MD5, GSSAPI, EXTERNAL, PLAIN, CRAM-MD5; server mechanisms for: DIGEST-MD5, GSSAPI, CRAM-MD5)
+2013-07-12 10:37:31,109 DEBUG main@530 org.apache.commons.httpclient.HttpClient - XMLDSig 1.0: XMLDSig (DOM XMLSignatureFactory; DOM KeyInfoFactory)
+2013-07-12 10:37:31,109 DEBUG main@530 org.apache.commons.httpclient.HttpClient - SunPCSC 1.6: Sun PC/SC provider
+2013-07-12 10:37:31,114 DEBUG main@535 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.useragent = Jakarta Commons-HttpClient/3.1
+2013-07-12 10:37:31,119 DEBUG main@540 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.version = HTTP/1.1
+2013-07-12 10:37:31,120 DEBUG main@541 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+2013-07-12 10:37:31,120 DEBUG main@541 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.cookie-policy = default
+2013-07-12 10:37:31,120 DEBUG main@541 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.element-charset = US-ASCII
+2013-07-12 10:37:31,120 DEBUG main@541 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.content-charset = ISO-8859-1
+2013-07-12 10:37:31,125 DEBUG main@546 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@9a082e2
+2013-07-12 10:37:31,125 DEBUG main@546 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+2013-07-12 10:37:31,132 DEBUG main@553 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.single-cookie-header = true
+2013-07-12 10:37:31,132 DEBUG main@553 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.protocol.cookie-policy = compatibility
+2013-07-12 10:37:31,132 DEBUG main@553 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.connection.timeout = 10000
+2013-07-12 10:37:31,158 DEBUG main@579 org.apache.commons.httpclient.params.DefaultHttpParams - Set parameter http.authentication.preemptive = true
+2013-07-12 10:37:31,159 DEBUG main@580 org.apache.commons.httpclient.HttpState - enter HttpState.setCredentials(AuthScope, Credentials)
+2013-07-12 10:37:31,159 DEBUG main@580 org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HttpMethod)
+2013-07-12 10:37:31,159 DEBUG main@580 org.apache.commons.httpclient.HttpClient - enter HttpClient.executeMethod(HostConfiguration,HttpMethod,HttpState)
+2013-07-12 10:37:31,165 DEBUG main@586 org.apache.commons.httpclient.HttpMethodDirector - Preemptively sending default basic credentials
+2013-07-12 10:37:31,170 DEBUG main@591 org.apache.commons.httpclient.HttpMethodDirector - Authenticating with BASIC <any realm>@phage.nics.utk.edu:443
+2013-07-12 10:37:31,170 DEBUG main@591 org.apache.commons.httpclient.HttpState - enter HttpState.getCredentials(AuthScope)
+2013-07-12 10:37:31,174 DEBUG main@595 org.apache.commons.httpclient.auth.BasicScheme - enter BasicScheme.authenticate(Credentials, HttpMethod)
+2013-07-12 10:37:31,174 DEBUG main@595 org.apache.commons.httpclient.params.HttpMethodParams - Credential charset not configured, using HTTP element charset
+2013-07-12 10:37:31,174 DEBUG main@595 org.apache.commons.httpclient.auth.BasicScheme - enter BasicScheme.authenticate(UsernamePasswordCredentials, String)
+2013-07-12 10:37:31,176 DEBUG main@597 org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+2013-07-12 10:37:31,176 DEBUG main@597 org.apache.commons.httpclient.HttpMethodDirector - Attempt number 1 to process request
+2013-07-12 10:37:31,176 DEBUG main@597 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.open()
+2013-07-12 10:37:31,176 DEBUG main@597 org.apache.commons.httpclient.HttpConnection - Open connection to phage.nics.utk.edu:443
+2013-07-12 10:37:31,466 DEBUG main@887 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.execute(HttpState, HttpConnection)
+2013-07-12 10:37:31,466 DEBUG main@887 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequest(HttpState, HttpConnection)
+2013-07-12 10:37:31,466 DEBUG main@887 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestLine(HttpState, HttpConnection)
+2013-07-12 10:37:31,466 DEBUG main@887 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.generateRequestLine(HttpConnection, String, String, String, String)
+2013-07-12 10:37:31,467 DEBUG main@888 httpclient.wire.header - >> "POST /REST/1.0//ticket/2305/show HTTP/1.1[\r][\n]"
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.writeRequestHeaders(HttpState,HttpConnection)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addRequestHeaders(HttpState, HttpConnection)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.methods.ExpectContinueMethod - enter ExpectContinueMethod.addRequestHeaders(HttpState, HttpConnection)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addRequestHeaders(HttpState, HttpConnection)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addUserAgentRequestHeaders(HttpState, HttpConnection)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addHostRequestHeader(HttpState, HttpConnection)
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpMethodBase - Adding Host request header
+2013-07-12 10:37:31,467 DEBUG main@888 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addCookieRequestHeader(HttpState, HttpConnection)
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.HttpState - enter HttpState.getCookies()
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.cookie.CookieSpec - enter CookieSpecBase.match(String, int, String, boolean, Cookie[])
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.HttpMethodBase - enter HttpMethodBase.addProxyConnectionHeader(HttpState, HttpConnection)
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.addContentLengthRequestHeader(HttpState, HttpConnection)
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.getRequestContentLength()
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.HttpMethodBase - HttpMethodBase.addRequestHeader(Header)
+2013-07-12 10:37:31,474 DEBUG main@895 org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.renerateRequestBody()
+2013-07-12 10:37:31,474 DEBUG main@895 httpclient.wire.header - >> "Authorization: Basic bXBhY2thcmQ6TW90aHJhMTcu[\r][\n]"
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+2013-07-12 10:37:31,475 DEBUG main@896 httpclient.wire.header - >> "User-Agent: Jakarta Commons-HttpClient/3.1[\r][\n]"
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+2013-07-12 10:37:31,475 DEBUG main@896 httpclient.wire.header - >> "Host: phage.nics.utk.edu[\r][\n]"
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+2013-07-12 10:37:31,475 DEBUG main@896 httpclient.wire.header - >> "Content-Length: 0[\r][\n]"
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.print(String)
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.writeLine()
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[])
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.write(byte[], int, int)
+2013-07-12 10:37:31,475 DEBUG main@896 httpclient.wire.header - >> "[\r][\n]"
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.writeRequestBody(HttpState, HttpConnection)
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.methods.PostMethod - enter PostMethod.hasRequestContent()
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.methods.EntityEnclosingMethod - enter EntityEnclosingMethod.hasRequestContent()
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.methods.EntityEnclosingMethod - Request body has not been specified
+2013-07-12 10:37:31,475 DEBUG main@896 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.flushRequestOutputStream()
+2013-07-12 10:37:31,746 DEBUG main@1167 org.apache.commons.httpclient.HttpMethodDirector - Closing the connection.
+2013-07-12 10:37:31,746 DEBUG main@1167 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.close()
+2013-07-12 10:37:31,746 DEBUG main@1167 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.closeSockedAndStreams()
+2013-07-12 10:37:31,746 DEBUG main@1167 org.apache.commons.httpclient.HttpMethodDirector - Method retry handler returned false. Automatic recovery will not be attempted
+2013-07-12 10:37:31,746 DEBUG main@1167 org.apache.commons.httpclient.HttpConnection - enter HttpConnection.releaseConnection()
+2013-07-12 10:37:31,746 DEBUG main@1167 org.apache.commons.httpclient.HttpConnection - Releasing connection back to connection manager.
+2013-07-12 10:37:31,746 ERROR main@1167 edu.iu.grid.tx.accessor.RTAccessor - javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+2013-07-12 10:37:31,746 DEBUG main@1167 edu.iu.grid.tx.TicketExchanger - mikedebug130 getclass: edu.iu.grid.tx.converter.RT2RTTicketConverter
+2013-07-12 10:37:31,746 DEBUG main@1167 edu.iu.grid.tx.TicketExchanger - Converting to the destination ticket using edu.iu.grid.tx.converter.RT2RTTicketConverter
+2013-07-12 10:37:31,746 DEBUG main@1167 edu.iu.grid.tx.TicketExchanger - Converting to the destination ticket using ... something.
+2013-07-12 10:37:31,747 DEBUG main@1168 edu.iu.grid.tx.converter.RT2RTTicketConverter - mikedebug200: start convert RT to RT.
+2013-07-12 10:37:31,747 DEBUG main@1168 edu.iu.grid.tx.converter.RT2RTTicketConverter - mikedebug290: end convert RT to RT.
+2013-07-12 10:37:31,758 DEBUG main@1179 edu.iu.grid.tx.TicketExchanger - This is an existing TX - preparing to update dest ticket
+2013-07-12 10:37:31,758 DEBUG main@1179 edu.iu.grid.tx.TicketExchanger - mikedebug120 dest: null source: 2305
+2013-07-12 10:37:31,764 ERROR main@1185 edu.iu.grid.tx.TicketExchanger - Failed to update ticket
+java.lang.NullPointerException
+	at edu.iu.grid.tx.TicketExchanger.processUpdate(TicketExchanger.java:260)
+	at edu.iu.grid.tx.TicketExchanger.run(TicketExchanger.java:193)
+	at goctx.Main.main(Main.java:59)

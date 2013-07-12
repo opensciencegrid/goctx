@@ -179,6 +179,8 @@ public class TicketExchanger {
 			
             // TODO: figure out why orig getclass.getname doesn't work:
 			//logger.debug("Converting to the destination ticket using " + converter.getClass().getName());
+            logger.debug("mikedebug130 getclass: " + converter.getClass().getName());
+			logger.debug("Converting to the destination ticket using " + converter.getClass().getName());
 			logger.debug("Converting to the destination ticket using ... something.");
 			dest_ticket = converter.convert(source_ticket);
 
@@ -246,6 +248,8 @@ public class TicketExchanger {
 	private void processUpdate(String source_ticket_id, String dest_id, Ticket source_ticket, Ticket dest_ticket)
 	{
 		logger.debug("This is an existing TX - preparing to update dest ticket");
+
+        logger.debug("mikedebug120 dest: " + dest_ticket.getTicketID() + " source: " + source_ticket.getTicketID());
 		
 		//we should only do update if source ticket is *actually* newer than last recorded TX time.
 		//if it's same timestamp, that probably means that this is just a notification loop

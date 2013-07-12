@@ -25,5 +25,5 @@ then
 fi
 
 email=`cat`
-echo "$email" | $JAVA_HOME/bin/java -cp $GOCTX_HOME/lib/*:$GOCTX_HOME/lib/axis2-1.5/* goctx.Main
+echo "$email" | $JAVA_HOME/bin/java -Dconfig=/opt/goctx/etc/goctx.properties -cp $GOCTX_HOME/lib/*:$GOCTX_HOME/lib/axis2-1.5/* goctx.Main
 

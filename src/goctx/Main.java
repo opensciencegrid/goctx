@@ -20,10 +20,28 @@ public class Main {
 	
 	public static void main(String[] args) 
 	{
+
+        // Load up properties file
+        String properties_file= System.getProperty("config", "goctx.default.properties");
+
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream(properties_file));
+        } catch (Exception e) {
+            logger.debug("Could not load properties file: " + properties_file);
+        }
+
+        // Print out properties
+        for(String key : properties.stringPropertyNames()) {
+            String value = properties.getProperty(key);
+            logger.debug(key + " => " + value);
+        }
+
 		logger.debug("GOCTX Version " + version);
+
         // TODO put somewhere else?
-		System.setProperty("javax.net.ssl.trustStore", "jssecacerts");
-		System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
+		//System.setProperty("javax.net.ssl.trustStore", "jssecacerts");
+		//System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
 
 		FileLock fl = lock();
 
