@@ -98,11 +98,13 @@ public class JiraAccessor implements TicketAccessor {
 					logger.info(reply);
 					JSONObject json = (JSONObject) JSONSerializer.toJSON(reply);
 					String key = json.getString("key");
-					ticket.setTicketID(key);
+					String id = json.getString("id");
+					ticket.setTicketID(id);
+					ticket.setKey(key);
 					
 					update(ticket, null, ticket);
 					
-					return key; //All good
+					return id; //All good
 				}
 				
 			} else {
@@ -315,6 +317,9 @@ public class JiraAccessor implements TicketAccessor {
 			InputStream response = mPost.getResponseBodyAsStream();
 			String jsontxt = IOUtils.toString(response);
 			JSONObject json = (JSONObject) JSONSerializer.toJSON( jsontxt );
+			
+			ticket.setKey(json.getString("key")); //this is what people refer to as ticket "name"
+			
 			JSONObject fields = json.getJSONObject("fields");
 			
 			//load ticket metadata
@@ -341,7 +346,7 @@ public class JiraAccessor implements TicketAccessor {
 			ticket.setIssueType(issuetype.getString("name"));
 			
 			//this should be overridden by custom accessor
-			ticket.setOriginNote("Jira(Generic) " + ticket.getTicketID());
+			ticket.setOriginNote("Jira(Generic) " + ticket.getKey());
 			
 			//load ticket comments
 			JSONObject comment_obj = fields.getJSONObject("comment");
@@ -572,10 +577,9 @@ public class JiraAccessor implements TicketAccessor {
 
 	@Override
 	public String parseTicketID(String subject) {
-		//TODO - this isn't right
-		//Parses : "[triage #6] Ticket title"
-		int start = subject.indexOf("#")+1;
-		int end = subject.indexOf("]");
+		//Parses : "[JIRA] (OSGPKI-387) OSG/PKI currently does not provide an easy way to update user certificate stored in browser"
+		int start = subject.indexOf("(")+1;
+		int end = subject.indexOf(")");
 		String id = subject.substring(start, end);
 		return id;
 	}

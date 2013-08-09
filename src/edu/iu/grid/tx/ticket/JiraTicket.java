@@ -12,6 +12,10 @@ public class JiraTicket implements Ticket {
 	@Override
 	public String getTicketID() { return id; }
 	
+	private String key;
+	public void setKey(String it) { key = it; }
+	public String getKey() { return key; }	
+	
 	private String summary;
 	public void setSummary(String it) { summary = it; }
 	public String getSummary() { return summary; }	
