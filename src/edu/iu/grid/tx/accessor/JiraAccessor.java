@@ -101,6 +101,8 @@ public class JiraAccessor implements TicketAccessor {
 					ticket.setTicketID(key);
 					
 					update(ticket, null, ticket);
+					
+					return key; //All good
 				}
 				
 			} else {
@@ -124,10 +126,10 @@ public class JiraAccessor implements TicketAccessor {
 	}
 
 	//https://docs.atlassian.com/jira/REST/latest/#idp1362256
-	public void update(Ticket _current, Date last_synctime, Ticket _ticket) {
+	public void update(Ticket _ticket, Date last_synctime, Ticket _old_ticket) {
 		
 		JiraTicket ticket = (JiraTicket)_ticket;
-		JiraTicket current_ticket = (JiraTicket)_current;
+		JiraTicket old_ticket = (JiraTicket)_old_ticket;
 		HttpClient cl = initHttpClient();
 				
 		//update fields
@@ -178,9 +180,9 @@ public class JiraAccessor implements TicketAccessor {
 		}
 		
 		//transition to specified state
-		massageTransition(current_ticket, ticket);
-		if(!current_ticket.getStatus().equals(ticket.getStatus())) {
-			logger.debug("Processing state transition from " + current_ticket.getStatus() + " to " + ticket.getStatus());
+		massageTransition(old_ticket, ticket);
+		if(!old_ticket.getStatus().equals(ticket.getStatus())) {
+			logger.debug("Processing state transition from " + old_ticket.getStatus() + " to " + ticket.getStatus());
 			
 			String transition_id = null;
 			try {
