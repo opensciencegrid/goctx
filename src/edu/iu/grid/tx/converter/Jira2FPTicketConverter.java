@@ -68,9 +68,10 @@ public class Jira2FPTicketConverter implements TicketConverter {
 		if(jira_status.equals("Closed")) return "Closed";
 		if(jira_status.equals("Resolved")) return "Resolved";
 		if(jira_status.equals("Open")) return "Engineering";
+		if(jira_status.equals("Reopened")) return "Engineering";
 		
-		logger.warn("Unknown jira status: " + jira_status + " (defaulting to Open)");
-		return "Open";
+		logger.warn("Unknown jira status: " + jira_status + " (defaulting to Engineering)");
+		return "Engineering";
 	}
 	
 	private String convertTicketType(String jira_issue_type) {
