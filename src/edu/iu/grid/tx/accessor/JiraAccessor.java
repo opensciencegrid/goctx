@@ -302,15 +302,14 @@ public class JiraAccessor implements TicketAccessor {
 	
 	//with auth 
 	//curl --insecure -D- -u hayashis:mygocpass -X GET -H "Content-Type: application/json" "https://jira.grid.iu.edu/rest/api/2/issue/OO-1"
-	public JiraTicket get(String id) {
+	public JiraTicket get(String key) {
 		JiraTicket ticket = new JiraTicket();
-		ticket.setTicketID(id);
 	
 		HttpClient cl = initHttpClient();
 		
 		try {
 			//make call
-			GetMethod mPost = new GetMethod(baseuri + "/rest/api/2/issue/"+ticket.getTicketID());
+			GetMethod mPost = new GetMethod(baseuri + "/rest/api/2/issue/"+key);
 			cl.executeMethod(mPost);
 			
 			//receive reply
@@ -319,6 +318,7 @@ public class JiraAccessor implements TicketAccessor {
 			JSONObject json = (JSONObject) JSONSerializer.toJSON( jsontxt );
 			
 			ticket.setKey(json.getString("key")); //this is what people refer to as ticket "name"
+			ticket.setTicketID(json.getString("id"));
 			
 			JSONObject fields = json.getJSONObject("fields");
 			
@@ -367,7 +367,7 @@ public class JiraAccessor implements TicketAccessor {
 		} catch (IOException e) {
 			logger.error(e);
 		} catch (Exception e) {
-			logger.error("exception in JiraAccessor:get() for ticket " + id);
+			logger.error("exception in JiraAccessor:get() for ticket " + key);
 			logger.error(e);
 		}
 

@@ -160,6 +160,7 @@ public class TicketExchanger {
 		try {
 			logger.debug("Retrieving source ticket");
 			source_ticket = source.get(source_ticket_id);
+			source_ticket_id = source_ticket.getTicketID(); //some accessor reset ticket id (like jira) from "key" to the real internal ticket id
 			
 			logger.debug("Converting to the destination ticket using " +converter.getClass().getName());
 			dest_ticket = converter.convert(source_ticket);
