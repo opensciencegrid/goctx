@@ -1,6 +1,7 @@
 package edu.iu.grid.tx.accessor;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -23,6 +24,9 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.PutMethod;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
+import org.apache.commons.httpclient.methods.multipart.FilePart;
+import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
+import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.io.IOUtils;
 
 import net.sf.json.JSONArray;
@@ -64,7 +68,6 @@ public class JiraAccessor implements TicketAccessor {
 	public String create(Ticket jiraticket, String reverse_assignee) 
 	{
 		JiraTicket ticket = (JiraTicket)jiraticket;
-		HttpClient cl = initHttpClient();
 		
 		try {
 			JSONObject fields =  new JSONObject();
@@ -83,6 +86,7 @@ public class JiraAccessor implements TicketAccessor {
 			PostMethod post = new PostMethod(baseuri + "/rest/api/2/issue");
 			StringRequestEntity  body = new StringRequestEntity (root.toString(), "application/json", null);
 			post.setRequestEntity(body);
+			HttpClient cl = initHttpClient();
 			cl.executeMethod(post);
 			
 			int code = post.getStatusCode();
@@ -305,11 +309,10 @@ public class JiraAccessor implements TicketAccessor {
 	public JiraTicket get(String key) {
 		JiraTicket ticket = new JiraTicket();
 	
-		HttpClient cl = initHttpClient();
-		
 		try {
 			//make call
 			GetMethod mPost = new GetMethod(baseuri + "/rest/api/2/issue/"+key);
+			HttpClient cl = initHttpClient();
 			cl.executeMethod(mPost);
 			
 			//receive reply
@@ -375,184 +378,86 @@ public class JiraAccessor implements TicketAccessor {
 	}
 	
 	@Override
-	public ArrayList<Attachment> getAttachments(String id) throws Exception {
-		
+	public ArrayList<Attachment> getAttachments(String key) throws Exception {
 		ArrayList<Attachment> attachments = new ArrayList<Attachment>();
-		/* TODO
-		HttpClient cl = new HttpClient();
-		cl.getParams().setParameter("http.protocol.single-cookie-header", true);
-		cl.getParams().setCookiePolicy(CookiePolicy.BROWSER_COMPATIBILITY);
-		cl.getHttpConnectionManager().getParams().setConnectionTimeout(1000*10);//10 seconds good?
-		
-		//PostMethod mPost = new PostMethod(baseuri + "/ticket/"+id+"/attachments?user="+user+"&pass="+password);
-		PostMethod mPost;
-		if(basic_auth) {
-			mPost = new PostMethod(baseuri + "/ticket/"+id+"/attachments");
-			cl.getParams().setAuthenticationPreemptive(true);
-			Credentials defaultcreds = new UsernamePasswordCredentials(user, password);
-			cl.getState().setCredentials(AuthScope.ANY, defaultcreds);
-		} else {
-			mPost = new PostMethod(baseuri + "/ticket/"+id+"/attachments?user="+user+"&pass="+password);
-		}
-		
-		cl.executeMethod(mPost);
-		//parse body into separate attachment objects
-		BufferedReader in = checkStatusAndGetBody(mPost);
-		while(true) {
-			ArrayList<KeyValue> kvs = parseKeyValues(in);
-			if(kvs.size() == 0) break;
+		try {
+			//make call
+			GetMethod mPost = new GetMethod(baseuri + "/rest/api/2/issue/"+key+ "?fields=attachment");
+			HttpClient cl = initHttpClient();
+			cl.executeMethod(mPost);
 			
-			String attachments_raw = searchValueByKey(kvs, "Attachments");
-			for(String attachment_raw : attachments_raw.split(",\n")) {
+			//receive reply
+			InputStream response = mPost.getResponseBodyAsStream();
+			String jsontxt = IOUtils.toString(response);
+			JSONObject json = (JSONObject) JSONSerializer.toJSON( jsontxt );
+			
+			JSONObject fields = json.getJSONObject("fields");
+			JSONArray attachments_json = fields.getJSONArray("attachment");
+			for(int i = 0; i < attachments_json.size(); ++i) {
+				JSONObject attachment_json = attachments_json.getJSONObject(i);
 				Attachment attachment = new Attachment();
-				int pos = attachment_raw.indexOf(':');
-				int pos1 = attachment_raw.lastIndexOf("(");
-				int pos2 = attachment_raw.indexOf(" ", pos1+2);
-				attachment.id = attachment_raw.substring(0, pos);
-				attachment.name = attachment_raw.substring(pos+2, pos1-1);
-				attachment.owner = "RT via GOC-TX"; //TODO - I should find out who the creator was by querying the ticket history..
-				attachment.content_type = attachment_raw.substring(pos1+1, pos2);
-				if(!attachment.name.equals("(Unnamed)")) {
-					attachments.add(attachment);
-				}
+				attachment.content_type = attachment_json.getString("mimeType");
+				attachment.file = null; //TODO
+				attachment.id = attachment_json.getString("id");
+				attachment.name = attachment_json.getString("filename");
+				JSONObject author_json = attachment_json.getJSONObject("author");
+				attachment.owner = author_json.getString("name");
+				attachments.add(attachment);
 			}
+					
+		} catch (HttpException e) {
+			logger.error(e);
+		} catch (IOException e) {
+			logger.error(e);
+		} catch (Exception e) {
+			logger.error("exception in JiraAccessor:get() for ticket " + key);
+			logger.error(e);
 		}
-		*/
-		
+			
 		return attachments;
 	}
 	
-	/*
-	private BufferedReader checkStatusAndGetBody(PostMethod post) throws Exception 
-	{
-		InputStreamReader inr = new InputStreamReader(post.getResponseBodyAsStream());
-		BufferedReader in = new BufferedReader(inr);
-		String status = in.readLine();
-		if(status == null) throw new Exception("RT returned null status.\n" + post.getResponseBodyAsString());
-		//logger.debug("status: " + status);
-		
-		//skip the empty line after status
-		in.readLine();
-		
-		//analyze status
-		String tokens[] = status.split(" ");
-		if(tokens.length < 3) throw new Exception("RT returned status in unexpected format : " + status);
-		if(!tokens[2].equals("Ok")) {
-			//consume the rest of the message
-			StringBuffer message = new StringBuffer();
-			while(in.ready()) {
-				message.append(in.readLine());
-			}
-			throw new Exception("RT returned non-OK stauts code : " + status + " for request path : " + post.getPath() + "\n" + message.toString());
-		}
-
-		return in;
-	}
-	
-	public String parseTicketID(String subject) {
-		//Parses : "[triage #6] Ticket title"
-		int start = subject.indexOf("#")+1;
-		int end = subject.indexOf("]");
-		String id = subject.substring(start, end);
-		return id;
-	}
-
-	
-	public StringBuffer getCustomFields(RTTicket ticket) {
-		StringBuffer content = new StringBuffer();
-		HashMap<String, String> custom_fields = ticket.getCustomFields();
-		for(String key : custom_fields.keySet()) {
-			String value = custom_fields.get(key);
-			content.append(key);
-			content.append(": ");
-			content.append(value);
-			content.append("\n");
-		}
-		return content;
-	}
-	*/
 	
 	@Override
 	public File downloadAttachment(String ticket_id, Attachment attachment) throws Exception {
-		return null; //TODO
-		/*
-		HttpClient cl = new HttpClient();		
-		cl.getParams().setParameter("http.protocol.single-cookie-header", true);
-		cl.getParams().setCookiePolicy(CookiePolicy.BROWSER_COMPATIBILITY);
-		cl.getHttpConnectionManager().getParams().setConnectionTimeout(1000*30);
+		GetMethod get = new GetMethod(baseuri + "/secure/attachment/"+attachment.id+"/"+attachment.name);
+		HttpClient cl = initHttpClient();
+		cl.executeMethod(get);
+		InputStream response = get.getResponseBodyAsStream();
 		
-		PostMethod mPost;
-		//= new PostMethod(baseuri + "/ticket/"+ticket_id+"/attachments/"+attachment.id+"/content?user="+user+"&pass="+password);
-		if(basic_auth) {
-			mPost = new PostMethod(baseuri + "/ticket/"+ticket_id+"/attachments/"+attachment.id+"/content");
-			cl.getParams().setAuthenticationPreemptive(true);
-			Credentials defaultcreds = new UsernamePasswordCredentials(user, password);
-			cl.getState().setCredentials(AuthScope.ANY, defaultcreds);
-		} else {
-			mPost = new PostMethod(baseuri + "/ticket/"+ticket_id+"/attachments/"+attachment.id+"/content?user="+user+"&pass="+password);
-		}
-		
-		cl.executeMethod(mPost);
-		InputStream in = mPost.getResponseBodyAsStream();
-		//skip first 2 lines
-		int lines = 0;
-		while(true) {
-			int ch = in.read();
-			if(ch == '\n') lines++;
-			if(lines == 2) break;
-		}
-		
-		//save to temp file
-	    File tempfile = File.createTempFile("GOCTX.RT.", "."+attachment.name);
+		//receive reply
+	    File tempfile = File.createTempFile("JIRA."+attachment.id+".", attachment.name);
 		FileOutputStream out = new FileOutputStream(tempfile.getAbsolutePath());
 		byte[] buf = new byte[1024];
 		while (true){
-				int size = in.read(buf, 0, 1024);
+				int size = response.read(buf, 0, 1024);
 				if(size == -1) break;
 				out.write(buf, 0, size);
 		}
 		out.close();
-		
 		return tempfile;
-		*/
 	}
 	
 	@Override
 	public String uploadAttachment(String ticket_id, Attachment attachment) throws Exception 
 	{
-		return null; //TODO
+		HttpClient cl = initHttpClient();
+		PostMethod post = new PostMethod(baseuri + "/rest/api/2/issue/"+ticket_id+"/attachments");
+		Part[] parts = new Part[] { new FilePart("file", attachment.file) };
+		post.setRequestEntity(new MultipartRequestEntity(parts, post.getParams()));
+		post.setRequestHeader("X-Atlassian-Token", "nocheck");
+		//post.setRequestHeader("Content-Type", "multipart/form-data");
+		cl.executeMethod(post);	
+		
+		//receive reply
+		InputStream response = post.getResponseBodyAsStream();
+		String jsontxt = IOUtils.toString(response);
+		JSONArray json = (JSONArray) JSONSerializer.toJSON( jsontxt );
+		JSONObject attachment_json = json.getJSONObject(0);//grab first one
+		String id = attachment_json.getString("id");
+		return id;
+				
 		/*
-		HttpClient cl = new HttpClient();
-		cl.getParams().setParameter("http.protocol.single-cookie-header", true);
-		cl.getParams().setCookiePolicy(CookiePolicy.BROWSER_COMPATIBILITY);
-		cl.getHttpConnectionManager().getParams().setConnectionTimeout(1000*30);
-		
-		PostMethod mPost;
-		if(basic_auth) {
-			mPost = new PostMethod(baseuri + "/ticket/"+ticket_id+"/comment");	
-			cl.getParams().setAuthenticationPreemptive(true);
-			Credentials defaultcreds = new UsernamePasswordCredentials(user, password);
-			cl.getState().setCredentials(AuthScope.ANY, defaultcreds);
-		} else {
-			mPost = new PostMethod(baseuri + "/ticket/"+ticket_id+"/comment?user="+user+"&pass="+password);	
-		}
-		//PostMethod mPost = new PostMethod(baseuri + "/ticket/"+ticket_id+"/comment?user="+user+"&pass="+password);	
-
-		String action = "correspond";
-		
-		FilePart attachment_part = new FilePart("attachment_1", attachment.file);
-		attachment_part.setContentType(attachment.content_type);//default -- application/octet-stream 
-		//TODO - how can I set Content-Disposition: inline; filename="PHP.gif"
-		    
-		Part[] parts = { 
-			new StringPart("content", "id: "+ticket_id+"\nAction: "+action+"\nAttachment: " + attachment.name),
-			attachment_part
-		};
-		mPost.setRequestEntity(new MultipartRequestEntity(parts, mPost.getParams()));
-
-		cl.executeMethod(mPost);
-		checkStatusAndGetBody(mPost);		
-
 		//find the attachment ID that we just inserted (assume new attachment will be the last element)
 		ArrayList<Attachment> attachments = getAttachments(ticket_id);
 		Attachment a = attachments.get(attachments.size()-1);
