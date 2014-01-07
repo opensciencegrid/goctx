@@ -1,10 +1,8 @@
 package edu.iu.grid.tx.accessor;
 
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
