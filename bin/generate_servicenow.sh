@@ -1,6 +1,6 @@
 #url="https://fermi.service-now.com"
-#url="https://fermitrn.service-now.com"
-url="https://fermidev.service-now.com"
+url="https://fermitrn.service-now.com"
+#url="https://fermidev.service-now.com"
 
 wget --no-check-certificate -O servicenow.wsdl "$url/incident.do?WSDL"
 wsdl2java.sh -ssi -or -uri servicenow.wsdl -p edu.iu.grid.tx.soap.servicenow -S ../src

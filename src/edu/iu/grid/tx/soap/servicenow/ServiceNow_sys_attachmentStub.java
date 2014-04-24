@@ -175,7 +175,7 @@
      */
     public ServiceNow_sys_attachmentStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://fermidev.service-now.com/sys_attachment.do?SOAP" );
+                    this(configurationContext,"https://fermitrn.service-now.com/sys_attachment.do?SOAP" );
                 
     }
 
@@ -184,7 +184,7 @@
      */
     public ServiceNow_sys_attachmentStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://fermidev.service-now.com/sys_attachment.do?SOAP" );
+                    this("https://fermitrn.service-now.com/sys_attachment.do?SOAP" );
                 
     }
 
@@ -2084,7 +2084,7 @@
         }
         return false;
     }
-     //https://fermidev.service-now.com/sys_attachment.do?SOAP
+     //https://fermitrn.service-now.com/sys_attachment.do?SOAP
         public static class GetRecordsResult_type0
         implements org.apache.axis2.databinding.ADBBean{
         /* This type was generated from the piece of schema that had

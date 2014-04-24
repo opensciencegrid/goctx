@@ -175,7 +175,7 @@
      */
     public ServiceNow_sys_userStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://fermidev.service-now.com/sys_user.do?SOAP" );
+                    this(configurationContext,"https://fermitrn.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -184,7 +184,7 @@
      */
     public ServiceNow_sys_userStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://fermidev.service-now.com/sys_user.do?SOAP" );
+                    this("https://fermitrn.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -2084,7 +2084,7 @@
         }
         return false;
     }
-     //https://fermidev.service-now.com/sys_user.do?SOAP
+     //https://fermitrn.service-now.com/sys_user.do?SOAP
         public static class Update
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -2893,6 +2893,51 @@
                                        }
                                    
                                             this.localHome_phone=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Internal_integration_user
+                        */
+
+                        
+                                    protected boolean localInternal_integration_user ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localInternal_integration_userTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getInternal_integration_user(){
+                               return localInternal_integration_user;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Internal_integration_user
+                               */
+                               public void setInternal_integration_user(boolean param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       
+                                               if (false) {
+                                           localInternal_integration_userTracker = false;
+                                              
+                                       } else {
+                                          localInternal_integration_userTracker = true;
+                                       }
+                                   
+                                            this.localInternal_integration_user=param;
                                     
 
                                }
@@ -5259,6 +5304,35 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localInternal_integration_userTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"internal_integration_user", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"internal_integration_user");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("internal_integration_user");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("internal_integration_user cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localIntroductionTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -6844,7 +6918,13 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("home_phone cannot be null!!");
                                         }
-                                    } if (localIntroductionTracker){
+                                    } if (localInternal_integration_userTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "internal_integration_user"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                            } if (localIntroductionTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "introduction"));
                                  
@@ -7562,6 +7642,24 @@
                                     
                                               object.setHome_phone(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","internal_integration_user").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setInternal_integration_user(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     
@@ -9570,6 +9668,51 @@
                                        }
                                    
                                             this.localHome_phone=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Internal_integration_user
+                        */
+
+                        
+                                    protected boolean localInternal_integration_user ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localInternal_integration_userTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getInternal_integration_user(){
+                               return localInternal_integration_user;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Internal_integration_user
+                               */
+                               public void setInternal_integration_user(boolean param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       
+                                               if (false) {
+                                           localInternal_integration_userTracker = false;
+                                              
+                                       } else {
+                                          localInternal_integration_userTracker = true;
+                                       }
+                                   
+                                            this.localInternal_integration_user=param;
                                     
 
                                }
@@ -11906,6 +12049,35 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localInternal_integration_userTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"internal_integration_user", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"internal_integration_user");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("internal_integration_user");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("internal_integration_user cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localIntroductionTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -13457,7 +13629,13 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("home_phone cannot be null!!");
                                         }
-                                    } if (localIntroductionTracker){
+                                    } if (localInternal_integration_userTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "internal_integration_user"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                            } if (localIntroductionTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "introduction"));
                                  
@@ -14166,6 +14344,24 @@
                                     
                                               object.setHome_phone(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","internal_integration_user").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setInternal_integration_user(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     
@@ -15673,6 +15869,51 @@
                                        }
                                    
                                             this.localHome_phone=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Internal_integration_user
+                        */
+
+                        
+                                    protected boolean localInternal_integration_user ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localInternal_integration_userTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getInternal_integration_user(){
+                               return localInternal_integration_user;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Internal_integration_user
+                               */
+                               public void setInternal_integration_user(boolean param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       
+                                               if (false) {
+                                           localInternal_integration_userTracker = false;
+                                              
+                                       } else {
+                                          localInternal_integration_userTracker = true;
+                                       }
+                                   
+                                            this.localInternal_integration_user=param;
                                     
 
                                }
@@ -18537,6 +18778,35 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localInternal_integration_userTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"internal_integration_user", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"internal_integration_user");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("internal_integration_user");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("internal_integration_user cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localIntroductionTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -20496,7 +20766,13 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("home_phone cannot be null!!");
                                         }
-                                    } if (localIntroductionTracker){
+                                    } if (localInternal_integration_userTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "internal_integration_user"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                            } if (localIntroductionTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "introduction"));
                                  
@@ -21313,6 +21589,24 @@
                                     
                                               object.setHome_phone(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","internal_integration_user").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setInternal_integration_user(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     
@@ -23036,6 +23330,51 @@
                                        }
                                    
                                             this.localHome_phone=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Internal_integration_user
+                        */
+
+                        
+                                    protected boolean localInternal_integration_user ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localInternal_integration_userTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getInternal_integration_user(){
+                               return localInternal_integration_user;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Internal_integration_user
+                               */
+                               public void setInternal_integration_user(boolean param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       
+                                               if (false) {
+                                           localInternal_integration_userTracker = false;
+                                              
+                                       } else {
+                                          localInternal_integration_userTracker = true;
+                                       }
+                                   
+                                            this.localInternal_integration_user=param;
                                     
 
                                }
@@ -25724,6 +26063,35 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localInternal_integration_userTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"internal_integration_user", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"internal_integration_user");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("internal_integration_user");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("internal_integration_user cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localIntroductionTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -27547,7 +27915,13 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("home_phone cannot be null!!");
                                         }
-                                    } if (localIntroductionTracker){
+                                    } if (localInternal_integration_userTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "internal_integration_user"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                            } if (localIntroductionTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "introduction"));
                                  
@@ -28328,6 +28702,24 @@
                                     
                                               object.setHome_phone(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","internal_integration_user").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setInternal_integration_user(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     
@@ -30525,6 +30917,51 @@
                                        }
                                    
                                             this.localHome_phone=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Internal_integration_user
+                        */
+
+                        
+                                    protected boolean localInternal_integration_user ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localInternal_integration_userTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getInternal_integration_user(){
+                               return localInternal_integration_user;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Internal_integration_user
+                               */
+                               public void setInternal_integration_user(boolean param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       
+                                               if (false) {
+                                           localInternal_integration_userTracker = false;
+                                              
+                                       } else {
+                                          localInternal_integration_userTracker = true;
+                                       }
+                                   
+                                            this.localInternal_integration_user=param;
                                     
 
                                }
@@ -33213,6 +33650,35 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localInternal_integration_userTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"internal_integration_user", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"internal_integration_user");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("internal_integration_user");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("internal_integration_user cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localIntroductionTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -35036,7 +35502,13 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("home_phone cannot be null!!");
                                         }
-                                    } if (localIntroductionTracker){
+                                    } if (localInternal_integration_userTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "internal_integration_user"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                            } if (localIntroductionTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "introduction"));
                                  
@@ -35817,6 +36289,24 @@
                                     
                                               object.setHome_phone(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","internal_integration_user").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setInternal_integration_user(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     
@@ -37936,6 +38426,51 @@
                                        }
                                    
                                             this.localHome_phone=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Internal_integration_user
+                        */
+
+                        
+                                    protected boolean localInternal_integration_user ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localInternal_integration_userTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getInternal_integration_user(){
+                               return localInternal_integration_user;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Internal_integration_user
+                               */
+                               public void setInternal_integration_user(boolean param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       
+                                               if (false) {
+                                           localInternal_integration_userTracker = false;
+                                              
+                                       } else {
+                                          localInternal_integration_userTracker = true;
+                                       }
+                                   
+                                            this.localInternal_integration_user=param;
                                     
 
                                }
@@ -40624,6 +41159,35 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localInternal_integration_userTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"internal_integration_user", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"internal_integration_user");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("internal_integration_user");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("internal_integration_user cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localIntroductionTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -42447,7 +43011,13 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("home_phone cannot be null!!");
                                         }
-                                    } if (localIntroductionTracker){
+                                    } if (localInternal_integration_userTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "internal_integration_user"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                            } if (localIntroductionTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "introduction"));
                                  
@@ -43228,6 +43798,24 @@
                                     
                                               object.setHome_phone(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","internal_integration_user").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setInternal_integration_user(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     
@@ -45970,6 +46558,51 @@
                                        }
                                    
                                             this.localHome_phone=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Internal_integration_user
+                        */
+
+                        
+                                    protected boolean localInternal_integration_user ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localInternal_integration_userTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getInternal_integration_user(){
+                               return localInternal_integration_user;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Internal_integration_user
+                               */
+                               public void setInternal_integration_user(boolean param){
+                            
+                                       // setting primitive attribute tracker to true
+                                       
+                                               if (false) {
+                                           localInternal_integration_userTracker = false;
+                                              
+                                       } else {
+                                          localInternal_integration_userTracker = true;
+                                       }
+                                   
+                                            this.localInternal_integration_user=param;
                                     
 
                                }
@@ -49010,6 +49643,35 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localInternal_integration_userTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"internal_integration_user", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"internal_integration_user");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("internal_integration_user");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("internal_integration_user cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localIntroductionTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -51105,7 +51767,13 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("home_phone cannot be null!!");
                                         }
-                                    } if (localIntroductionTracker){
+                                    } if (localInternal_integration_userTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "internal_integration_user"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInternal_integration_user));
+                            } if (localIntroductionTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "introduction"));
                                  
@@ -51958,6 +52626,24 @@
                                     
                                               object.setHome_phone(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","internal_integration_user").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setInternal_integration_user(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     
