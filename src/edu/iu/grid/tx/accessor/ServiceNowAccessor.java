@@ -246,6 +246,8 @@ public class ServiceNowAccessor implements TicketAccessor {
 
 		ServiceNow_sys_journal_fieldStub.GetRecords get = new ServiceNow_sys_journal_fieldStub.GetRecords();
 		get.setElement_id(id);
+		
+		//testing this again per Mike Baker's request
 		get.setElement("comments"); //this is now broke on servicenow interface
 		
 		GetRecordsResponse resp = stub.getRecords(get);
