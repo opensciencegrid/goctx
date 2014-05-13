@@ -301,7 +301,8 @@ public class ServiceNowAccessor implements TicketAccessor {
 		ArrayList<Attachment> attachments = new ArrayList<Attachment>();
 		ServiceNow_sys_attachmentStub.GetRecordsResult_type0 [] records = resp.getGetRecordsResult();
 		if(records == null) {
-			logger.error("Failed to load ServiceNow attachments");
+			//we never had snow attachment working, so let's generate warning instead of error
+			logger.warn("Failed to load ServiceNow attachments");
 		} else {
 			for(ServiceNow_sys_attachmentStub.GetRecordsResult_type0 record : records) {
 				Attachment attachment = new Attachment();
