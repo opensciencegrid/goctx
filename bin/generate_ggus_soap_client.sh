@@ -15,6 +15,8 @@ url=https://train-ars.ggus.eu/arsys/WSDL/public/train-ars
 wget --no-check-certificate -O /tmp/ggus.helpdesk.$prefix.wsdl $url/GGUS
 wget --no-check-certificate -O /tmp/ggus.history.$prefix.wsdl $url/Grid_History
 wget --no-check-certificate -O /tmp/ggus.attachment.$prefix.wsdl $url/Grid_Attachment
+wget --no-check-certificate -O /tmp/ggus.HISTORY.$prefix.wsdl $url/GGUS_HISTORY
+wget --no-check-certificate -O /tmp/ggus.ATTACH.$prefix.wsdl $url/GGUS_ATTACH
 
 ###################################################################################################
 
@@ -33,4 +35,6 @@ echo "generating client stub (you need to download 2 wsdls if necessary)"
 wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.helpdesk.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
 wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.history.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
 wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.attachment.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
+wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.HISTORY.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
+wsdl2java.sh -S ../src -ssi -or -uri /tmp/ggus.ATTACH.$prefix.wsdl -p edu.iu.grid.tx.soap.ggus 
 

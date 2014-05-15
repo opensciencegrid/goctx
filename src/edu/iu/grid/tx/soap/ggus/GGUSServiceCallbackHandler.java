@@ -124,6 +124,22 @@
             public void receiveErrorticketGetList(java.lang.Exception e) {
             }
                 
+           /**
+            * auto generated Axis2 call back method for ticketCreate method
+            * override this method for handling normal response from ticketCreate operation
+            */
+           public void receiveResultticketCreate(
+                    edu.iu.grid.tx.soap.ggus.GGUSServiceStub.TicketCreateResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from ticketCreate operation
+           */
+            public void receiveErrorticketCreate(java.lang.Exception e) {
+            }
+                
 
 
     }

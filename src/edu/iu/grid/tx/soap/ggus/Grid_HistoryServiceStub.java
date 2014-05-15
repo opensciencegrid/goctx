@@ -1674,8 +1674,15 @@
                         */
 
                         
-                                    protected java.lang.String localStartRecord ;
+                                    protected java.lang.String localStartRecord =
+                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString("0");
                                 
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localStartRecordTracker = false ;
+                           
 
                            /**
                            * Auto generated getter method
@@ -1693,6 +1700,14 @@
                                */
                                public void setStartRecord(java.lang.String param){
                             
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localStartRecordTracker = true;
+                                       } else {
+                                          localStartRecordTracker = false;
+                                              
+                                       }
+                                   
                                             this.localStartRecord=param;
                                     
 
@@ -1704,8 +1719,15 @@
                         */
 
                         
-                                    protected java.lang.String localMaxLimit ;
+                                    protected java.lang.String localMaxLimit =
+                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString("200");
                                 
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localMaxLimitTracker = false ;
+                           
 
                            /**
                            * Auto generated getter method
@@ -1723,6 +1745,14 @@
                                */
                                public void setMaxLimit(java.lang.String param){
                             
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localMaxLimitTracker = true;
+                                       } else {
+                                          localMaxLimitTracker = false;
+                                              
+                                       }
+                                   
                                             this.localMaxLimit=param;
                                     
 
@@ -1889,7 +1919,7 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             
+                              if (localStartRecordTracker){
                                     namespace = "urn:Grid_History";
                                     if (! namespace.equals("")) {
                                         prefix = xmlWriter.getPrefix(namespace);
@@ -1923,7 +1953,7 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             
+                             } if (localMaxLimitTracker){
                                     namespace = "urn:Grid_History";
                                     if (! namespace.equals("")) {
                                         prefix = xmlWriter.getPrefix(namespace);
@@ -1957,7 +1987,7 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             
+                             }
                                     namespace = "urn:Grid_History";
                                     if (! namespace.equals("")) {
                                         prefix = xmlWriter.getPrefix(namespace);
@@ -2162,7 +2192,7 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("Qualification cannot be null!!");
                                         }
-                                    
+                                     if (localStartRecordTracker){
                                       elementList.add(new javax.xml.namespace.QName("urn:Grid_History",
                                                                       "startRecord"));
                                  
@@ -2171,7 +2201,7 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("startRecord cannot be null!!");
                                         }
-                                    
+                                    } if (localMaxLimitTracker){
                                       elementList.add(new javax.xml.namespace.QName("urn:Grid_History",
                                                                       "maxLimit"));
                                  
@@ -2180,7 +2210,7 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("maxLimit cannot be null!!");
                                         }
-                                    
+                                    }
                                       elementList.add(new javax.xml.namespace.QName("urn:Grid_History",
                                                                       "GHI_Ticket_ID"));
                                  
@@ -2298,11 +2328,10 @@
                                     
                               }  // End of if for expected property start element
                                 
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
+                                    else {
+                                        
+                                    }
+                                
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
@@ -2317,11 +2346,10 @@
                                     
                               }  // End of if for expected property start element
                                 
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
+                                    else {
+                                        
+                                    }
+                                
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
