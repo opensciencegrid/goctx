@@ -45,6 +45,38 @@
 
         
            /**
+            * auto generated Axis2 call back method for getOneAttachment method
+            * override this method for handling normal response from getOneAttachment operation
+            */
+           public void receiveResultgetOneAttachment(
+                    edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.GetOneAttachmentResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getOneAttachment operation
+           */
+            public void receiveErrorgetOneAttachment(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getAttachIDs method
+            * override this method for handling normal response from getAttachIDs operation
+            */
+           public void receiveResultgetAttachIDs(
+                    edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.GetAttachIDsResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getAttachIDs operation
+           */
+            public void receiveErrorgetAttachIDs(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for addAttachment method
             * override this method for handling normal response from addAttachment operation
             */

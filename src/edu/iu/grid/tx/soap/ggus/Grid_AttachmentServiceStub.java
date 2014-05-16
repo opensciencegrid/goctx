@@ -5426,7 +5426,7 @@
                                           //update the setting tracker
                                           localGAT_PriorityTracker = true;
                                        } else {
-                                          localGAT_PriorityTracker = false;
+                                          localGAT_PriorityTracker = true;
                                               
                                        }
                                    
@@ -5827,12 +5827,37 @@
                                     
                                    xmlWriter.writeEndElement();
                               if (localGAT_PriorityTracker){
-                                            if (localGAT_Priority==null){
-                                                 throw new org.apache.axis2.databinding.ADBException("GAT_Priority cannot be null!!");
+                                    if (localGAT_Priority==null){
+
+                                            java.lang.String namespace2 = "urn:Grid_Attachment";
+
+                                        if (! namespace2.equals("")) {
+                                            java.lang.String prefix2 = xmlWriter.getPrefix(namespace2);
+
+                                            if (prefix2 == null) {
+                                                prefix2 = generatePrefix(namespace2);
+
+                                                xmlWriter.writeStartElement(prefix2,"GAT_Priority", namespace2);
+                                                xmlWriter.writeNamespace(prefix2, namespace2);
+                                                xmlWriter.setPrefix(prefix2, namespace2);
+
+                                            } else {
+                                                xmlWriter.writeStartElement(namespace2,"GAT_Priority");
                                             }
-                                           localGAT_Priority.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Priority"),
-                                               factory,xmlWriter);
+
+                                        } else {
+                                            xmlWriter.writeStartElement("GAT_Priority");
                                         }
+
+
+                                       // write the nil attribute
+                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                      xmlWriter.writeEndElement();
+                                    }else{
+                                     localGAT_Priority.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Priority"),
+                                        factory,xmlWriter);
+                                    }
+                                }
                     xmlWriter.writeEndElement();
                
 
@@ -6067,10 +6092,8 @@
                                                                       "GAT_Priority"));
                             
                             
-                                    if (localGAT_Priority==null){
-                                         throw new org.apache.axis2.databinding.ADBException("GAT_Priority cannot be null!!");
-                                    }
-                                    elementList.add(localGAT_Priority);
+                                    elementList.add(localGAT_Priority==null?null:
+                                    localGAT_Priority);
                                 }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -6362,10 +6385,19 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Priority").equals(reader.getName())){
                                 
+                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                          object.setGAT_Priority(null);
+                                          reader.next();
+                                            
+                                            reader.next();
+                                          
+                                      }else{
+                                    
                                                 object.setGAT_Priority(GAT_PriorityType.Factory.parse(reader));
                                               
                                         reader.next();
-                                    
+                                    }
                               }  // End of if for expected property start element
                                 
                                     else {
@@ -10303,37 +10335,12 @@
                
                    }
                
-                                    if (localGAT_Delete==null){
-
-                                            java.lang.String namespace2 = "urn:Grid_Attachment";
-
-                                        if (! namespace2.equals("")) {
-                                            java.lang.String prefix2 = xmlWriter.getPrefix(namespace2);
-
-                                            if (prefix2 == null) {
-                                                prefix2 = generatePrefix(namespace2);
-
-                                                xmlWriter.writeStartElement(prefix2,"GAT_Delete", namespace2);
-                                                xmlWriter.writeNamespace(prefix2, namespace2);
-                                                xmlWriter.setPrefix(prefix2, namespace2);
-
-                                            } else {
-                                                xmlWriter.writeStartElement(namespace2,"GAT_Delete");
+                                            if (localGAT_Delete==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("GAT_Delete cannot be null!!");
                                             }
-
-                                        } else {
-                                            xmlWriter.writeStartElement("GAT_Delete");
-                                        }
-
-
-                                       // write the nil attribute
-                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                      xmlWriter.writeEndElement();
-                                    }else{
-                                     localGAT_Delete.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Delete"),
-                                        factory,xmlWriter);
-                                    }
-                                
+                                           localGAT_Delete.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Delete"),
+                                               factory,xmlWriter);
+                                        
                                     namespace = "urn:Grid_Attachment";
                                     if (! namespace.equals("")) {
                                         prefix = xmlWriter.getPrefix(namespace);
@@ -10534,8 +10541,10 @@
                                                                       "GAT_Delete"));
                             
                             
-                                    elementList.add(localGAT_Delete==null?null:
-                                    localGAT_Delete);
+                                    if (localGAT_Delete==null){
+                                         throw new org.apache.axis2.databinding.ADBException("GAT_Delete cannot be null!!");
+                                    }
+                                    elementList.add(localGAT_Delete);
                                 
                                       elementList.add(new javax.xml.namespace.QName("urn:Grid_Attachment",
                                                                       "GAT_Attachment-ID"));
@@ -10626,19 +10635,10 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Delete").equals(reader.getName())){
                                 
-                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                          object.setGAT_Delete(null);
-                                          reader.next();
-                                            
-                                            reader.next();
-                                          
-                                      }else{
-                                    
                                                 object.setGAT_Delete(GAT_DeleteType.Factory.parse(reader));
                                               
                                         reader.next();
-                                    }
+                                    
                               }  // End of if for expected property start element
                                 
                                 else{
@@ -12639,37 +12639,12 @@
                                     
                                    xmlWriter.writeEndElement();
                              
-                                    if (localGAT_Transferred_To_CERN==null){
-
-                                            java.lang.String namespace2 = "urn:Grid_Attachment";
-
-                                        if (! namespace2.equals("")) {
-                                            java.lang.String prefix2 = xmlWriter.getPrefix(namespace2);
-
-                                            if (prefix2 == null) {
-                                                prefix2 = generatePrefix(namespace2);
-
-                                                xmlWriter.writeStartElement(prefix2,"GAT_Transferred_To_CERN", namespace2);
-                                                xmlWriter.writeNamespace(prefix2, namespace2);
-                                                xmlWriter.setPrefix(prefix2, namespace2);
-
-                                            } else {
-                                                xmlWriter.writeStartElement(namespace2,"GAT_Transferred_To_CERN");
+                                            if (localGAT_Transferred_To_CERN==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("GAT_Transferred_To_CERN cannot be null!!");
                                             }
-
-                                        } else {
-                                            xmlWriter.writeStartElement("GAT_Transferred_To_CERN");
-                                        }
-
-
-                                       // write the nil attribute
-                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                      xmlWriter.writeEndElement();
-                                    }else{
-                                     localGAT_Transferred_To_CERN.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Transferred_To_CERN"),
-                                        factory,xmlWriter);
-                                    }
-                                
+                                           localGAT_Transferred_To_CERN.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Transferred_To_CERN"),
+                                               factory,xmlWriter);
+                                        
                                     namespace = "urn:Grid_Attachment";
                                     if (! namespace.equals("")) {
                                         prefix = xmlWriter.getPrefix(namespace);
@@ -12888,8 +12863,10 @@
                                                                       "GAT_Transferred_To_CERN"));
                             
                             
-                                    elementList.add(localGAT_Transferred_To_CERN==null?null:
-                                    localGAT_Transferred_To_CERN);
+                                    if (localGAT_Transferred_To_CERN==null){
+                                         throw new org.apache.axis2.databinding.ADBException("GAT_Transferred_To_CERN cannot be null!!");
+                                    }
+                                    elementList.add(localGAT_Transferred_To_CERN);
                                 
                                       elementList.add(new javax.xml.namespace.QName("urn:Grid_Attachment",
                                                                       "GAT_Attachment-ID"));
@@ -13018,19 +12995,10 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Transferred_To_CERN").equals(reader.getName())){
                                 
-                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                          object.setGAT_Transferred_To_CERN(null);
-                                          reader.next();
-                                            
-                                            reader.next();
-                                          
-                                      }else{
-                                    
                                                 object.setGAT_Transferred_To_CERN(GAT_DeleteType.Factory.parse(reader));
                                               
                                         reader.next();
-                                    }
+                                    
                               }  // End of if for expected property start element
                                 
                                 else{
@@ -13936,37 +13904,12 @@
                
                    }
                
-                                    if (localGAT_Delete==null){
-
-                                            java.lang.String namespace2 = "urn:Grid_Attachment";
-
-                                        if (! namespace2.equals("")) {
-                                            java.lang.String prefix2 = xmlWriter.getPrefix(namespace2);
-
-                                            if (prefix2 == null) {
-                                                prefix2 = generatePrefix(namespace2);
-
-                                                xmlWriter.writeStartElement(prefix2,"GAT_Delete", namespace2);
-                                                xmlWriter.writeNamespace(prefix2, namespace2);
-                                                xmlWriter.setPrefix(prefix2, namespace2);
-
-                                            } else {
-                                                xmlWriter.writeStartElement(namespace2,"GAT_Delete");
+                                            if (localGAT_Delete==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("GAT_Delete cannot be null!!");
                                             }
-
-                                        } else {
-                                            xmlWriter.writeStartElement("GAT_Delete");
-                                        }
-
-
-                                       // write the nil attribute
-                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                      xmlWriter.writeEndElement();
-                                    }else{
-                                     localGAT_Delete.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Delete"),
-                                        factory,xmlWriter);
-                                    }
-                                
+                                           localGAT_Delete.serialize(new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Delete"),
+                                               factory,xmlWriter);
+                                        
                                     namespace = "urn:Grid_Attachment";
                                     if (! namespace.equals("")) {
                                         prefix = xmlWriter.getPrefix(namespace);
@@ -14167,8 +14110,10 @@
                                                                       "GAT_Delete"));
                             
                             
-                                    elementList.add(localGAT_Delete==null?null:
-                                    localGAT_Delete);
+                                    if (localGAT_Delete==null){
+                                         throw new org.apache.axis2.databinding.ADBException("GAT_Delete cannot be null!!");
+                                    }
+                                    elementList.add(localGAT_Delete);
                                 
                                       elementList.add(new javax.xml.namespace.QName("urn:Grid_Attachment",
                                                                       "GAT_Attachment-ID"));
@@ -14259,19 +14204,10 @@
                                 
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("urn:Grid_Attachment","GAT_Delete").equals(reader.getName())){
                                 
-                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                          object.setGAT_Delete(null);
-                                          reader.next();
-                                            
-                                            reader.next();
-                                          
-                                      }else{
-                                    
                                                 object.setGAT_Delete(GAT_DeleteType.Factory.parse(reader));
                                               
                                         reader.next();
-                                    }
+                                    
                               }  // End of if for expected property start element
                                 
                                 else{
