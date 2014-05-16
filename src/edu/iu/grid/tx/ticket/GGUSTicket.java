@@ -11,6 +11,7 @@ import edu.iu.grid.tx.accessor.GGUSSOAPAccessor;
 import edu.iu.grid.tx.accessor.RTAccessor;
 import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.GHD_PriorityType;
 import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.GHD_Ticket_TypeType;
+import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub.GetListValues_type2;
 import edu.iu.grid.tx.soap.ggus.Grid_HistoryServiceStub.GetListValues_type0;
 
 public class GGUSTicket implements Ticket {
@@ -40,26 +41,26 @@ public class GGUSTicket implements Ticket {
 		//if the ticket was created via conversion, sometime past_history is empty (simply because the source ticket doesn't have any..)
 		//if this occurs, then we can simply ignore this.
 		if(accessor != null) {
-			GetListValues_type0[] history_list = accessor.getHistory(id);
-			for(GetListValues_type0 history : history_list) {
+			GetListValues_type2[] history_list = accessor.getHistory(id);
+			for(GetListValues_type2 history : history_list) {
 				PastHistoryEntry entry = new PastHistoryEntry();
 				
 				entry.content = "";
-				if(history.getGHI_Internal_Diary() != null) {
-					entry.content += history.getGHI_Internal_Diary();
+				if(history.getGHD_Internal_Diary() != null) {
+					entry.content += history.getGHD_Internal_Diary();
 				}
-				if(history.getGHI_Public_Diary() != null) {
-					entry.content += history.getGHI_Public_Diary();
+				if(history.getGHD_Public_Diary() != null) {
+					entry.content += history.getGHD_Public_Diary();
 				}
-				if(history.getGHI_Detailed_Solution() != null) {
-					entry.content += history.getGHI_Detailed_Solution();
+				if(history.getGHD_Detailed_Solution() != null) {
+					entry.content += history.getGHD_Detailed_Solution();
 				} 
-				if(history.getGHI_Diary_Of_Steps() != null) {
-					entry.content += history.getGHI_Diary_Of_Steps();
+				if(history.getGHD_Diary_Of_Steps() != null) {
+					entry.content += history.getGHD_Diary_Of_Steps();
 				} 
 				
-				entry.name = history.getGHI_Last_Modifier();
-				entry.time = history.getGHI_Creation_Date().getTime();
+				entry.name = history.getGHD_Last_Modifier();
+				entry.time = history.getGHD_Creation_Date().getTime();
 				
 				/* -- this doesn't work since the name of attachment uploader is *usually* the name of some user on the other ticketing system
 				//ignore comments added by the rest user - most likely due to TX (such as attachment)

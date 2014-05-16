@@ -10,6 +10,7 @@ import java.rmi.RemoteException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 
@@ -17,21 +18,29 @@ import org.apache.axis2.AxisFault;
 import org.apache.log4j.Logger;
 
 import edu.iu.grid.tx.soap.ggus.GGUSServiceStub;
+import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.GetInputMap;
 import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.GetOutputMap;
+import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.InputMapping4;
+import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.OpCreateResponse;
+import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.OutputMapping4;
+import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.SetInputMap;
 import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.SetOutputMap;
+import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.TicketGetResponse;
+import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.TicketModifyResponse;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.AddAttachment;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.AddAttachmentResponse;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.GetAttachIDs;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.GetAttachIDsResponse;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.GetOneAttachmentResponse;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.InputMapping2;
+import edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.OutputMapping2;
+import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub;
+import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub.GetListValues_type2;
+import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub.InputMapping3;
+import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub.OutputMapping3;
 import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub;
-import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub.AddAttachment;
-import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub.AddAttachmentResponse;
-import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub.GetListOutputMap;
-import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub.GetOneAttachmentResponse;
-import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub.OutputMapping;
-import edu.iu.grid.tx.soap.ggus.GGUSServiceStub.*;
-import edu.iu.grid.tx.soap.ggus.Grid_HistoryServiceStub;
-import edu.iu.grid.tx.soap.ggus.Grid_HistoryServiceStub.GetListValues_type0;
-import edu.iu.grid.tx.soap.ggus.Grid_HistoryServiceStub.InputMapping1;
-import edu.iu.grid.tx.soap.ggus.Grid_HistoryServiceStub.OutputMapping1;
 import edu.iu.grid.tx.ticket.GGUSTicket;
-import edu.iu.grid.tx.ticket.RTTicket;
 import edu.iu.grid.tx.ticket.Ticket;
 
 public class GGUSSOAPAccessor implements TicketAccessor {
@@ -98,7 +107,6 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 				}
 			}
 		
-			
 			//truncate the description to be less than 4000 chars
 			if(description.length() > 4000) {
 				//grab last 4000 chars
@@ -317,29 +325,30 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 		return ticket;
 	}
 	
-	public GetListValues_type0[] getHistory(String id) throws RemoteException {	
-		Grid_HistoryServiceStub stub = new Grid_HistoryServiceStub(endpoint + "&webService=Grid_History");
+	public GetListValues_type2[] getHistory(String id) throws RemoteException {	
+		GGUS_HISTORYServiceStub stub = new GGUS_HISTORYServiceStub(endpoint + "&webService=GGUS_HISTORY");
 		
-		Grid_HistoryServiceStub.AuthenticationInfo auth = new Grid_HistoryServiceStub.AuthenticationInfo();
+		GGUS_HISTORYServiceStub.AuthenticationInfo auth = new GGUS_HISTORYServiceStub.AuthenticationInfo();
 		auth.setUserName(user);
 		auth.setPassword(password);
 		
-		Grid_HistoryServiceStub.AuthenticationInfoE authe = new Grid_HistoryServiceStub.AuthenticationInfoE();
+		GGUS_HISTORYServiceStub.AuthenticationInfoE authe = new GGUS_HISTORYServiceStub.AuthenticationInfoE();
 		authe.setAuthenticationInfo(auth);	
 		
-		InputMapping1 param = new InputMapping1();
-		param.setGHI_Ticket_ID(id);
-		param.setQualification(id);
+		InputMapping3 param = new InputMapping3();
+		//param.setGHI_Ticket_ID(id);
+		param.setGHD_Request_ID(id);
+		//param.setQualification(id); //no longer exists?
 		param.setStartRecord("");
 		param.setMaxLimit("");
 
-		Grid_HistoryServiceStub.OpGetTicketHist get = new Grid_HistoryServiceStub.OpGetTicketHist();
+		GGUS_HISTORYServiceStub.OpGetTicketHist get = new GGUS_HISTORYServiceStub.OpGetTicketHist();
 		get.setOpGetTicketHist(param);
 		
-		Grid_HistoryServiceStub.OpGetTicketHistResponse res = stub.opGetTicketHist(get, authe);
+		GGUS_HISTORYServiceStub.OpGetTicketHistResponse res = stub.opGetTicketHist(get, authe);
 		
-		OutputMapping1 ret = res.getOpGetTicketHistResponse();
-		GetListValues_type0[] values = ret.getGetListValues();
+		OutputMapping3 ret = res.getOpGetTicketHistResponse();
+		GetListValues_type2[] values = ret.getGetListValues();
 	
 		return values;
 
@@ -363,33 +372,33 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 	@Override
 	public ArrayList<Attachment> getAttachments(String id) throws Exception {
 		//String debug_endoint = "";//https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars
-		Grid_AttachmentServiceStub stub = new Grid_AttachmentServiceStub(endpoint + "&webService=Grid_Attachment");
+		GGUS_ATTACHServiceStub stub = new GGUS_ATTACHServiceStub(endpoint + "&webService=GGUS_ATTACH");
 		
 		//create authe
-		Grid_AttachmentServiceStub.AuthenticationInfo auth = new Grid_AttachmentServiceStub.AuthenticationInfo();
+		GGUS_ATTACHServiceStub.AuthenticationInfo auth = new GGUS_ATTACHServiceStub.AuthenticationInfo();
 		auth.setUserName(user);
 		auth.setPassword(password);
-		Grid_AttachmentServiceStub.AuthenticationInfoE authe = new Grid_AttachmentServiceStub.AuthenticationInfoE();
+		GGUS_ATTACHServiceStub.AuthenticationInfoE authe = new GGUS_ATTACHServiceStub.AuthenticationInfoE();
 		authe.setAuthenticationInfo(auth);	
 		
 		//create request
-		Grid_AttachmentServiceStub.GetListInputMap param = new Grid_AttachmentServiceStub.GetListInputMap();
-		param.setGAT_RequestID(id);
-		Grid_AttachmentServiceStub.GetAllAttachments request = new Grid_AttachmentServiceStub.GetAllAttachments();
-		request.setGetAllAttachments(param);
+		InputMapping2 param = new GGUS_ATTACHServiceStub.InputMapping2();
+		param.setGAT_Request_ID(id);
+		GetAttachIDs request = new GGUS_ATTACHServiceStub.GetAttachIDs();
+		request.setGetAttachIDs(param);
 		
 		ArrayList<Attachment> attachments = new ArrayList<Attachment>();
 		
 		//call, and pull result
 		try {
-			Grid_AttachmentServiceStub.GetAllAttachmentsResponse res = stub.getAllAttachments(request, authe);
-			GetListOutputMap ret = res.getGetAllAttachmentsResponse();
-			Grid_AttachmentServiceStub.GetListValues_type0[] values = ret.getGetListValues();
+			GetAttachIDsResponse res = stub.getAttachIDs(request, authe);
+			OutputMapping2 ret = res.getGetAttachIDsResponse();
+			GGUS_ATTACHServiceStub.GetListValues_type0[] values = ret.getGetListValues();
 			
-			for(Grid_AttachmentServiceStub.GetListValues_type0 value : values) {
+			for(GGUS_ATTACHServiceStub.GetListValues_type0 value : values) {
 				Attachment attachment = new Attachment();
-				attachment.id = value.getGAT_AttachmentID();
-				attachment.name = value.getGAT_Attachment_Name().trim(); ////ggus still returns newlinea at the end of the name
+				attachment.id = value.getGAT_AttachmentID(); //value.getGAT_Attachment_ID();
+				attachment.name = value.getGAT_Attachment_attachmentName(); //getGAT_Attachment_Name().trim(); ////ggus still returns newlinea at the end of the name
 				attachment.owner = value.getGAT_Last_Modifier();
 				attachments.add(attachment);
 			}
@@ -408,25 +417,25 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 	
 	@Override
 	public File downloadAttachment(String ticket_id_notused, Attachment attachment) throws IOException {
-		Grid_AttachmentServiceStub stub = new Grid_AttachmentServiceStub(endpoint + "&webService=Grid_Attachment");
+		GGUS_ATTACHServiceStub stub = new GGUS_ATTACHServiceStub(endpoint + "&webService=GGUS_ATTACH");
 
 		//create authe
-		Grid_AttachmentServiceStub.AuthenticationInfo auth = new Grid_AttachmentServiceStub.AuthenticationInfo();
+		GGUS_ATTACHServiceStub.AuthenticationInfo auth = new GGUS_ATTACHServiceStub.AuthenticationInfo();
 		auth.setUserName(user);
 		auth.setPassword(password);
-		Grid_AttachmentServiceStub.AuthenticationInfoE authe = new Grid_AttachmentServiceStub.AuthenticationInfoE();
+		GGUS_ATTACHServiceStub.AuthenticationInfoE authe = new GGUS_ATTACHServiceStub.AuthenticationInfoE();
 		authe.setAuthenticationInfo(auth);	
 		
 		//create request
-		Grid_AttachmentServiceStub.InputMapping param = new Grid_AttachmentServiceStub.InputMapping();
-		param.setGAT_AttachmentID(attachment.id);
-		Grid_AttachmentServiceStub.GetOneAttachment request = new Grid_AttachmentServiceStub.GetOneAttachment();
+		edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.InputMapping3 param = new edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.InputMapping3();
+		param.setGAT_Attachment_ID(attachment.id);
+		GGUS_ATTACHServiceStub.GetOneAttachment request = new GGUS_ATTACHServiceStub.GetOneAttachment();
 		request.setGetOneAttachment(param);
 		
 		//call, and pull result
 		GetOneAttachmentResponse res = stub.getOneAttachment(request, authe);
-		OutputMapping ret = res.getGetOneAttachmentResponse();
-	    InputStream in = ret.getGAT_Attachment_Data().getInputStream();
+		edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.OutputMapping3 ret = res.getGetOneAttachmentResponse();
+	    InputStream in = ret.getGAT_Attachment_attachmentData().getInputStream();
 	    
 		//save to temporarly file
 	    //String name = ret.getGAT_Attachment_Name();
@@ -444,13 +453,13 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 
 	@Override
 	public String uploadAttachment(String ticket_id, final Attachment attachment) throws RemoteException {
-		Grid_AttachmentServiceStub stub = new Grid_AttachmentServiceStub(endpoint + "&webService=Grid_Attachment");
+		GGUS_ATTACHServiceStub stub = new GGUS_ATTACHServiceStub(endpoint + "&webService=GGUS_ATTACH");
 
 		//create authe
-		Grid_AttachmentServiceStub.AuthenticationInfo auth = new Grid_AttachmentServiceStub.AuthenticationInfo();
+		GGUS_ATTACHServiceStub.AuthenticationInfo auth = new GGUS_ATTACHServiceStub.AuthenticationInfo();
 		auth.setUserName(user);
 		auth.setPassword(password);
-		Grid_AttachmentServiceStub.AuthenticationInfoE authe = new Grid_AttachmentServiceStub.AuthenticationInfoE();
+		GGUS_ATTACHServiceStub.AuthenticationInfoE authe = new GGUS_ATTACHServiceStub.AuthenticationInfoE();
 		authe.setAuthenticationInfo(auth);	
 		
 		//create datahandler for attachment
@@ -480,20 +489,20 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 		});
 		
 		//create request
-		Grid_AttachmentServiceStub.CreateInputMap param = new Grid_AttachmentServiceStub.CreateInputMap();
-		param.setGAT_RequestID(ticket_id);
+		GGUS_ATTACHServiceStub.CreateInputMap param = new GGUS_ATTACHServiceStub.CreateInputMap();
+		param.setGAT_Request_ID(ticket_id);
 		param.setGAT_Attachment_Name(attachment.name);
 		param.setGAT_Attachment_Data(attachment_handler);
 		param.setGAT_Attachment_Orig_Size((int)attachment.file.length());
 		param.setGAT_Last_Modifier(attachment.owner);//required
 		param.setGAT_Last_Login("n/a");//required
-		param.setGAT_Origin_SG("n/a");//required
+		//param.setGAT_Origin_SG("n/a");//required
 		AddAttachment request = new AddAttachment();
 		request.setAddAttachment(param);
 		
 		//call, and pull result
 		AddAttachmentResponse res = stub.addAttachment(request, authe);
-		Grid_AttachmentServiceStub.CreateOutputMap ret = res.getAddAttachmentResponse();
+		GGUS_ATTACHServiceStub.CreateOutputMap ret = res.getAddAttachmentResponse();
 		return ret.getGAT_Attachment_ID();
 	}
 	
