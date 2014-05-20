@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.ByteBuffer;
 import java.rmi.RemoteException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -15,6 +16,10 @@ import javax.activation.DataHandler;
 import javax.activation.DataSource;
 
 import org.apache.axis2.AxisFault;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64InputStream;
+import org.apache.commons.codec.binary.Base64OutputStream;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
 import edu.iu.grid.tx.soap.ggus.GGUSServiceStub;
@@ -40,6 +45,7 @@ import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub.GetListValues_type2;
 import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub.InputMapping3;
 import edu.iu.grid.tx.soap.ggus.GGUS_HISTORYServiceStub.OutputMapping3;
 import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub;
+import edu.iu.grid.tx.soap.ggus.Grid_AttachmentServiceStub.GetListOutputMap;
 import edu.iu.grid.tx.ticket.GGUSTicket;
 import edu.iu.grid.tx.ticket.Ticket;
 
@@ -415,6 +421,54 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 		return attachments;		
 	}
 	
+	/*
+	//deprecated.. remove this!
+	public ArrayList<Attachment> getAttachments_old(String id) throws Exception {
+		//String debug_endoint = "";//https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars
+		Grid_AttachmentServiceStub stub = new Grid_AttachmentServiceStub(endpoint + "&webService=Grid_Attachment");
+
+		//create authe
+		Grid_AttachmentServiceStub.AuthenticationInfo auth = new Grid_AttachmentServiceStub.AuthenticationInfo();
+		auth.setUserName(user);
+		auth.setPassword(password);
+		Grid_AttachmentServiceStub.AuthenticationInfoE authe = new Grid_AttachmentServiceStub.AuthenticationInfoE();
+		authe.setAuthenticationInfo(auth);	
+
+		//create request
+		Grid_AttachmentServiceStub.GetListInputMap param = new Grid_AttachmentServiceStub.GetListInputMap();
+		param.setGAT_RequestID(id);
+		Grid_AttachmentServiceStub.GetAllAttachments request = new Grid_AttachmentServiceStub.GetAllAttachments();
+		request.setGetAllAttachments(param);
+
+		ArrayList<Attachment> attachments = new ArrayList<Attachment>();
+
+		//call, and pull result
+		try {
+			Grid_AttachmentServiceStub.GetAllAttachmentsResponse res = stub.getAllAttachments(request, authe);
+			GetListOutputMap ret = res.getGetAllAttachmentsResponse();
+			Grid_AttachmentServiceStub.GetListValues_type0[] values = ret.getGetListValues();
+
+			for(Grid_AttachmentServiceStub.GetListValues_type0 value : values) {
+				Attachment attachment = new Attachment();
+				attachment.id = value.getGAT_AttachmentID();
+				attachment.name = value.getGAT_Attachment_Name().trim(); ////ggus still returns newlinea at the end of the name
+				attachment.owner = value.getGAT_Last_Modifier();
+				attachments.add(attachment);
+			}
+		} catch(AxisFault e) {
+			String message = e.getLocalizedMessage();
+			if(message.equals("ERROR (302): Entry does not exist in database; ")) {
+				logger.debug("GGUS returns AxisFault with 'Entry does not exist' which means the attachment list is empty.. ignoring this exception");
+			} else {
+				//rethrow everything else
+				throw e;
+			}
+		}
+
+		return attachments;		
+	}
+	*/
+	
 	@Override
 	public File downloadAttachment(String ticket_id_notused, Attachment attachment) throws IOException {
 		GGUS_ATTACHServiceStub stub = new GGUS_ATTACHServiceStub(endpoint + "&webService=GGUS_ATTACH");
@@ -437,17 +491,28 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 		edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.OutputMapping3 ret = res.getGetOneAttachmentResponse();
 	    InputStream in = ret.getGAT_Attachment_attachmentData().getInputStream();
 	    
-		//save to temporarly file
-	    //String name = ret.getGAT_Attachment_Name();
-	    File tempfile = File.createTempFile("GOCTX.GGUS.", "."+attachment.name); //trimming newline char at the end
+		File tempfile = File.createTempFile("GOCTX.GGUS.", "."+attachment.name); //trimming newline char at the end
 		FileOutputStream out = new FileOutputStream(tempfile.getAbsolutePath());
+		
+	    //load to byte array..
+	    byte[] bytes = IOUtils.toByteArray(in);
+	    if(Base64.isArrayByteBase64(bytes)) {
+	    	Base64OutputStream bout = new Base64OutputStream(out, false);
+	    	IOUtils.write(bytes, bout);
+	    	bout.close();
+	    } else {
+	    	IOUtils.write(bytes, out);
+	    	out.close();
+	    }
+		/*
+		Base64InputStream b64in = new Base64InputStream(in);
 		byte[] buf = new byte[1024];
 		while (true){
-				int size = in.read(buf, 0, 1024);
+				int size = b64in.read(buf, 0, 1024);
 				if(size == -1) break;
 				out.write(buf, 0, size);
 		}
-		out.close();
+	    */
 		return tempfile;
 	}
 
@@ -472,6 +537,7 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 			@Override
 			public InputStream getInputStream() throws IOException {
 				return new FileInputStream(attachment.file);
+				//return new Base64InputStream(new FileInputStream(attachment.file), true); //this doesn't make any differnce
 			}
 
 			@Override
