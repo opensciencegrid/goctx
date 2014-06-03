@@ -494,6 +494,7 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 		File tempfile = File.createTempFile("GOCTX.GGUS.", "."+attachment.name); //trimming newline char at the end
 		FileOutputStream out = new FileOutputStream(tempfile.getAbsolutePath());
 		
+		//why am I decoding the content *sometimes*? See https://jira.opensciencegrid.org/browse/GOCTX-29
 	    //load to byte array..
 	    byte[] bytes = IOUtils.toByteArray(in);
 	    if(Base64.isArrayByteBase64(bytes)) {
