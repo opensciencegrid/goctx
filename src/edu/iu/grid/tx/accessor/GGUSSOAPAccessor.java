@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.ByteBuffer;
 import java.rmi.RemoteException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ import javax.activation.DataSource;
 
 import org.apache.axis2.AxisFault;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.binary.Base64InputStream;
 import org.apache.commons.codec.binary.Base64OutputStream;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
