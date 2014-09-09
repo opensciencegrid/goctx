@@ -244,6 +244,11 @@ public class TicketExchanger {
 				Date dest_sync_timestamp = model.getSourceTimestamp(dest_id, getReverseTXID());
 				Ticket dest_old_ticket = destination.get(dest_id);
 				
+				if(dest_sync_timestamp == null) {
+					logger.error("Failed to find source timestamp for dest id:"+dest_id + " reverse txid:"+getReverseTXID() + " try to sync just in case.");
+					dest_sync_timestamp = dest_old_ticket.getUpdatetime();
+				}
+				
 				//make sure destination still has reverse assignee assigned to it (JIRA GOCTX-26)
 				if(destination.isTicketExchanged(dest_old_ticket, reverse_assignee)) {
 				
