@@ -4120,6 +4120,50 @@
                             
 
                         /**
+                        * field for U_employee_name_suffix
+                        */
+
+                        
+                                    protected java.lang.String localU_employee_name_suffix ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_employee_name_suffixTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_employee_name_suffix(){
+                               return localU_employee_name_suffix;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_employee_name_suffix
+                               */
+                               public void setU_employee_name_suffix(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_employee_name_suffixTracker = true;
+                                       } else {
+                                          localU_employee_name_suffixTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_employee_name_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_employee_number_suffix
                         */
 
@@ -6241,6 +6285,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_employee_name_suffixTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_employee_name_suffix", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_employee_name_suffix");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_employee_name_suffix");
+                                    }
+                                
+
+                                          if (localU_employee_name_suffix==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_employee_name_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_employee_number_suffixTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -7160,6 +7238,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_department_group));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_department_group cannot be null!!");
+                                        }
+                                    } if (localU_employee_name_suffixTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_employee_name_suffix"));
+                                 
+                                        if (localU_employee_name_suffix != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_name_suffix));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
                                         }
                                     } if (localU_employee_number_suffixTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -8146,6 +8233,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_department_group(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_employee_name_suffix").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_employee_name_suffix(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -10865,6 +10970,50 @@
                             
 
                         /**
+                        * field for U_employee_name_suffix
+                        */
+
+                        
+                                    protected java.lang.String localU_employee_name_suffix ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_employee_name_suffixTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_employee_name_suffix(){
+                               return localU_employee_name_suffix;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_employee_name_suffix
+                               */
+                               public void setU_employee_name_suffix(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_employee_name_suffixTracker = true;
+                                       } else {
+                                          localU_employee_name_suffixTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_employee_name_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_employee_number_suffix
                         */
 
@@ -12952,6 +13101,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_employee_name_suffixTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_employee_name_suffix", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_employee_name_suffix");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_employee_name_suffix");
+                                    }
+                                
+
+                                          if (localU_employee_name_suffix==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_employee_name_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_employee_number_suffixTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -13862,6 +14045,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_department_group));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_department_group cannot be null!!");
+                                        }
+                                    } if (localU_employee_name_suffixTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_employee_name_suffix"));
+                                 
+                                        if (localU_employee_name_suffix != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_name_suffix));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
                                         }
                                     } if (localU_employee_number_suffixTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -14829,6 +15021,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_department_group(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_employee_name_suffix").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_employee_name_suffix(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -17368,6 +17578,50 @@
                                        }
                                    
                                             this.localU_department_group=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_employee_name_suffix
+                        */
+
+                        
+                                    protected java.lang.String localU_employee_name_suffix ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_employee_name_suffixTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_employee_name_suffix(){
+                               return localU_employee_name_suffix;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_employee_name_suffix
+                               */
+                               public void setU_employee_name_suffix(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_employee_name_suffixTracker = true;
+                                       } else {
+                                          localU_employee_name_suffixTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_employee_name_suffix=param;
                                     
 
                                }
@@ -19919,6 +20173,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_employee_name_suffixTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_employee_name_suffix", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_employee_name_suffix");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_employee_name_suffix");
+                                    }
+                                
+
+                                          if (localU_employee_name_suffix==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_employee_name_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_employee_number_suffixTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -21063,6 +21351,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_department_group cannot be null!!");
                                         }
+                                    } if (localU_employee_name_suffixTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_employee_name_suffix"));
+                                 
+                                        if (localU_employee_name_suffix != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_name_suffix));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                        }
                                     } if (localU_employee_number_suffixTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_employee_number_suffix"));
@@ -22200,6 +22497,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_department_group(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_employee_name_suffix").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_employee_name_suffix(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -24879,6 +25194,50 @@
                             
 
                         /**
+                        * field for U_employee_name_suffix
+                        */
+
+                        
+                                    protected java.lang.String localU_employee_name_suffix ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_employee_name_suffixTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_employee_name_suffix(){
+                               return localU_employee_name_suffix;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_employee_name_suffix
+                               */
+                               public void setU_employee_name_suffix(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_employee_name_suffixTracker = true;
+                                       } else {
+                                          localU_employee_name_suffixTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_employee_name_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_employee_number_suffix
                         */
 
@@ -27238,6 +27597,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_employee_name_suffixTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_employee_name_suffix", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_employee_name_suffix");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_employee_name_suffix");
+                                    }
+                                
+
+                                          if (localU_employee_name_suffix==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_employee_name_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_employee_number_suffixTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -28220,6 +28613,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_department_group));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_department_group cannot be null!!");
+                                        }
+                                    } if (localU_employee_name_suffixTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_employee_name_suffix"));
+                                 
+                                        if (localU_employee_name_suffix != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_name_suffix));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
                                         }
                                     } if (localU_employee_number_suffixTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -29331,6 +29733,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_department_group(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_employee_name_suffix").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_employee_name_suffix(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -32466,6 +32886,50 @@
                             
 
                         /**
+                        * field for U_employee_name_suffix
+                        */
+
+                        
+                                    protected java.lang.String localU_employee_name_suffix ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_employee_name_suffixTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_employee_name_suffix(){
+                               return localU_employee_name_suffix;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_employee_name_suffix
+                               */
+                               public void setU_employee_name_suffix(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_employee_name_suffixTracker = true;
+                                       } else {
+                                          localU_employee_name_suffixTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_employee_name_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_employee_number_suffix
                         */
 
@@ -34825,6 +35289,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_employee_name_suffixTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_employee_name_suffix", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_employee_name_suffix");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_employee_name_suffix");
+                                    }
+                                
+
+                                          if (localU_employee_name_suffix==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_employee_name_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_employee_number_suffixTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -35807,6 +36305,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_department_group));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_department_group cannot be null!!");
+                                        }
+                                    } if (localU_employee_name_suffixTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_employee_name_suffix"));
+                                 
+                                        if (localU_employee_name_suffix != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_name_suffix));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
                                         }
                                     } if (localU_employee_number_suffixTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -36918,6 +37425,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_department_group(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_employee_name_suffix").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_employee_name_suffix(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -39975,6 +40500,50 @@
                             
 
                         /**
+                        * field for U_employee_name_suffix
+                        */
+
+                        
+                                    protected java.lang.String localU_employee_name_suffix ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_employee_name_suffixTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_employee_name_suffix(){
+                               return localU_employee_name_suffix;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_employee_name_suffix
+                               */
+                               public void setU_employee_name_suffix(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_employee_name_suffixTracker = true;
+                                       } else {
+                                          localU_employee_name_suffixTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_employee_name_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_employee_number_suffix
                         */
 
@@ -42334,6 +42903,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_employee_name_suffixTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_employee_name_suffix", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_employee_name_suffix");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_employee_name_suffix");
+                                    }
+                                
+
+                                          if (localU_employee_name_suffix==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_employee_name_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_employee_number_suffixTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -43316,6 +43919,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_department_group));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_department_group cannot be null!!");
+                                        }
+                                    } if (localU_employee_name_suffixTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_employee_name_suffix"));
+                                 
+                                        if (localU_employee_name_suffix != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_name_suffix));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
                                         }
                                     } if (localU_employee_number_suffixTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -44427,6 +45039,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_department_group(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_employee_name_suffix").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_employee_name_suffix(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -47520,6 +48150,50 @@
                             
 
                         /**
+                        * field for U_employee_name_suffix
+                        */
+
+                        
+                                    protected java.lang.String localU_employee_name_suffix ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_employee_name_suffixTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_employee_name_suffix(){
+                               return localU_employee_name_suffix;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_employee_name_suffix
+                               */
+                               public void setU_employee_name_suffix(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_employee_name_suffixTracker = true;
+                                       } else {
+                                          localU_employee_name_suffixTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_employee_name_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_employee_number_suffix
                         */
 
@@ -50231,6 +50905,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_employee_name_suffixTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_employee_name_suffix", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_employee_name_suffix");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_employee_name_suffix");
+                                    }
+                                
+
+                                          if (localU_employee_name_suffix==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_employee_name_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_employee_number_suffixTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -51486,6 +52194,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_department_group cannot be null!!");
                                         }
+                                    } if (localU_employee_name_suffixTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_employee_name_suffix"));
+                                 
+                                        if (localU_employee_name_suffix != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_name_suffix));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_employee_name_suffix cannot be null!!");
+                                        }
                                     } if (localU_employee_number_suffixTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_employee_number_suffix"));
@@ -52668,6 +53385,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_department_group(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_employee_name_suffix").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_employee_name_suffix(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
