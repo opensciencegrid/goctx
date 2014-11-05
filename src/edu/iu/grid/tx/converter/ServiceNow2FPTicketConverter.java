@@ -69,9 +69,9 @@ public class ServiceNow2FPTicketConverter implements TicketConverter {
 		if(state.equals(new BigInteger("1"))) return "Engineering"; //Assigned
 		if(state.equals(new BigInteger("2"))) return "Engineering"; //Work in Progress
 		if(state.equals(new BigInteger("4"))) return "Engineering"; //Pending
-		if(state.equals(new BigInteger("7"))) return "Closed"; //Resolved
-		if(state.equals(new BigInteger("8"))) return "Closed"; //Canceled
-		if(state.equals(new BigInteger("6"))) return "Closed"; //Closed //6 is my guess
+		if(state.equals(new BigInteger("7"))) return "Resolved"; //Resolved
+		if(state.equals(new BigInteger("8"))) return "Resolved"; //Canceled
+		if(state.equals(new BigInteger("6"))) return "Resolved"; //Closed //6 is my guess
 		
 		logger.warn("Unknown servicenow state: " + state + " (defaulting to Engineering)");
 		return "Engineering";
