@@ -212,8 +212,9 @@ public class ServiceNowAccessor implements TicketAccessor {
 				ServiceNowTicket.CloseInfo close_info = ticket.new CloseInfo();
 				close_info.note = resp.getClose_notes();
 				close_info.code = resp.getClose_code();
-				close_info.at = resp.getClosed_at(); //always empty string?
-				close_info.by = resp.getClosed_by(); //always empty string?
+				//at and by will be empty until ticket gets updated from resolved to closed (per Mike B.)
+				close_info.at = resp.getClosed_at(); 
+				close_info.by = resp.getClosed_by();
 				ticket.setCloseInfo(close_info);
 			}
 
