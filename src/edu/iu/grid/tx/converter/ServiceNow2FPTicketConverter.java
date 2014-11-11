@@ -41,7 +41,13 @@ public class ServiceNow2FPTicketConverter implements TicketConverter {
 		if(close_info != null) {
 			FPTicket.DescriptionEntry close_entry = fp.new DescriptionEntry();
 			close_entry.content = "["+close_info.code + "]\n" + close_info.note;
-			close_entry.name = close_info.by; //empty until ticket gets closed (per Mike B.)... but it's ok?
+			
+			//empty until ticket gets closed at SNOW (per Mike B.)... 
+			if(close_info.by.isEmpty()) {
+				close_info.by = "(Undisclosed by SNOW)";
+			} else {
+				close_entry.name = close_info.by; 
+			}
 			
 			//TODO - close_info.at will be set when ticket is closed. if it's set, use it instead of getUpdatetime();
 			//close_entry.time = close_info.at; 
