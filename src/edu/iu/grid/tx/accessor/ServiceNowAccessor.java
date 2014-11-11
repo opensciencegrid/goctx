@@ -126,7 +126,6 @@ public class ServiceNowAccessor implements TicketAccessor {
 			stub._getServiceClient().getOptions().setProperty(org.apache.axis2.transport.http.HTTPConstants.SO_TIMEOUT, new Integer(60*1000));
 			stub._getServiceClient().getOptions().setProperty(org.apache.axis2.transport.http.HTTPConstants.CONNECTION_TIMEOUT, new Integer(60*1000));
 
-			
 			ServiceNow_incidentStub.Update update = new ServiceNow_incidentStub.Update();
 			update.setNumber(new_servicenow_ticket.getTicketID());
 			String newcomment = new_servicenow_ticket.aggregateCommentsAfter(last_synctime).trim();
@@ -208,6 +207,15 @@ public class ServiceNowAccessor implements TicketAccessor {
 			ticket.setCreatedBy(resp.getSys_created_by());
 			ticket.setAssignmentGroup(resp.getAssignment_group());
 			ticket.setExternalTicketNumber(resp.getU_external_ticket_number());
+			
+			if(resp.getClose_code() != null && !resp.getClose_code().isEmpty()) {
+				ServiceNowTicket.CloseInfo close_info = ticket.new CloseInfo();
+				close_info.note = resp.getClose_notes();
+				close_info.code = resp.getClose_code();
+				close_info.at = resp.getClosed_at(); //always empty string?
+				close_info.by = resp.getClosed_by(); //always empty string?
+				ticket.setCloseInfo(close_info);
+			}
 
 			//lookup caller_user_id from caller_id (sys_id)
 			ServiceNow_sys_userStub uStub = new ServiceNow_sys_userStub(endpoint + "/sys_user.do?SOAP");

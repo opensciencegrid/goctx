@@ -36,6 +36,17 @@ public class ServiceNow2FPTicketConverter implements TicketConverter {
 		first_entry.time = servicenow.getCreatedOn();
 		fp.addDescription(first_entry);	
 		
+		//servicenow close info should be added as the last comment
+		ServiceNowTicket.CloseInfo close_info = servicenow.getCloseInfo();
+		if(close_info != null) {
+			FPTicket.DescriptionEntry close_entry = fp.new DescriptionEntry();
+			close_entry.content = "["+close_info.code + "]\n" + close_info.note;
+			close_entry.name = close_info.by; //not set
+			//close_entry.time = close_info.at; //not set
+			close_entry.time = servicenow.getUpdatetime(); //close_info.at is set to empty, so let's use the last ticket update time
+			fp.addDescription(close_entry);
+		}
+		
 		fp.setSubmitter(servicenow.getCreatedBy());
 		fp.setPriority(convertUrgency2Priority(servicenow.getUrgency()));
 		fp.setStatus(convertState(servicenow.getIncidentState()));

@@ -157,6 +157,16 @@ public class ServiceNowTicket implements Ticket {
 	public String getAssignmentGroup() { return assignment_group; }
 	public void setAssignmentGroup(String assignment_group) { this.assignment_group = assignment_group; }
 	
+	public class CloseInfo {
+		public String note;
+		public String code;
+		public String at;
+		public String by;
+	}
+	private CloseInfo close_info;
+	public CloseInfo getCloseInfo() { return close_info; }
+	public void setCloseInfo(CloseInfo info) { close_info = info; }
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	//
 	// fields that aren't exchanged but needs to be set (required)
