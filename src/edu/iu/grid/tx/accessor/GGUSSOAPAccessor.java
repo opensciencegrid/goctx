@@ -483,35 +483,28 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 		param.setGAT_Attachment_ID(attachment.id);
 		GGUS_ATTACHServiceStub.GetOneAttachment request = new GGUS_ATTACHServiceStub.GetOneAttachment();
 		request.setGetOneAttachment(param);
+
+		File tempfile = File.createTempFile("GOCTX.GGUS.", "."+attachment.name); //trimming newline char at the end
+		FileOutputStream out = new FileOutputStream(tempfile.getAbsolutePath());
 		
 		//call, and pull result
 		GetOneAttachmentResponse res = stub.getOneAttachment(request, authe);
 		edu.iu.grid.tx.soap.ggus.GGUS_ATTACHServiceStub.OutputMapping3 ret = res.getGetOneAttachmentResponse();
-	    InputStream in = ret.getGAT_Attachment_attachmentData().getInputStream();
-	    
-		File tempfile = File.createTempFile("GOCTX.GGUS.", "."+attachment.name); //trimming newline char at the end
-		FileOutputStream out = new FileOutputStream(tempfile.getAbsolutePath());
-		
-		//why am I decoding the content *sometimes*? See https://jira.opensciencegrid.org/browse/GOCTX-29
-	    //load to byte array..
-	    byte[] bytes = IOUtils.toByteArray(in);
-	    if(Base64.isArrayByteBase64(bytes)) {
-	    	Base64OutputStream bout = new Base64OutputStream(out, false);
-	    	IOUtils.write(bytes, bout);
-	    	bout.close();
-	    } else {
-	    	IOUtils.write(bytes, out);
-	    	out.close();
-	    }
-		/*
-		Base64InputStream b64in = new Base64InputStream(in);
-		byte[] buf = new byte[1024];
-		while (true){
-				int size = b64in.read(buf, 0, 1024);
-				if(size == -1) break;
-				out.write(buf, 0, size);
+		DataHandler handler = ret.getGAT_Attachment_attachmentData();
+		if(handler != null) {
+			//why am I decoding the content *sometimes*? See https://jira.opensciencegrid.org/browse/GOCTX-29
+		    //load to byte array..
+		    byte[] bytes = IOUtils.toByteArray(handler.getInputStream());
+		    if(Base64.isArrayByteBase64(bytes)) {
+		    	Base64OutputStream bout = new Base64OutputStream(out, false);
+		    	IOUtils.write(bytes, bout);
+		    	bout.close();
+		    } else {
+		    	IOUtils.write(bytes, out);
+		    	out.close();
+		    }
 		}
-	    */
+	    		
 		return tempfile;
 	}
 
