@@ -20,7 +20,7 @@ import edu.iu.grid.tx.ticket.Ticket;
 
 public class TicketExchanger {
 	
-	static String version = "1.29";
+	//static String version = "1.29";
 	
 	static Logger logger = Logger.getLogger(TicketExchanger.class);
 	
@@ -57,7 +57,7 @@ public class TicketExchanger {
 		
 		this.model = new SyncModel();
 		
-		logger.debug("GOCTX TicketExchanger Version " + version);
+		//logger.debug("GOCTX TicketExchanger Version " + version);
 	}
 	
 	static public TicketExchanger createInstanceFromEmail(BufferedReader reader, IFactory factory) throws Exception {
