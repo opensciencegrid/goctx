@@ -65,7 +65,10 @@ public class ServiceNow2FPTicketConverter implements TicketConverter {
 		fp.setPhone(null);
 		fp.setEmail(null);
 		*/
-		fp.setTicketType("");
+		//TODO - I think this override ticket type to "Changed Ticket-Type to No Choice" and fp will 
+		//eventually change it to problem/request? I think I should leave this ticket type set to null
+		//and allow fp accessor to skip setting ticket types.. (will that crash during the fp create creation?)
+		fp.setTicketType(""); 
 		
 		fp.setOriginNote(servicenow.getOriginNote());
 		fp.setMetadata("SERVICENOW_TICKET_ID", servicenow.getTicketID());	
