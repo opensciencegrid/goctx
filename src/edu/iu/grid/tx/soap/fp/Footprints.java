@@ -135,15 +135,15 @@ public class Footprints
         arg4_8.addAttribute( env.createName("type","xsi",""), "xsd:string" );
         arg4_8.addTextNode(title);
         
-        if(ticket.getPriority() == null) {
+        String priority = ticket.getPriority();
+        if(priority == null) {
            	//priority can be null if source ticketing system doesn't want to synchronize it.. 
         	//even so, we need to set priority because FP requires it... let's set it to normal priority
-        	ticket.setPriority("4");//normal
+        	priority = "4";//normal
         }
     	SOAPElement arg4_1 = args.addChildElement( env.createName("priorityNumber") );
     	arg4_1.addAttribute( env.createName("type","xsi",""), "xsd:int" );
-    	arg4_1.addTextNode(ticket.getPriority());
-    	
+    	arg4_1.addTextNode(priority);
         
         SOAPElement arg4_4 = args.addChildElement( env.createName("description") );
         arg4_4.addAttribute( env.createName("type","xsi",""), "xsd:string" );
@@ -173,6 +173,7 @@ public class Footprints
         SOAPElement projfields = args.addChildElement( env.createName("projfields") );
         projfields.addAttribute( env.createName("type","xsi",""), "namesp2:SOAPStruct" );
         
+        /*deprecated
         SOAPElement orig_vo = projfields.addChildElement( env.createName("Originating__bVO__bSupport__bCenter") );
         orig_vo.addAttribute( env.createName("type","xsi",""), "xsd:string" );
         //orig_vo.addTextNode(ticket.getOriginatingVO());
@@ -182,6 +183,7 @@ public class Footprints
         dest_vo.addAttribute( env.createName("type","xsi",""), "xsd:string" );
         //dest_vo.addTextNode(ticket.getDestinationVO());
         dest_vo.addTextNode("Ops");
+        */
         
         SOAPElement next_action = projfields.addChildElement( env.createName("ENG__bNext__bAction__bItem") );
         next_action.addAttribute( env.createName("type","xsi",""), "xsd:string" );
@@ -192,11 +194,14 @@ public class Footprints
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
         nad.addTextNode(format.format(new Date()));            
         
-        if(ticket.getTicketType() != null) {
-	        SOAPElement type = projfields.addChildElement( env.createName("Ticket__uType") );
-	        type.addAttribute( env.createName("type","xsi",""), "xsd:string" );
-	        type.addTextNode(ticket.getTicketType()); 
+        String ticket_type = ticket.getTicketType();
+        if(ticket_type == null) {
+        	//Footprints no longer set this to default.. if we don't set it
+        	ticket_type = "Problem/Request";//normal
         }
+        SOAPElement type = projfields.addChildElement( env.createName("Ticket__uType") );
+        type.addAttribute( env.createName("type","xsi",""), "xsd:string" );
+        type.addTextNode(ticket_type); 
         
         SOAPElement arg4_2 = args.addChildElement( env.createName("status") );
         arg4_2.addAttribute( env.createName("type","xsi",""), "xsd:string" );
