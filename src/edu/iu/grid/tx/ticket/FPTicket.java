@@ -153,5 +153,9 @@ public class FPTicket implements Ticket
 	public void setMetadata(String key, String value) { metadata.put(key, value); }
 	public String getMetadata(String key) { return metadata.get(key); }
 	public HashMap<String, String> getMetadata() { return metadata; }
-
+	
+	@Override
+	public void mergeMeta(Ticket source_ticket) {
+		//nothing to do.. see comment above TicketExchange::processUpdate() / source_new_ticket.mergeMeta(source_ticket); for more detail
+	}
 }

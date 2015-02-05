@@ -11,4 +11,5 @@ public interface Ticket {
 	
 	public void setOriginNote(String origin_note);
 	public String getOriginNote();
+	public void mergeMeta(Ticket source_ticket);
 }

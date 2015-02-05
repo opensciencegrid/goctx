@@ -97,4 +97,9 @@ public class RTTicket implements Ticket {
 	private String origin_note;
 	public String getOriginNote() { return origin_note; }
 	public void setOriginNote(String origin_note) { this.origin_note = origin_note; }
+	
+	@Override
+	public void mergeMeta(Ticket source_ticket) {
+		//nothing to do.. see comment above TicketExchange::processUpdate() / source_new_ticket.mergeMeta(source_ticket); for more detail
+	}
 }

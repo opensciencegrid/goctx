@@ -90,4 +90,9 @@ public class JiraTicket implements Ticket {
 	private String issuetype;
 	public void setIssueType(String it) { issuetype = it; }
 	public String getIssueType() { return issuetype; }	
+	
+	@Override
+	public void mergeMeta(Ticket source_ticket) {
+		//nothing to do.. see comment above TicketExchange::processUpdate() / source_new_ticket.mergeMeta(source_ticket); for more detail
+	}
 }

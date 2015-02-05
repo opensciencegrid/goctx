@@ -219,4 +219,9 @@ public class ServiceNowTicket implements Ticket {
 	private String external_ticket_number;
 	public String getExternalTicketNumber() { return external_ticket_number; }
 	public void setExternalTicketNumber(String external_ticket_number) { this.external_ticket_number = external_ticket_number; }	
+	
+	@Override
+	public void mergeMeta(Ticket source_ticket) {
+		//nothing to do.. see comment above TicketExchange::processUpdate() / source_new_ticket.mergeMeta(source_ticket); for more detail
+	}
 }

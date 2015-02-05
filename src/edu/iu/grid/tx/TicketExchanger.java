@@ -259,7 +259,13 @@ public class TicketExchanger {
 						TicketConverter reverse_converter = factory.chooseAndInstantiateConverter(destination, source);
 						Ticket source_new_ticket = reverse_converter.convert(dest_old_ticket);
 						source_new_ticket.setTicketID(source_ticket_id);
-						
+
+						//when we do reverse update the source ticket, sometimes it overwrite change recently made on 
+						//the source ticket. For example, source ticket's status could be "resolved", but dest_old_ticket
+						//could still have "open" status. reverse ticket will "undo" status change in such case.
+						//In order to prevent that from happening, we give source_new_ticket a chance to *merge* certain
+						//metadata from source_ticket.
+						source_new_ticket.mergeMeta(source_ticket);		
 						try {
 							//synchronize attachments from dest to source (reverse)
 							processAttachments(getReverseTXID(), tx_id, destination, dest_id, source, source_ticket_id);
@@ -268,18 +274,18 @@ public class TicketExchanger {
 							//TODO - somehow add note to the source ticket
 						}
 						
-						//this update is mainly to update 
+						//do reverse update
 						source.update(source_new_ticket, dest_sync_timestamp, source_ticket);
-						logger.debug("Updateted source ticket..");
+						logger.debug("Updateted source ticket..with content from dest ticket");
 						
 						ticket_timestamp = source.get(source_ticket_id).getUpdatetime();
 						logger.debug("source ticket's timestamp is now " + ticket_timestamp.toGMTString());
-						
+						/*
 						//we might have just re-done the status updates.. we can solve this by simply doing the update again
 						//with no description update by using the current timestamp with original source_ticket
 						//TODO - I am not sure if I can really clear out ...
 						source.update(source_ticket, ticket_timestamp, source_ticket);
-						
+						*/
 					}
 					
 					try {

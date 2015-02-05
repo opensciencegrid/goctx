@@ -192,4 +192,10 @@ The default value for GHD_Ticket_Type is USER. Hence this field won't be set to 
 	private String responsible_unit;
 	public String getResponsibleUnit() { return responsible_unit; }
 	public void setResponsibleUnit(String responsible_unit) { this.responsible_unit = responsible_unit; }
+	
+	@Override
+	public void mergeMeta(Ticket source_ticket) {
+		GGUSTicket source_ticket_ggus = (GGUSTicket) source_ticket;
+		setStatus(source_ticket_ggus.getStatus());
+	}
 }
