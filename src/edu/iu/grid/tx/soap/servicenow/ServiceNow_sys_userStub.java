@@ -175,7 +175,7 @@
      */
     public ServiceNow_sys_userStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://fermitrn.service-now.com/sys_user.do?SOAP" );
+                    this(configurationContext,"https://fermidev.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -184,7 +184,7 @@
      */
     public ServiceNow_sys_userStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://fermitrn.service-now.com/sys_user.do?SOAP" );
+                    this("https://fermidev.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -2084,7 +2084,7 @@
         }
         return false;
     }
-     //https://fermitrn.service-now.com/sys_user.do?SOAP
+     //https://fermidev.service-now.com/sys_user.do?SOAP
         public static class Update
         implements org.apache.axis2.databinding.ADBBean{
         
