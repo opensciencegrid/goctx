@@ -11,10 +11,10 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/goctx/.gitignore"/>
         <file path="/goctx/.project"/>
         <javaElement handleIdentifier="=goctx/src"/>
         <file path="/goctx/build.xml"/>
         <file path="/goctx/.classpath"/>
-        <file path="/goctx/.gitignore"/>
     </selectedElements>
 </jardesc>
