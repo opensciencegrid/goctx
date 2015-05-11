@@ -175,7 +175,7 @@
      */
     public ServiceNow_ecc_queueStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://fermitrn.service-now.com/ecc_queue.do?SOAP" );
+                    this(configurationContext,"https://fermi.service-now.com/ecc_queue.do?SOAP" );
                 
     }
 
@@ -184,7 +184,7 @@
      */
     public ServiceNow_ecc_queueStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://fermitrn.service-now.com/ecc_queue.do?SOAP" );
+                    this("https://fermi.service-now.com/ecc_queue.do?SOAP" );
                 
     }
 
@@ -2084,7 +2084,7 @@
         }
         return false;
     }
-     //https://fermitrn.service-now.com/ecc_queue.do?SOAP
+     //https://fermi.service-now.com/ecc_queue.do?SOAP
         public static class Update
         implements org.apache.axis2.databinding.ADBBean{
         
