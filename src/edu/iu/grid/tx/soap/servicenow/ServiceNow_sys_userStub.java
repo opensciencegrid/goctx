@@ -3782,6 +3782,50 @@
                             
 
                         /**
+                        * field for Sso_source
+                        */
+
+                        
+                                    protected java.lang.String localSso_source ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSso_sourceTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSso_source(){
+                               return localSso_source;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sso_source
+                               */
+                               public void setSso_source(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSso_sourceTracker = true;
+                                       } else {
+                                          localSso_sourceTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSso_source=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for State
                         */
 
@@ -4202,6 +4246,50 @@
                                        }
                                    
                                             this.localU_employee_number_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_fermiworks_id
+                        */
+
+                        
+                                    protected java.lang.String localU_fermiworks_id ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_fermiworks_idTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_fermiworks_id(){
+                               return localU_fermiworks_id;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_fermiworks_id
+                               */
+                               public void setU_fermiworks_id(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_fermiworks_idTracker = true;
+                                       } else {
+                                          localU_fermiworks_idTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_fermiworks_id=param;
                                     
 
                                }
@@ -6013,6 +6101,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localSso_sourceTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sso_source", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sso_source");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sso_source");
+                                    }
+                                
+
+                                          if (localSso_source==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSso_source);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localStateTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -6349,6 +6471,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localU_employee_number_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localU_fermiworks_idTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_fermiworks_id", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_fermiworks_id");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_fermiworks_id");
+                                    }
+                                
+
+                                          if (localU_fermiworks_id==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_fermiworks_id);
                                             
                                           }
                                     
@@ -7167,6 +7323,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("source cannot be null!!");
                                         }
+                                    } if (localSso_sourceTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sso_source"));
+                                 
+                                        if (localSso_source != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSso_source));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                        }
                                     } if (localStateTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "state"));
@@ -7256,6 +7421,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_number_suffix));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_employee_number_suffix cannot be null!!");
+                                        }
+                                    } if (localU_fermiworks_idTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_fermiworks_id"));
+                                 
+                                        if (localU_fermiworks_id != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_fermiworks_id));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
                                         }
                                     } if (localU_lab_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -8101,6 +8275,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sso_source").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSso_source(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","state").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -8269,6 +8461,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_employee_number_suffix(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_fermiworks_id").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_fermiworks_id(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -10662,6 +10872,50 @@
                             
 
                         /**
+                        * field for Sso_source
+                        */
+
+                        
+                                    protected java.lang.String localSso_source ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSso_sourceTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSso_source(){
+                               return localSso_source;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sso_source
+                               */
+                               public void setSso_source(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSso_sourceTracker = true;
+                                       } else {
+                                          localSso_sourceTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSso_source=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for State
                         */
 
@@ -11052,6 +11306,50 @@
                                        }
                                    
                                             this.localU_employee_number_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_fermiworks_id
+                        */
+
+                        
+                                    protected java.lang.String localU_fermiworks_id ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_fermiworks_idTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_fermiworks_id(){
+                               return localU_fermiworks_id;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_fermiworks_id
+                               */
+                               public void setU_fermiworks_id(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_fermiworks_idTracker = true;
+                                       } else {
+                                          localU_fermiworks_idTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_fermiworks_id=param;
                                     
 
                                }
@@ -12863,6 +13161,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localSso_sourceTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sso_source", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sso_source");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sso_source");
+                                    }
+                                
+
+                                          if (localSso_source==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSso_source);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localStateTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -13165,6 +13497,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localU_employee_number_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localU_fermiworks_idTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_fermiworks_id", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_fermiworks_id");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_fermiworks_id");
+                                    }
+                                
+
+                                          if (localU_fermiworks_id==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_fermiworks_id);
                                             
                                           }
                                     
@@ -13983,6 +14349,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("source cannot be null!!");
                                         }
+                                    } if (localSso_sourceTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sso_source"));
+                                 
+                                        if (localSso_source != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSso_source));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                        }
                                     } if (localStateTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "state"));
@@ -14063,6 +14438,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_number_suffix));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_employee_number_suffix cannot be null!!");
+                                        }
+                                    } if (localU_fermiworks_idTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_fermiworks_id"));
+                                 
+                                        if (localU_fermiworks_id != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_fermiworks_id));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
                                         }
                                     } if (localU_lab_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -14908,6 +15292,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sso_source").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSso_source(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","state").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -15057,6 +15459,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_employee_number_suffix(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_fermiworks_id").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_fermiworks_id(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -16968,6 +17388,50 @@
                             
 
                         /**
+                        * field for Sso_source
+                        */
+
+                        
+                                    protected java.lang.String localSso_source ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSso_sourceTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSso_source(){
+                               return localSso_source;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sso_source
+                               */
+                               public void setSso_source(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSso_sourceTracker = true;
+                                       } else {
+                                          localSso_sourceTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSso_source=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for State
                         */
 
@@ -17710,6 +18174,50 @@
                                        }
                                    
                                             this.localU_employee_number_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_fermiworks_id
+                        */
+
+                        
+                                    protected java.lang.String localU_fermiworks_id ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_fermiworks_idTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_fermiworks_id(){
+                               return localU_fermiworks_id;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_fermiworks_id
+                               */
+                               public void setU_fermiworks_id(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_fermiworks_idTracker = true;
+                                       } else {
+                                          localU_fermiworks_idTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_fermiworks_id=param;
                                     
 
                                }
@@ -19741,6 +20249,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localSso_sourceTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sso_source", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sso_source");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sso_source");
+                                    }
+                                
+
+                                          if (localSso_source==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSso_source);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localStateTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -20315,6 +20857,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localU_employee_number_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localU_fermiworks_idTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_fermiworks_id", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_fermiworks_id");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_fermiworks_id");
+                                    }
+                                
+
+                                          if (localU_fermiworks_id==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_fermiworks_id);
                                             
                                           }
                                     
@@ -21303,6 +21879,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("source cannot be null!!");
                                         }
+                                    } if (localSso_sourceTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sso_source"));
+                                 
+                                        if (localSso_source != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSso_source));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                        }
                                     } if (localStateTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "state"));
@@ -21455,6 +22040,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_number_suffix));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_employee_number_suffix cannot be null!!");
+                                        }
+                                    } if (localU_fermiworks_idTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_fermiworks_id"));
+                                 
+                                        if (localU_fermiworks_id != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_fermiworks_id));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
                                         }
                                     } if (localU_lab_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -22345,6 +22939,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sso_source").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSso_source(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","state").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -22638,6 +23250,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_employee_number_suffix(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_fermiworks_id").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_fermiworks_id(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -24639,6 +25269,50 @@
                             
 
                         /**
+                        * field for Sso_source
+                        */
+
+                        
+                                    protected java.lang.String localSso_source ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSso_sourceTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSso_source(){
+                               return localSso_source;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sso_source
+                               */
+                               public void setSso_source(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSso_sourceTracker = true;
+                                       } else {
+                                          localSso_sourceTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSso_source=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for State
                         */
 
@@ -25425,6 +26099,50 @@
                                        }
                                    
                                             this.localU_employee_number_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_fermiworks_id
+                        */
+
+                        
+                                    protected java.lang.String localU_fermiworks_id ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_fermiworks_idTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_fermiworks_id(){
+                               return localU_fermiworks_id;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_fermiworks_id
+                               */
+                               public void setU_fermiworks_id(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_fermiworks_idTracker = true;
+                                       } else {
+                                          localU_fermiworks_idTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_fermiworks_id=param;
                                     
 
                                }
@@ -27236,6 +27954,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localSso_sourceTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sso_source", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sso_source");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sso_source");
+                                    }
+                                
+
+                                          if (localSso_source==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSso_source);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localStateTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -27844,6 +28596,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localU_employee_number_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localU_fermiworks_idTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_fermiworks_id", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_fermiworks_id");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_fermiworks_id");
+                                    }
+                                
+
+                                          if (localU_fermiworks_id==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_fermiworks_id);
                                             
                                           }
                                     
@@ -28662,6 +29448,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("source cannot be null!!");
                                         }
+                                    } if (localSso_sourceTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sso_source"));
+                                 
+                                        if (localSso_source != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSso_source));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                        }
                                     } if (localStateTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "state"));
@@ -28823,6 +29618,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_number_suffix));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_employee_number_suffix cannot be null!!");
+                                        }
+                                    } if (localU_fermiworks_idTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_fermiworks_id"));
+                                 
+                                        if (localU_fermiworks_id != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_fermiworks_id));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
                                         }
                                     } if (localU_lab_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -29668,6 +30472,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sso_source").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSso_source(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","state").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -29979,6 +30801,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_employee_number_suffix(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_fermiworks_id").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_fermiworks_id(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -32436,6 +33276,50 @@
                             
 
                         /**
+                        * field for Sso_source
+                        */
+
+                        
+                                    protected java.lang.String localSso_source ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSso_sourceTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSso_source(){
+                               return localSso_source;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sso_source
+                               */
+                               public void setSso_source(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSso_sourceTracker = true;
+                                       } else {
+                                          localSso_sourceTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSso_source=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for State
                         */
 
@@ -33222,6 +34106,50 @@
                                        }
                                    
                                             this.localU_employee_number_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_fermiworks_id
+                        */
+
+                        
+                                    protected java.lang.String localU_fermiworks_id ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_fermiworks_idTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_fermiworks_id(){
+                               return localU_fermiworks_id;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_fermiworks_id
+                               */
+                               public void setU_fermiworks_id(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_fermiworks_idTracker = true;
+                                       } else {
+                                          localU_fermiworks_idTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_fermiworks_id=param;
                                     
 
                                }
@@ -35033,6 +35961,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localSso_sourceTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sso_source", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sso_source");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sso_source");
+                                    }
+                                
+
+                                          if (localSso_source==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSso_source);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localStateTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -35641,6 +36603,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localU_employee_number_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localU_fermiworks_idTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_fermiworks_id", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_fermiworks_id");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_fermiworks_id");
+                                    }
+                                
+
+                                          if (localU_fermiworks_id==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_fermiworks_id);
                                             
                                           }
                                     
@@ -36459,6 +37455,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("source cannot be null!!");
                                         }
+                                    } if (localSso_sourceTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sso_source"));
+                                 
+                                        if (localSso_source != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSso_source));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                        }
                                     } if (localStateTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "state"));
@@ -36620,6 +37625,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_number_suffix));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_employee_number_suffix cannot be null!!");
+                                        }
+                                    } if (localU_fermiworks_idTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_fermiworks_id"));
+                                 
+                                        if (localU_fermiworks_id != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_fermiworks_id));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
                                         }
                                     } if (localU_lab_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -37465,6 +38479,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sso_source").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSso_source(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","state").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -37776,6 +38808,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_employee_number_suffix(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_fermiworks_id").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_fermiworks_id(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -40155,6 +41205,50 @@
                             
 
                         /**
+                        * field for Sso_source
+                        */
+
+                        
+                                    protected java.lang.String localSso_source ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSso_sourceTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSso_source(){
+                               return localSso_source;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sso_source
+                               */
+                               public void setSso_source(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSso_sourceTracker = true;
+                                       } else {
+                                          localSso_sourceTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSso_source=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for State
                         */
 
@@ -40941,6 +42035,50 @@
                                        }
                                    
                                             this.localU_employee_number_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_fermiworks_id
+                        */
+
+                        
+                                    protected java.lang.String localU_fermiworks_id ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_fermiworks_idTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_fermiworks_id(){
+                               return localU_fermiworks_id;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_fermiworks_id
+                               */
+                               public void setU_fermiworks_id(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_fermiworks_idTracker = true;
+                                       } else {
+                                          localU_fermiworks_idTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_fermiworks_id=param;
                                     
 
                                }
@@ -42752,6 +43890,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localSso_sourceTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sso_source", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sso_source");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sso_source");
+                                    }
+                                
+
+                                          if (localSso_source==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSso_source);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localStateTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -43360,6 +44532,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localU_employee_number_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localU_fermiworks_idTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_fermiworks_id", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_fermiworks_id");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_fermiworks_id");
+                                    }
+                                
+
+                                          if (localU_fermiworks_id==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_fermiworks_id);
                                             
                                           }
                                     
@@ -44178,6 +45384,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("source cannot be null!!");
                                         }
+                                    } if (localSso_sourceTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sso_source"));
+                                 
+                                        if (localSso_source != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSso_source));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                        }
                                     } if (localStateTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "state"));
@@ -44339,6 +45554,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_number_suffix));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_employee_number_suffix cannot be null!!");
+                                        }
+                                    } if (localU_fermiworks_idTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_fermiworks_id"));
+                                 
+                                        if (localU_fermiworks_id != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_fermiworks_id));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
                                         }
                                     } if (localU_lab_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -45184,6 +46408,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sso_source").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSso_source(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","state").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -45495,6 +46737,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_employee_number_suffix(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_fermiworks_id").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_fermiworks_id(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -47910,6 +49170,50 @@
                             
 
                         /**
+                        * field for Sso_source
+                        */
+
+                        
+                                    protected java.lang.String localSso_source ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSso_sourceTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSso_source(){
+                               return localSso_source;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sso_source
+                               */
+                               public void setSso_source(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSso_sourceTracker = true;
+                                       } else {
+                                          localSso_sourceTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSso_source=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for State
                         */
 
@@ -48696,6 +50000,50 @@
                                        }
                                    
                                             this.localU_employee_number_suffix=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for U_fermiworks_id
+                        */
+
+                        
+                                    protected java.lang.String localU_fermiworks_id ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_fermiworks_idTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_fermiworks_id(){
+                               return localU_fermiworks_id;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_fermiworks_id
+                               */
+                               public void setU_fermiworks_id(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_fermiworks_idTracker = true;
+                                       } else {
+                                          localU_fermiworks_idTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_fermiworks_id=param;
                                     
 
                                }
@@ -50859,6 +52207,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localSso_sourceTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sso_source", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sso_source");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sso_source");
+                                    }
+                                
+
+                                          if (localSso_source==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSso_source);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localStateTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -51467,6 +52849,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localU_employee_number_suffix);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localU_fermiworks_idTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_fermiworks_id", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_fermiworks_id");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_fermiworks_id");
+                                    }
+                                
+
+                                          if (localU_fermiworks_id==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_fermiworks_id);
                                             
                                           }
                                     
@@ -52557,6 +53973,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("source cannot be null!!");
                                         }
+                                    } if (localSso_sourceTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sso_source"));
+                                 
+                                        if (localSso_source != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSso_source));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sso_source cannot be null!!");
+                                        }
                                     } if (localStateTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "state"));
@@ -52718,6 +54143,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_employee_number_suffix));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_employee_number_suffix cannot be null!!");
+                                        }
+                                    } if (localU_fermiworks_idTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_fermiworks_id"));
+                                 
+                                        if (localU_fermiworks_id != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_fermiworks_id));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_fermiworks_id cannot be null!!");
                                         }
                                     } if (localU_lab_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -53635,6 +55069,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sso_source").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSso_source(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","state").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -53946,6 +55398,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_employee_number_suffix(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_fermiworks_id").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_fermiworks_id(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
