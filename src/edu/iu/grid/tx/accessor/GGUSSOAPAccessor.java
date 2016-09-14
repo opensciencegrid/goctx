@@ -366,11 +366,24 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 	
 	public String parseTicketID(String subject) {
 		//Parses : " NOTIFICATION of GGUS-Ticket-ID: #40637    Test Ticket"
-		int pos = subject.indexOf("#");
+		/*int pos = subject.indexOf("#");
+		
 		int pos2 = subject.indexOf(" ", pos+1);
 		if(pos2 == -1) pos2 = subject.length();
 		String id = subject.substring(pos+1, pos2);
-		return id;
+		*/
+		
+		String[] full_subject = subject.split("#");
+	    String second_part_subject = full_subject[1];
+	    if(full_subject[1]!=""){
+	    String trimmed_subject =  second_part_subject.trim();
+		String[] id = trimmed_subject.split(" ");
+
+		return id[0];
+		}else{
+	    	
+		return subject.trim();
+	    }
 	}
 
 	@Override
