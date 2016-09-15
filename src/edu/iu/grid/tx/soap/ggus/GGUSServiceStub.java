@@ -163,7 +163,7 @@
      */
     public GGUSServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=GGUS" );
+                    this(configurationContext,"https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=GGUS" );
                 
     }
 
@@ -172,7 +172,7 @@
      */
     public GGUSServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=GGUS" );
+                    this("https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=GGUS" );
                 
     }
 
@@ -1945,7 +1945,7 @@
         }
         return false;
     }
-     //https://train-ars.ggus.eu/arsys/services/ARService?server=train-ars&webService=GGUS
+     //https://prod-ars.ggus.eu/arsys/services/ARService?server=prod-ars&webService=GGUS
         public static class GHD_Parent_Child_RelationType
         implements org.apache.axis2.databinding.ADBBean{
         
