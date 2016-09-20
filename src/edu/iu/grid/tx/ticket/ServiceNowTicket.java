@@ -238,7 +238,7 @@ public class ServiceNowTicket implements Ticket {
 		this.caller_id = caller_id; 
 		this.caller_user_id = caller_user_id;
 	}
-	
+	 
 	private String external_ticket_number;
 	public String getExternalTicketNumber() { return external_ticket_number; }
 	public void setExternalTicketNumber(String external_ticket_number) { this.external_ticket_number = external_ticket_number; }	

@@ -137,7 +137,7 @@ public class ServiceNowAccessor implements TicketAccessor {
 			update.setShort_description(new_servicenow_ticket.getShortDescription());
 			update.setUrgency(new_servicenow_ticket.getUrgency());
 			update.setIncident_state(new_servicenow_ticket.getIncidentState());
-			
+			 
 			//requird fields (non exchanged field - use value from current ticket)
 			update.setSys_id(current_servicenow_ticket.getSysID());
 			update.setImpact(current_servicenow_ticket.getImpact());			
