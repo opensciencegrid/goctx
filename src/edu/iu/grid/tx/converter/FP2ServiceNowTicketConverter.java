@@ -28,11 +28,11 @@ public class FP2ServiceNowTicketConverter implements TicketConverter {
 		servicenow.setExternalTicketNumber("GOC"+fp.getProjectID() + " #" + fp.getTicketID());
 		
 		//non convertible fields (accessor uses default(for create) / or current value(for update) for these fields)
-		servicenow.setCategory(null);
-		servicenow.setSubcategory(null);
-		servicenow.setCustomerCategorization(null);
+		//servicenow.setCategory(null);
+		//servicenow.setSubcategory(null);
+		//servicenow.setCustomerCategorization(null);
 		servicenow.setItem(null);
-		servicenow.setOperationalCategory(null);
+		//servicenow.setOperationalCategory(null);
 		servicenow.setReportedSource(null);
 		servicenow.setService(null);
 		servicenow.setImpact(null);
