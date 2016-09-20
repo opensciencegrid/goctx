@@ -141,10 +141,10 @@ public class ServiceNowAccessor implements TicketAccessor {
 			//requird fields (non exchanged field - use value from current ticket)
 			update.setSys_id(current_servicenow_ticket.getSysID());
 			update.setImpact(current_servicenow_ticket.getImpact());			
-			update.setCategory(current_servicenow_ticket.getCategory());
-			update.setSubcategory(current_servicenow_ticket.getSubcategory());
-			update.setU_categorization(current_servicenow_ticket.getCategorization());
-			update.setU_customer_categorization(current_servicenow_ticket.getCustomerCategorization());
+			//update.setCategory(current_servicenow_ticket.getCategory());
+			//update.setSubcategory(current_servicenow_ticket.getSubcategory());
+			//update.setU_categorization(current_servicenow_ticket.getCategorization());
+			//update.setU_customer_categorization(current_servicenow_ticket.getCustomerCategorization());
 			update.setCaller_id(current_servicenow_ticket.getCallerID());
 			update.setU_item(current_servicenow_ticket.getItem());
 			update.setU_operational_category(current_servicenow_ticket.getOperationalCategory());
