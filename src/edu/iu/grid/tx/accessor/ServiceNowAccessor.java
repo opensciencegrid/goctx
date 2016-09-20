@@ -79,8 +79,8 @@ public class ServiceNowAccessor implements TicketAccessor {
 			
 			//required fields - with defaults
 			insert.setCategory("General");
-			insert.setSubcategory("Service Desk Email Support");//GOC Ticket
-			insert.setU_categorization("General");//Other
+			insert.setSubcategory("Communications/Outreach");//GOC Ticket
+			insert.setU_categorization("Service Desk");//Other
 			insert.setU_customer_categorization("Service Desk Email Support");//GOC
 			insert.setU_item("Other");
 			insert.setU_operational_category("Information");
