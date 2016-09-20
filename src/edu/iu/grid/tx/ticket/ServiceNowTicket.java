@@ -173,19 +173,38 @@ public class ServiceNowTicket implements Ticket {
 	//
 	private String category;
 	public String getCategory() { return category; }
-	public void setCategory(String category) { this.category = category; }
+	public void setCategory(String category) { 
+		this.category = category; 
+		logger.debug("Category: "+category);
+
+	}
 	
 	private String sub_category;
 	public String getSubcategory() { return sub_category; }
-	public void setSubcategory(String sub_category) { this.sub_category = sub_category; }
+	public void setSubcategory(String sub_category) { 
+		this.sub_category = sub_category; 
+		logger.debug("Category: "+ sub_category);
+	
+	}
 
 	private String categorization;
 	public String getCategorization() { return categorization; }
-	public void setCategorization(String categorization) { this.categorization = categorization; }
+	public void setCategorization(String categorization) { 
+		this.categorization = categorization; 
+		logger.debug("Category: "+ categorization);
+	
+	}
+	
+	
 	
 	private String customer_categorization;
 	public String getCustomerCategorization() { return customer_categorization; }
-	public void setCustomerCategorization(String customer_categorization) { this.customer_categorization = customer_categorization; }
+	public void setCustomerCategorization(String customer_categorization) { 
+		
+		this.customer_categorization = customer_categorization; 
+		logger.debug("Category: "+ customer_categorization);
+	
+	}
 	
 	private String item;
 	public String getItem() { return item; }
@@ -193,7 +212,11 @@ public class ServiceNowTicket implements Ticket {
 	
 	private String operational_category;
 	public String getOperationalCategory() { return operational_category; }
-	public void setOperationalCategory(String operational_category) { this.operational_category = operational_category; }
+	public void setOperationalCategory(String operational_category) { 
+		this.operational_category = operational_category; 
+		logger.debug("Category: "+ operational_category);
+	
+	}
 	
 	private String reported_source;
 	public String getReportedSource() { return reported_source; }
