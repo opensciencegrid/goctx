@@ -183,7 +183,7 @@ public class ServiceNowTicket implements Ticket {
 	public String getSubcategory() { return sub_category; }
 	public void setSubcategory(String sub_category) { 
 		this.sub_category = sub_category; 
-		logger.debug("Category: "+ sub_category);
+		logger.debug("Sub Category: "+ sub_category);
 	
 	}
 
@@ -191,7 +191,7 @@ public class ServiceNowTicket implements Ticket {
 	public String getCategorization() { return categorization; }
 	public void setCategorization(String categorization) { 
 		this.categorization = categorization; 
-		logger.debug("Category: "+ categorization);
+		logger.debug("Categorization: "+ categorization);
 	
 	}
 	
@@ -202,7 +202,7 @@ public class ServiceNowTicket implements Ticket {
 	public void setCustomerCategorization(String customer_categorization) { 
 		
 		this.customer_categorization = customer_categorization; 
-		logger.debug("Category: "+ customer_categorization);
+		logger.debug("Customer Categorization: "+ customer_categorization);
 	
 	}
 	
@@ -214,7 +214,7 @@ public class ServiceNowTicket implements Ticket {
 	public String getOperationalCategory() { return operational_category; }
 	public void setOperationalCategory(String operational_category) { 
 		this.operational_category = operational_category; 
-		logger.debug("Category: "+ operational_category);
+		logger.debug("Operational Category: "+ operational_category);
 	
 	}
 	
