@@ -78,10 +78,10 @@ public class ServiceNowAccessor implements TicketAccessor {
 			insert.setUrgency(ticket.getUrgency());
 			
 			//required fields - with defaults
-			insert.setCategory("General");
-			insert.setSubcategory("GOC Ticket");//GOC Ticket
-			insert.setU_categorization("Other");//Other
-			insert.setU_customer_categorization("GOC");//GOC
+			//insert.setCategory("General");
+			//insert.setSubcategory("GOC Ticket");//GOC Ticket
+			//insert.setU_categorization("Other");//Other
+			//insert.setU_customer_categorization("GOC");//GOC
 			insert.setU_item("Other");
 			insert.setU_operational_category("Information");
 			insert.setU_reported_source("Direct Input");
