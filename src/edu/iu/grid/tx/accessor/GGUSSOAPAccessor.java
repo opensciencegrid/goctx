@@ -374,10 +374,11 @@ public class GGUSSOAPAccessor implements TicketAccessor {
 		*/
 		
 		String[] full_subject = subject.split("#");
-	    String second_part_subject = full_subject[1];
 	    if(full_subject[1]!=""){
-	    String trimmed_subject =  second_part_subject.trim();
-		String[] id = trimmed_subject.split(" ");
+		    String second_part_subject = full_subject[1];
+
+		    String trimmed_subject =  second_part_subject.trim();
+		    String[] id = trimmed_subject.split(" ");
 
 		return id[0];
 		}else{
