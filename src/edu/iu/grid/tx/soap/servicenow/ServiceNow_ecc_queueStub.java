@@ -175,7 +175,7 @@
      */
     public ServiceNow_ecc_queueStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://fermi.service-now.com/ecc_queue.do?SOAP" );
+                    this(configurationContext,"https://fermitrn.service-now.com/ecc_queue.do?SOAP" );
                 
     }
 
@@ -184,7 +184,7 @@
      */
     public ServiceNow_ecc_queueStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://fermi.service-now.com/ecc_queue.do?SOAP" );
+                    this("https://fermitrn.service-now.com/ecc_queue.do?SOAP" );
                 
     }
 
@@ -2084,7 +2084,7 @@
         }
         return false;
     }
-     //https://fermi.service-now.com/ecc_queue.do?SOAP
+     //https://fermitrn.service-now.com/ecc_queue.do?SOAP
         public static class Update
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -2407,6 +2407,50 @@
                                        }
                                    
                                             this.localPayload=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Priority
+                        */
+
+                        
+                                    protected java.math.BigInteger localPriority ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPriorityTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigInteger
+                           */
+                           public  java.math.BigInteger getPriority(){
+                               return localPriority;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Priority
+                               */
+                               public void setPriority(java.math.BigInteger param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localPriorityTracker = true;
+                                       } else {
+                                          localPriorityTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localPriority=param;
                                     
 
                                }
@@ -3084,6 +3128,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localPriorityTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"priority", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"priority");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("priority");
+                                    }
+                                
+
+                                          if (localPriority==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localProcessedTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -3581,6 +3659,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("payload cannot be null!!");
                                         }
+                                    } if (localPriorityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "priority"));
+                                 
+                                        if (localPriority != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                        }
                                     } if (localProcessedTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "processed"));
@@ -3846,6 +3933,24 @@
                                     
                                               object.setPayload(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","priority").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPriority(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
                                               
                                         reader.next();
                                     
@@ -4834,6 +4939,50 @@
                             
 
                         /**
+                        * field for Priority
+                        */
+
+                        
+                                    protected java.math.BigInteger localPriority ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPriorityTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigInteger
+                           */
+                           public  java.math.BigInteger getPriority(){
+                               return localPriority;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Priority
+                               */
+                               public void setPriority(java.math.BigInteger param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localPriorityTracker = true;
+                                       } else {
+                                          localPriorityTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localPriority=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for Processed
                         */
 
@@ -5475,6 +5624,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localPriorityTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"priority", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"priority");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("priority");
+                                    }
+                                
+
+                                          if (localPriority==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localProcessedTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -5938,6 +6121,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("payload cannot be null!!");
                                         }
+                                    } if (localPriorityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "priority"));
+                                 
+                                        if (localPriority != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                        }
                                     } if (localProcessedTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "processed"));
@@ -6194,6 +6386,24 @@
                                     
                                               object.setPayload(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","priority").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPriority(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
                                               
                                         reader.next();
                                     
@@ -6681,6 +6891,50 @@
                             
 
                         /**
+                        * field for Priority
+                        */
+
+                        
+                                    protected java.math.BigInteger localPriority ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPriorityTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigInteger
+                           */
+                           public  java.math.BigInteger getPriority(){
+                               return localPriority;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Priority
+                               */
+                               public void setPriority(java.math.BigInteger param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localPriorityTracker = true;
+                                       } else {
+                                          localPriorityTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localPriority=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for Processed
                         */
 
@@ -7027,6 +7281,50 @@
                                        }
                                    
                                             this.localSys_created_on=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Sys_domain
+                        */
+
+                        
+                                    protected java.lang.String localSys_domain ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSys_domainTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSys_domain(){
+                               return localSys_domain;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sys_domain
+                               */
+                               public void setSys_domain(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSys_domainTracker = true;
+                                       } else {
+                                          localSys_domainTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSys_domain=param;
                                     
 
                                }
@@ -7762,6 +8060,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localPriorityTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"priority", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"priority");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("priority");
+                                    }
+                                
+
+                                          if (localPriority==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localProcessedTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -8030,6 +8362,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localSys_created_on);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSys_domainTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sys_domain", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sys_domain");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sys_domain");
+                                    }
+                                
+
+                                          if (localSys_domain==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSys_domain);
                                             
                                           }
                                     
@@ -8565,6 +8931,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("payload cannot be null!!");
                                         }
+                                    } if (localPriorityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "priority"));
+                                 
+                                        if (localPriority != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                        }
                                     } if (localProcessedTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "processed"));
@@ -8636,6 +9011,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_created_on));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_created_on cannot be null!!");
+                                        }
+                                    } if (localSys_domainTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sys_domain"));
+                                 
+                                        if (localSys_domain != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_domain));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
                                         }
                                     } if (localSys_mod_countTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -8923,6 +9307,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","priority").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPriority(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","processed").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -9054,6 +9456,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSys_created_on(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_domain").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSys_domain(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -9578,6 +9998,50 @@
                             
 
                         /**
+                        * field for Priority
+                        */
+
+                        
+                                    protected java.math.BigInteger localPriority ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPriorityTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigInteger
+                           */
+                           public  java.math.BigInteger getPriority(){
+                               return localPriority;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Priority
+                               */
+                               public void setPriority(java.math.BigInteger param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localPriorityTracker = true;
+                                       } else {
+                                          localPriorityTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localPriority=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for Processed
                         */
 
@@ -9924,6 +10388,50 @@
                                        }
                                    
                                             this.localSys_created_on=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Sys_domain
+                        */
+
+                        
+                                    protected java.lang.String localSys_domain ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSys_domainTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSys_domain(){
+                               return localSys_domain;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sys_domain
+                               */
+                               public void setSys_domain(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSys_domainTracker = true;
+                                       } else {
+                                          localSys_domainTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSys_domain=param;
                                     
 
                                }
@@ -10483,6 +10991,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localPriorityTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"priority", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"priority");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("priority");
+                                    }
+                                
+
+                                          if (localPriority==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localProcessedTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -10751,6 +11293,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localSys_created_on);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSys_domainTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sys_domain", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sys_domain");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sys_domain");
+                                    }
+                                
+
+                                          if (localSys_domain==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSys_domain);
                                             
                                           }
                                     
@@ -11150,6 +11726,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("payload cannot be null!!");
                                         }
+                                    } if (localPriorityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "priority"));
+                                 
+                                        if (localPriority != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                        }
                                     } if (localProcessedTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "processed"));
@@ -11221,6 +11806,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_created_on));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_created_on cannot be null!!");
+                                        }
+                                    } if (localSys_domainTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sys_domain"));
+                                 
+                                        if (localSys_domain != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_domain));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
                                         }
                                     } if (localSys_idTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -11472,6 +12066,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","priority").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPriority(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","processed").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -11603,6 +12215,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSys_created_on(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_domain").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSys_domain(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -12601,6 +13231,50 @@
                             
 
                         /**
+                        * field for Priority
+                        */
+
+                        
+                                    protected java.math.BigInteger localPriority ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPriorityTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigInteger
+                           */
+                           public  java.math.BigInteger getPriority(){
+                               return localPriority;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Priority
+                               */
+                               public void setPriority(java.math.BigInteger param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localPriorityTracker = true;
+                                       } else {
+                                          localPriorityTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localPriority=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for Processed
                         */
 
@@ -12947,6 +13621,50 @@
                                        }
                                    
                                             this.localSys_created_on=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Sys_domain
+                        */
+
+                        
+                                    protected java.lang.String localSys_domain ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSys_domainTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSys_domain(){
+                               return localSys_domain;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sys_domain
+                               */
+                               public void setSys_domain(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSys_domainTracker = true;
+                                       } else {
+                                          localSys_domainTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSys_domain=param;
                                     
 
                                }
@@ -13506,6 +14224,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localPriorityTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"priority", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"priority");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("priority");
+                                    }
+                                
+
+                                          if (localPriority==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localProcessedTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -13774,6 +14526,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localSys_created_on);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSys_domainTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sys_domain", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sys_domain");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sys_domain");
+                                    }
+                                
+
+                                          if (localSys_domain==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSys_domain);
                                             
                                           }
                                     
@@ -14173,6 +14959,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("payload cannot be null!!");
                                         }
+                                    } if (localPriorityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "priority"));
+                                 
+                                        if (localPriority != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                        }
                                     } if (localProcessedTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "processed"));
@@ -14244,6 +15039,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_created_on));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_created_on cannot be null!!");
+                                        }
+                                    } if (localSys_domainTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sys_domain"));
+                                 
+                                        if (localSys_domain != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_domain));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
                                         }
                                     } if (localSys_idTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -14495,6 +15299,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","priority").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPriority(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","processed").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -14626,6 +15448,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSys_created_on(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_domain").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSys_domain(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -15546,6 +16386,50 @@
                             
 
                         /**
+                        * field for Priority
+                        */
+
+                        
+                                    protected java.math.BigInteger localPriority ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPriorityTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigInteger
+                           */
+                           public  java.math.BigInteger getPriority(){
+                               return localPriority;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Priority
+                               */
+                               public void setPriority(java.math.BigInteger param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localPriorityTracker = true;
+                                       } else {
+                                          localPriorityTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localPriority=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for Processed
                         */
 
@@ -15892,6 +16776,50 @@
                                        }
                                    
                                             this.localSys_created_on=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Sys_domain
+                        */
+
+                        
+                                    protected java.lang.String localSys_domain ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSys_domainTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSys_domain(){
+                               return localSys_domain;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sys_domain
+                               */
+                               public void setSys_domain(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSys_domainTracker = true;
+                                       } else {
+                                          localSys_domainTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSys_domain=param;
                                     
 
                                }
@@ -16451,6 +17379,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localPriorityTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"priority", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"priority");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("priority");
+                                    }
+                                
+
+                                          if (localPriority==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localProcessedTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -16719,6 +17681,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localSys_created_on);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSys_domainTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sys_domain", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sys_domain");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sys_domain");
+                                    }
+                                
+
+                                          if (localSys_domain==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSys_domain);
                                             
                                           }
                                     
@@ -17118,6 +18114,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("payload cannot be null!!");
                                         }
+                                    } if (localPriorityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "priority"));
+                                 
+                                        if (localPriority != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                        }
                                     } if (localProcessedTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "processed"));
@@ -17189,6 +18194,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_created_on));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_created_on cannot be null!!");
+                                        }
+                                    } if (localSys_domainTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sys_domain"));
+                                 
+                                        if (localSys_domain != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_domain));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
                                         }
                                     } if (localSys_idTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -17440,6 +18454,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","priority").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPriority(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","processed").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -17571,6 +18603,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSys_created_on(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_domain").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSys_domain(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -18527,6 +19577,50 @@
                             
 
                         /**
+                        * field for Priority
+                        */
+
+                        
+                                    protected java.math.BigInteger localPriority ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localPriorityTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigInteger
+                           */
+                           public  java.math.BigInteger getPriority(){
+                               return localPriority;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Priority
+                               */
+                               public void setPriority(java.math.BigInteger param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localPriorityTracker = true;
+                                       } else {
+                                          localPriorityTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localPriority=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for Processed
                         */
 
@@ -18873,6 +19967,50 @@
                                        }
                                    
                                             this.localSys_created_on=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Sys_domain
+                        */
+
+                        
+                                    protected java.lang.String localSys_domain ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSys_domainTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSys_domain(){
+                               return localSys_domain;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Sys_domain
+                               */
+                               public void setSys_domain(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSys_domainTracker = true;
+                                       } else {
+                                          localSys_domainTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSys_domain=param;
                                     
 
                                }
@@ -19784,6 +20922,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localPriorityTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"priority", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"priority");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("priority");
+                                    }
+                                
+
+                                          if (localPriority==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localProcessedTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -20052,6 +21224,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(localSys_created_on);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSys_domainTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"sys_domain", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"sys_domain");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("sys_domain");
+                                    }
+                                
+
+                                          if (localSys_domain==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSys_domain);
                                             
                                           }
                                     
@@ -20723,6 +21929,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("payload cannot be null!!");
                                         }
+                                    } if (localPriorityTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "priority"));
+                                 
+                                        if (localPriority != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPriority));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("priority cannot be null!!");
+                                        }
                                     } if (localProcessedTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "processed"));
@@ -20794,6 +22009,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_created_on));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_created_on cannot be null!!");
+                                        }
+                                    } if (localSys_domainTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "sys_domain"));
+                                 
+                                        if (localSys_domain != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_domain));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("sys_domain cannot be null!!");
                                         }
                                     } if (localSys_idTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -21117,6 +22341,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","priority").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPriority(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","processed").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -21248,6 +22490,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setSys_created_on(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_domain").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSys_domain(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();

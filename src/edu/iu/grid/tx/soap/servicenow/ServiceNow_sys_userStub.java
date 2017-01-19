@@ -175,7 +175,7 @@
      */
     public ServiceNow_sys_userStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://fermi.service-now.com/sys_user.do?SOAP" );
+                    this(configurationContext,"https://fermitrn.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -184,7 +184,7 @@
      */
     public ServiceNow_sys_userStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://fermi.service-now.com/sys_user.do?SOAP" );
+                    this("https://fermitrn.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -2084,7 +2084,7 @@
         }
         return false;
     }
-     //https://fermi.service-now.com/sys_user.do?SOAP
+     //https://fermitrn.service-now.com/sys_user.do?SOAP
         public static class Update
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -2233,6 +2233,50 @@
                                        }
                                    
                                             this.localAuditor=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Average_daily_fte
+                        */
+
+                        
+                                    protected java.math.BigDecimal localAverage_daily_fte ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAverage_daily_fteTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getAverage_daily_fte(){
+                               return localAverage_daily_fte;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Average_daily_fte
+                               */
+                               public void setAverage_daily_fte(java.math.BigDecimal param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAverage_daily_fteTracker = true;
+                                       } else {
+                                          localAverage_daily_fteTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAverage_daily_fte=param;
                                     
 
                                }
@@ -4926,6 +4970,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localAverage_daily_fteTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"average_daily_fte", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"average_daily_fte");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("average_daily_fte");
+                                    }
+                                
+
+                                          if (localAverage_daily_fte==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localBuildingTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -7017,7 +7095,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
-                            } if (localBuildingTracker){
+                            } if (localAverage_daily_fteTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "average_daily_fte"));
+                                 
+                                        if (localAverage_daily_fte != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                        }
+                                    } if (localBuildingTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "building"));
                                  
@@ -7633,6 +7720,24 @@
                                     
                                               object.setAuditor(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","average_daily_fte").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAverage_daily_fte(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
                                               
                                         reader.next();
                                     
@@ -9323,6 +9428,50 @@
                                        }
                                    
                                             this.localAuditor=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Average_daily_fte
+                        */
+
+                        
+                                    protected java.math.BigDecimal localAverage_daily_fte ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAverage_daily_fteTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getAverage_daily_fte(){
+                               return localAverage_daily_fte;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Average_daily_fte
+                               */
+                               public void setAverage_daily_fte(java.math.BigDecimal param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAverage_daily_fteTracker = true;
+                                       } else {
+                                          localAverage_daily_fteTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAverage_daily_fte=param;
                                     
 
                                }
@@ -11986,6 +12135,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localAverage_daily_fteTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"average_daily_fte", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"average_daily_fte");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("average_daily_fte");
+                                    }
+                                
+
+                                          if (localAverage_daily_fte==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localBuildingTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -14043,7 +14226,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
-                            } if (localBuildingTracker){
+                            } if (localAverage_daily_fteTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "average_daily_fte"));
+                                 
+                                        if (localAverage_daily_fte != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                        }
+                                    } if (localBuildingTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "building"));
                                  
@@ -14650,6 +14842,24 @@
                                     
                                               object.setAuditor(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","average_daily_fte").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAverage_daily_fte(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
                                               
                                         reader.next();
                                     
@@ -15839,6 +16049,50 @@
                                        }
                                    
                                             this.localAuditor=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Average_daily_fte
+                        */
+
+                        
+                                    protected java.math.BigDecimal localAverage_daily_fte ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAverage_daily_fteTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getAverage_daily_fte(){
+                               return localAverage_daily_fte;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Average_daily_fte
+                               */
+                               public void setAverage_daily_fte(java.math.BigDecimal param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAverage_daily_fteTracker = true;
+                                       } else {
+                                          localAverage_daily_fteTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAverage_daily_fte=param;
                                     
 
                                }
@@ -17734,50 +17988,6 @@
                                        }
                                    
                                             this.localSys_mod_count=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Sys_tags
-                        */
-
-                        
-                                    protected java.lang.String localSys_tags ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localSys_tagsTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getSys_tags(){
-                               return localSys_tags;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Sys_tags
-                               */
-                               public void setSys_tags(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localSys_tagsTracker = true;
-                                       } else {
-                                          localSys_tagsTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localSys_tags=param;
                                     
 
                                }
@@ -19074,6 +19284,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localAverage_daily_fteTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"average_daily_fte", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"average_daily_fte");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("average_daily_fte");
+                                    }
+                                
+
+                                          if (localAverage_daily_fte==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localBuildingTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -20521,40 +20765,6 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localSys_tagsTracker){
-                                    namespace = "";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"sys_tags", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"sys_tags");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("sys_tags");
-                                    }
-                                
-
-                                          if (localSys_tags==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localSys_tags);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
                              } if (localSys_updated_byTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -21573,7 +21783,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
-                            } if (localBuildingTracker){
+                            } if (localAverage_daily_fteTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "average_daily_fte"));
+                                 
+                                        if (localAverage_daily_fte != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                        }
+                                    } if (localBuildingTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "building"));
                                  
@@ -21951,15 +22170,6 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_mod_count cannot be null!!");
                                         }
-                                    } if (localSys_tagsTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "sys_tags"));
-                                 
-                                        if (localSys_tags != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_tags));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                        }
                                     } if (localSys_updated_byTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "sys_updated_by"));
@@ -22297,6 +22507,24 @@
                                     
                                               object.setAuditor(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","average_daily_fte").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAverage_daily_fte(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
                                               
                                         reader.next();
                                     
@@ -23083,24 +23311,6 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_tags").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setSys_tags(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_updated_by").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
@@ -23720,6 +23930,50 @@
                                        }
                                    
                                             this.localAuditor=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Average_daily_fte
+                        */
+
+                        
+                                    protected java.math.BigDecimal localAverage_daily_fte ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAverage_daily_fteTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getAverage_daily_fte(){
+                               return localAverage_daily_fte;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Average_daily_fte
+                               */
+                               public void setAverage_daily_fte(java.math.BigDecimal param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAverage_daily_fteTracker = true;
+                                       } else {
+                                          localAverage_daily_fteTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAverage_daily_fte=param;
                                     
 
                                }
@@ -25665,50 +25919,6 @@
                             
 
                         /**
-                        * field for Sys_tags
-                        */
-
-                        
-                                    protected java.lang.String localSys_tags ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localSys_tagsTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getSys_tags(){
-                               return localSys_tags;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Sys_tags
-                               */
-                               public void setSys_tags(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localSys_tagsTracker = true;
-                                       } else {
-                                          localSys_tagsTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localSys_tags=param;
-                                    
-
-                               }
-                            
-
-                        /**
                         * field for Sys_updated_by
                         */
 
@@ -26777,6 +26987,40 @@
                                                } else {
                                                     xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
                                                }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localAverage_daily_fteTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"average_daily_fte", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"average_daily_fte");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("average_daily_fte");
+                                    }
+                                
+
+                                          if (localAverage_daily_fte==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                            
+                                          }
                                     
                                    xmlWriter.writeEndElement();
                              } if (localBuildingTracker){
@@ -28260,40 +28504,6 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localSys_tagsTracker){
-                                    namespace = "";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"sys_tags", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"sys_tags");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("sys_tags");
-                                    }
-                                
-
-                                          if (localSys_tags==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localSys_tags);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
                              } if (localSys_updated_byTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -29142,7 +29352,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
-                            } if (localBuildingTracker){
+                            } if (localAverage_daily_fteTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "average_daily_fte"));
+                                 
+                                        if (localAverage_daily_fte != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                        }
+                                    } if (localBuildingTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "building"));
                                  
@@ -29529,15 +29748,6 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_mod_count cannot be null!!");
                                         }
-                                    } if (localSys_tagsTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "sys_tags"));
-                                 
-                                        if (localSys_tags != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_tags));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                        }
                                     } if (localSys_updated_byTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "sys_updated_by"));
@@ -29830,6 +30040,24 @@
                                     
                                               object.setAuditor(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","average_daily_fte").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAverage_daily_fte(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
                                               
                                         reader.next();
                                     
@@ -30622,24 +30850,6 @@
                                     
                                               object.setSys_mod_count(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_tags").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setSys_tags(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -31733,6 +31943,50 @@
                             
 
                         /**
+                        * field for Average_daily_fte
+                        */
+
+                        
+                                    protected java.math.BigDecimal localAverage_daily_fte ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAverage_daily_fteTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getAverage_daily_fte(){
+                               return localAverage_daily_fte;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Average_daily_fte
+                               */
+                               public void setAverage_daily_fte(java.math.BigDecimal param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAverage_daily_fteTracker = true;
+                                       } else {
+                                          localAverage_daily_fteTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAverage_daily_fte=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for Building
                         */
 
@@ -33666,50 +33920,6 @@
                                        }
                                    
                                             this.localSys_mod_count=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Sys_tags
-                        */
-
-                        
-                                    protected java.lang.String localSys_tags ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localSys_tagsTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getSys_tags(){
-                               return localSys_tags;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Sys_tags
-                               */
-                               public void setSys_tags(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localSys_tagsTracker = true;
-                                       } else {
-                                          localSys_tagsTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localSys_tags=param;
                                     
 
                                }
@@ -34786,6 +34996,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localAverage_daily_fteTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"average_daily_fte", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"average_daily_fte");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("average_daily_fte");
+                                    }
+                                
+
+                                          if (localAverage_daily_fte==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localBuildingTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -36267,40 +36511,6 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localSys_tagsTracker){
-                                    namespace = "";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"sys_tags", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"sys_tags");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("sys_tags");
-                                    }
-                                
-
-                                          if (localSys_tags==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localSys_tags);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
                              } if (localSys_updated_byTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -37149,7 +37359,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
-                            } if (localBuildingTracker){
+                            } if (localAverage_daily_fteTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "average_daily_fte"));
+                                 
+                                        if (localAverage_daily_fte != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                        }
+                                    } if (localBuildingTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "building"));
                                  
@@ -37536,15 +37755,6 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_mod_count cannot be null!!");
                                         }
-                                    } if (localSys_tagsTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "sys_tags"));
-                                 
-                                        if (localSys_tags != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_tags));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                        }
                                     } if (localSys_updated_byTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "sys_updated_by"));
@@ -37837,6 +38047,24 @@
                                     
                                               object.setAuditor(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","average_daily_fte").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAverage_daily_fte(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
                                               
                                         reader.next();
                                     
@@ -38629,24 +38857,6 @@
                                     
                                               object.setSys_mod_count(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_tags").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setSys_tags(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -39656,6 +39866,50 @@
                                        }
                                    
                                             this.localAuditor=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Average_daily_fte
+                        */
+
+                        
+                                    protected java.math.BigDecimal localAverage_daily_fte ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAverage_daily_fteTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getAverage_daily_fte(){
+                               return localAverage_daily_fte;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Average_daily_fte
+                               */
+                               public void setAverage_daily_fte(java.math.BigDecimal param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAverage_daily_fteTracker = true;
+                                       } else {
+                                          localAverage_daily_fteTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAverage_daily_fte=param;
                                     
 
                                }
@@ -41595,50 +41849,6 @@
                                        }
                                    
                                             this.localSys_mod_count=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Sys_tags
-                        */
-
-                        
-                                    protected java.lang.String localSys_tags ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localSys_tagsTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getSys_tags(){
-                               return localSys_tags;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Sys_tags
-                               */
-                               public void setSys_tags(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localSys_tagsTracker = true;
-                                       } else {
-                                          localSys_tagsTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localSys_tags=param;
                                     
 
                                }
@@ -42715,6 +42925,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localAverage_daily_fteTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"average_daily_fte", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"average_daily_fte");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("average_daily_fte");
+                                    }
+                                
+
+                                          if (localAverage_daily_fte==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localBuildingTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -44196,40 +44440,6 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localSys_tagsTracker){
-                                    namespace = "";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"sys_tags", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"sys_tags");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("sys_tags");
-                                    }
-                                
-
-                                          if (localSys_tags==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localSys_tags);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
                              } if (localSys_updated_byTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -45078,7 +45288,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
-                            } if (localBuildingTracker){
+                            } if (localAverage_daily_fteTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "average_daily_fte"));
+                                 
+                                        if (localAverage_daily_fte != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                        }
+                                    } if (localBuildingTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "building"));
                                  
@@ -45465,15 +45684,6 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_mod_count cannot be null!!");
                                         }
-                                    } if (localSys_tagsTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "sys_tags"));
-                                 
-                                        if (localSys_tags != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_tags));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                        }
                                     } if (localSys_updated_byTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "sys_updated_by"));
@@ -45766,6 +45976,24 @@
                                     
                                               object.setAuditor(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","average_daily_fte").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAverage_daily_fte(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
                                               
                                         reader.next();
                                     
@@ -46558,24 +46786,6 @@
                                     
                                               object.setSys_mod_count(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_tags").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setSys_tags(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -47621,6 +47831,50 @@
                                        }
                                    
                                             this.localAuditor=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Average_daily_fte
+                        */
+
+                        
+                                    protected java.math.BigDecimal localAverage_daily_fte ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAverage_daily_fteTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getAverage_daily_fte(){
+                               return localAverage_daily_fte;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Average_daily_fte
+                               */
+                               public void setAverage_daily_fte(java.math.BigDecimal param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAverage_daily_fteTracker = true;
+                                       } else {
+                                          localAverage_daily_fteTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAverage_daily_fte=param;
                                     
 
                                }
@@ -49560,50 +49814,6 @@
                                        }
                                    
                                             this.localSys_mod_count=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for Sys_tags
-                        */
-
-                        
-                                    protected java.lang.String localSys_tags ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localSys_tagsTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getSys_tags(){
-                               return localSys_tags;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param Sys_tags
-                               */
-                               public void setSys_tags(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localSys_tagsTracker = true;
-                                       } else {
-                                          localSys_tagsTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localSys_tags=param;
                                     
 
                                }
@@ -51032,6 +51242,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localAverage_daily_fteTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"average_daily_fte", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"average_daily_fte");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("average_daily_fte");
+                                    }
+                                
+
+                                          if (localAverage_daily_fte==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localBuildingTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -52513,40 +52757,6 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
-                             } if (localSys_tagsTracker){
-                                    namespace = "";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"sys_tags", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"sys_tags");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("sys_tags");
-                                    }
-                                
-
-                                          if (localSys_tags==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localSys_tags);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
                              } if (localSys_updated_byTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -53667,7 +53877,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuditor));
-                            } if (localBuildingTracker){
+                            } if (localAverage_daily_fteTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "average_daily_fte"));
+                                 
+                                        if (localAverage_daily_fte != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAverage_daily_fte));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("average_daily_fte cannot be null!!");
+                                        }
+                                    } if (localBuildingTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "building"));
                                  
@@ -54054,15 +54273,6 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("sys_mod_count cannot be null!!");
                                         }
-                                    } if (localSys_tagsTracker){
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "sys_tags"));
-                                 
-                                        if (localSys_tags != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSys_tags));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("sys_tags cannot be null!!");
-                                        }
                                     } if (localSys_updated_byTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "sys_updated_by"));
@@ -54427,6 +54637,24 @@
                                     
                                               object.setAuditor(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","average_daily_fte").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAverage_daily_fte(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
                                               
                                         reader.next();
                                     
@@ -55219,24 +55447,6 @@
                                     
                                               object.setSys_mod_count(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToInteger(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","sys_tags").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setSys_tags(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
