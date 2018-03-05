@@ -3,7 +3,7 @@
  * ServiceNow_sys_journal_fieldCallbackHandler.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.5.4  Built on : Dec 19, 2010 (08:18:42 CET)
+ * by the Apache Axis2 version: 1.5  Built on : Apr 30, 2009 (06:07:24 EDT)
  */
 
     package edu.iu.grid.tx.soap.servicenow;

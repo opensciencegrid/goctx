@@ -3,7 +3,7 @@
  * ServiceNow_sys_userStub.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.5.4  Built on : Dec 19, 2010 (08:18:42 CET)
+ * by the Apache Axis2 version: 1.5  Built on : Apr 30, 2009 (06:07:24 EDT)
  */
         package edu.iu.grid.tx.soap.servicenow;
 
@@ -31,7 +31,7 @@
                 counter = 0;
             }
             counter = counter + 1; 
-            return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + counter;
+            return java.lang.Long.toString(System.currentTimeMillis()) + "_" + counter;
         }
 
     
@@ -4473,6 +4473,50 @@
                             
 
                         /**
+                        * field for U_treat_as_badge
+                        */
+
+                        
+                                    protected java.lang.String localU_treat_as_badge ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_treat_as_badgeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_treat_as_badge(){
+                               return localU_treat_as_badge;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_treat_as_badge
+                               */
+                               public void setU_treat_as_badge(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_treat_as_badgeTracker = true;
+                                       } else {
+                                          localU_treat_as_badgeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_treat_as_badge=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_virtual_organization
                         */
 
@@ -6684,6 +6728,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_treat_as_badgeTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_treat_as_badge", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_treat_as_badge");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_treat_as_badge");
+                                    }
+                                
+
+                                          if (localU_treat_as_badge==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_treat_as_badge);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_virtual_organizationTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -7542,7 +7620,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_systems_monitoring_user));
-                            } if (localU_virtual_organizationTracker){
+                            } if (localU_treat_as_badgeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_treat_as_badge"));
+                                 
+                                        if (localU_treat_as_badge != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_treat_as_badge));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                        }
+                                    } if (localU_virtual_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_virtual_organization"));
                                  
@@ -8639,6 +8726,24 @@
                                     
                                               object.setU_systems_monitoring_user(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_treat_as_badge").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_treat_as_badge(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -11638,6 +11743,50 @@
                             
 
                         /**
+                        * field for U_treat_as_badge
+                        */
+
+                        
+                                    protected java.lang.String localU_treat_as_badge ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_treat_as_badgeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_treat_as_badge(){
+                               return localU_treat_as_badge;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_treat_as_badge
+                               */
+                               public void setU_treat_as_badge(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_treat_as_badgeTracker = true;
+                                       } else {
+                                          localU_treat_as_badgeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_treat_as_badge=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_virtual_organization
                         */
 
@@ -13815,6 +13964,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_treat_as_badgeTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_treat_as_badge", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_treat_as_badge");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_treat_as_badge");
+                                    }
+                                
+
+                                          if (localU_treat_as_badge==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_treat_as_badge);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_virtual_organizationTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -14664,7 +14847,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_systems_monitoring_user));
-                            } if (localU_virtual_organizationTracker){
+                            } if (localU_treat_as_badgeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_treat_as_badge"));
+                                 
+                                        if (localU_treat_as_badge != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_treat_as_badge));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                        }
+                                    } if (localU_virtual_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_virtual_organization"));
                                  
@@ -15742,6 +15934,24 @@
                                     
                                               object.setU_systems_monitoring_user(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_treat_as_badge").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_treat_as_badge(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -18567,6 +18777,50 @@
                             
 
                         /**
+                        * field for U_treat_as_badge
+                        */
+
+                        
+                                    protected java.lang.String localU_treat_as_badge ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_treat_as_badgeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_treat_as_badge(){
+                               return localU_treat_as_badge;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_treat_as_badge
+                               */
+                               public void setU_treat_as_badge(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_treat_as_badgeTracker = true;
+                                       } else {
+                                          localU_treat_as_badgeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_treat_as_badge=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_virtual_organization
                         */
 
@@ -21202,6 +21456,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_treat_as_badgeTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_treat_as_badge", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_treat_as_badge");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_treat_as_badge");
+                                    }
+                                
+
+                                          if (localU_treat_as_badge==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_treat_as_badge);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_virtual_organizationTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -22284,7 +22572,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_systems_monitoring_user));
-                            } if (localU_virtual_organizationTracker){
+                            } if (localU_treat_as_badgeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_treat_as_badge"));
+                                 
+                                        if (localU_treat_as_badge != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_treat_as_badge));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                        }
+                                    } if (localU_virtual_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_virtual_organization"));
                                  
@@ -23533,6 +23830,24 @@
                                     
                                               object.setU_systems_monitoring_user(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_treat_as_badge").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_treat_as_badge(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -26492,6 +26807,50 @@
                             
 
                         /**
+                        * field for U_treat_as_badge
+                        */
+
+                        
+                                    protected java.lang.String localU_treat_as_badge ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_treat_as_badgeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_treat_as_badge(){
+                               return localU_treat_as_badge;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_treat_as_badge
+                               */
+                               public void setU_treat_as_badge(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_treat_as_badgeTracker = true;
+                                       } else {
+                                          localU_treat_as_badgeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_treat_as_badge=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_virtual_organization
                         */
 
@@ -28941,6 +29300,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_treat_as_badgeTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_treat_as_badge", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_treat_as_badge");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_treat_as_badge");
+                                    }
+                                
+
+                                          if (localU_treat_as_badge==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_treat_as_badge);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_virtual_organizationTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -29862,7 +30255,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_systems_monitoring_user));
-                            } if (localU_virtual_organizationTracker){
+                            } if (localU_treat_as_badgeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_treat_as_badge"));
+                                 
+                                        if (localU_treat_as_badge != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_treat_as_badge));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                        }
+                                    } if (localU_virtual_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_virtual_organization"));
                                  
@@ -31084,6 +31486,24 @@
                                     
                                               object.setU_systems_monitoring_user(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_treat_as_badge").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_treat_as_badge(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -34499,6 +34919,50 @@
                             
 
                         /**
+                        * field for U_treat_as_badge
+                        */
+
+                        
+                                    protected java.lang.String localU_treat_as_badge ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_treat_as_badgeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_treat_as_badge(){
+                               return localU_treat_as_badge;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_treat_as_badge
+                               */
+                               public void setU_treat_as_badge(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_treat_as_badgeTracker = true;
+                                       } else {
+                                          localU_treat_as_badgeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_treat_as_badge=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_virtual_organization
                         */
 
@@ -36948,6 +37412,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_treat_as_badgeTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_treat_as_badge", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_treat_as_badge");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_treat_as_badge");
+                                    }
+                                
+
+                                          if (localU_treat_as_badge==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_treat_as_badge);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_virtual_organizationTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -37869,7 +38367,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_systems_monitoring_user));
-                            } if (localU_virtual_organizationTracker){
+                            } if (localU_treat_as_badgeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_treat_as_badge"));
+                                 
+                                        if (localU_treat_as_badge != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_treat_as_badge));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                        }
+                                    } if (localU_virtual_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_virtual_organization"));
                                  
@@ -39091,6 +39598,24 @@
                                     
                                               object.setU_systems_monitoring_user(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_treat_as_badge").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_treat_as_badge(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -42428,6 +42953,50 @@
                             
 
                         /**
+                        * field for U_treat_as_badge
+                        */
+
+                        
+                                    protected java.lang.String localU_treat_as_badge ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_treat_as_badgeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_treat_as_badge(){
+                               return localU_treat_as_badge;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_treat_as_badge
+                               */
+                               public void setU_treat_as_badge(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_treat_as_badgeTracker = true;
+                                       } else {
+                                          localU_treat_as_badgeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_treat_as_badge=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_virtual_organization
                         */
 
@@ -44877,6 +45446,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_treat_as_badgeTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_treat_as_badge", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_treat_as_badge");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_treat_as_badge");
+                                    }
+                                
+
+                                          if (localU_treat_as_badge==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_treat_as_badge);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_virtual_organizationTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -45798,7 +46401,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_systems_monitoring_user));
-                            } if (localU_virtual_organizationTracker){
+                            } if (localU_treat_as_badgeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_treat_as_badge"));
+                                 
+                                        if (localU_treat_as_badge != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_treat_as_badge));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                        }
+                                    } if (localU_virtual_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_virtual_organization"));
                                  
@@ -47020,6 +47632,24 @@
                                     
                                               object.setU_systems_monitoring_user(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_treat_as_badge").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_treat_as_badge(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
@@ -50393,6 +51023,50 @@
                             
 
                         /**
+                        * field for U_treat_as_badge
+                        */
+
+                        
+                                    protected java.lang.String localU_treat_as_badge ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_treat_as_badgeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_treat_as_badge(){
+                               return localU_treat_as_badge;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_treat_as_badge
+                               */
+                               public void setU_treat_as_badge(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_treat_as_badgeTracker = true;
+                                       } else {
+                                          localU_treat_as_badgeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_treat_as_badge=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_virtual_organization
                         */
 
@@ -53194,6 +53868,40 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_treat_as_badgeTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_treat_as_badge", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_treat_as_badge");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_treat_as_badge");
+                                    }
+                                
+
+                                          if (localU_treat_as_badge==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_treat_as_badge);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_virtual_organizationTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -54387,7 +55095,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_systems_monitoring_user));
-                            } if (localU_virtual_organizationTracker){
+                            } if (localU_treat_as_badgeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_treat_as_badge"));
+                                 
+                                        if (localU_treat_as_badge != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_treat_as_badge));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_treat_as_badge cannot be null!!");
+                                        }
+                                    } if (localU_virtual_organizationTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
                                                                       "u_virtual_organization"));
                                  
@@ -55681,6 +56398,24 @@
                                     
                                               object.setU_systems_monitoring_user(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_treat_as_badge").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_treat_as_badge(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
                                     
