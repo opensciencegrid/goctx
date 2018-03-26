@@ -175,7 +175,7 @@
      */
     public ServiceNow_sys_userStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"https://fermitrn.service-now.com/sys_user.do?SOAP" );
+                    this(configurationContext,"https://fermi.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -184,7 +184,7 @@
      */
     public ServiceNow_sys_userStub() throws org.apache.axis2.AxisFault {
         
-                    this("https://fermitrn.service-now.com/sys_user.do?SOAP" );
+                    this("https://fermi.service-now.com/sys_user.do?SOAP" );
                 
     }
 
@@ -2084,7 +2084,7 @@
         }
         return false;
     }
-     //https://fermitrn.service-now.com/sys_user.do?SOAP
+     //https://fermi.service-now.com/sys_user.do?SOAP
         public static class Update
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -4428,6 +4428,50 @@
                             
 
                         /**
+                        * field for U_preferred_view
+                        */
+
+                        
+                                    protected java.lang.String localU_preferred_view ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_preferred_viewTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_preferred_view(){
+                               return localU_preferred_view;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_preferred_view
+                               */
+                               public void setU_preferred_view(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_preferred_viewTracker = true;
+                                       } else {
+                                          localU_preferred_viewTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_preferred_view=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_preferred_vo
                         */
 
@@ -6743,6 +6787,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_preferred_viewTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_preferred_view", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_preferred_view");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_preferred_view");
+                                    }
+                                
+
+                                          if (localU_preferred_view==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_preferred_view);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_preferred_voTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -7691,6 +7769,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_last_rep));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_last_rep cannot be null!!");
+                                        }
+                                    } if (localU_preferred_viewTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_preferred_view"));
+                                 
+                                        if (localU_preferred_view != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_preferred_view));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
                                         }
                                     } if (localU_preferred_voTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -8794,6 +8881,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_last_rep(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_preferred_view").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_preferred_view(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -11803,6 +11908,50 @@
                             
 
                         /**
+                        * field for U_preferred_view
+                        */
+
+                        
+                                    protected java.lang.String localU_preferred_view ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_preferred_viewTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_preferred_view(){
+                               return localU_preferred_view;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_preferred_view
+                               */
+                               public void setU_preferred_view(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_preferred_viewTracker = true;
+                                       } else {
+                                          localU_preferred_viewTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_preferred_view=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_preferred_vo
                         */
 
@@ -14084,6 +14233,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_preferred_viewTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_preferred_view", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_preferred_view");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_preferred_view");
+                                    }
+                                
+
+                                          if (localU_preferred_view==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_preferred_view);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_preferred_voTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -15023,6 +15206,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_last_rep));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_last_rep cannot be null!!");
+                                        }
+                                    } if (localU_preferred_viewTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_preferred_view"));
+                                 
+                                        if (localU_preferred_view != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_preferred_view));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
                                         }
                                     } if (localU_preferred_voTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -16107,6 +16299,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_last_rep(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_preferred_view").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_preferred_view(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -18942,6 +19152,50 @@
                             
 
                         /**
+                        * field for U_preferred_view
+                        */
+
+                        
+                                    protected java.lang.String localU_preferred_view ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_preferred_viewTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_preferred_view(){
+                               return localU_preferred_view;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_preferred_view
+                               */
+                               public void setU_preferred_view(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_preferred_viewTracker = true;
+                                       } else {
+                                          localU_preferred_viewTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_preferred_view=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_preferred_vo
                         */
 
@@ -21681,6 +21935,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_preferred_viewTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_preferred_view", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_preferred_view");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_preferred_view");
+                                    }
+                                
+
+                                          if (localU_preferred_view==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_preferred_view);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_preferred_voTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -22853,6 +23141,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_last_rep));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_last_rep cannot be null!!");
+                                        }
+                                    } if (localU_preferred_viewTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_preferred_view"));
+                                 
+                                        if (localU_preferred_view != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_preferred_view));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
                                         }
                                     } if (localU_preferred_voTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -24108,6 +24405,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_last_rep(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_preferred_view").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_preferred_view(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -27077,6 +27392,50 @@
                             
 
                         /**
+                        * field for U_preferred_view
+                        */
+
+                        
+                                    protected java.lang.String localU_preferred_view ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_preferred_viewTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_preferred_view(){
+                               return localU_preferred_view;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_preferred_view
+                               */
+                               public void setU_preferred_view(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_preferred_viewTracker = true;
+                                       } else {
+                                          localU_preferred_viewTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_preferred_view=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_preferred_vo
                         */
 
@@ -29630,6 +29989,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_preferred_viewTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_preferred_view", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_preferred_view");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_preferred_view");
+                                    }
+                                
+
+                                          if (localU_preferred_view==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_preferred_view);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_preferred_voTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -30641,6 +31034,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_last_rep));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_last_rep cannot be null!!");
+                                        }
+                                    } if (localU_preferred_viewTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_preferred_view"));
+                                 
+                                        if (localU_preferred_view != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_preferred_view));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
                                         }
                                     } if (localU_preferred_voTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -31869,6 +32271,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_last_rep(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_preferred_view").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_preferred_view(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -35294,6 +35714,50 @@
                             
 
                         /**
+                        * field for U_preferred_view
+                        */
+
+                        
+                                    protected java.lang.String localU_preferred_view ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_preferred_viewTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_preferred_view(){
+                               return localU_preferred_view;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_preferred_view
+                               */
+                               public void setU_preferred_view(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_preferred_viewTracker = true;
+                                       } else {
+                                          localU_preferred_viewTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_preferred_view=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_preferred_vo
                         */
 
@@ -37847,6 +38311,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_preferred_viewTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_preferred_view", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_preferred_view");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_preferred_view");
+                                    }
+                                
+
+                                          if (localU_preferred_view==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_preferred_view);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_preferred_voTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -38858,6 +39356,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_last_rep));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_last_rep cannot be null!!");
+                                        }
+                                    } if (localU_preferred_viewTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_preferred_view"));
+                                 
+                                        if (localU_preferred_view != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_preferred_view));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
                                         }
                                     } if (localU_preferred_voTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -40086,6 +40593,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_last_rep(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_preferred_view").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_preferred_view(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -43433,6 +43958,50 @@
                             
 
                         /**
+                        * field for U_preferred_view
+                        */
+
+                        
+                                    protected java.lang.String localU_preferred_view ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_preferred_viewTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_preferred_view(){
+                               return localU_preferred_view;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_preferred_view
+                               */
+                               public void setU_preferred_view(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_preferred_viewTracker = true;
+                                       } else {
+                                          localU_preferred_viewTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_preferred_view=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_preferred_vo
                         */
 
@@ -45986,6 +46555,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_preferred_viewTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_preferred_view", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_preferred_view");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_preferred_view");
+                                    }
+                                
+
+                                          if (localU_preferred_view==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_preferred_view);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_preferred_voTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -46997,6 +47600,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_last_rep));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_last_rep cannot be null!!");
+                                        }
+                                    } if (localU_preferred_viewTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_preferred_view"));
+                                 
+                                        if (localU_preferred_view != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_preferred_view));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
                                         }
                                     } if (localU_preferred_voTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -48225,6 +48837,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_last_rep(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_preferred_view").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_preferred_view(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -51608,6 +52238,50 @@
                             
 
                         /**
+                        * field for U_preferred_view
+                        */
+
+                        
+                                    protected java.lang.String localU_preferred_view ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localU_preferred_viewTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getU_preferred_view(){
+                               return localU_preferred_view;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param U_preferred_view
+                               */
+                               public void setU_preferred_view(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localU_preferred_viewTracker = true;
+                                       } else {
+                                          localU_preferred_viewTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localU_preferred_view=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for U_preferred_vo
                         */
 
@@ -54513,6 +55187,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localU_preferred_viewTracker){
+                                    namespace = "";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"u_preferred_view", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"u_preferred_view");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("u_preferred_view");
+                                    }
+                                
+
+                                          if (localU_preferred_view==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localU_preferred_view);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localU_preferred_voTracker){
                                     namespace = "";
                                     if (! namespace.equals("")) {
@@ -55796,6 +56504,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_last_rep));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("u_last_rep cannot be null!!");
+                                        }
+                                    } if (localU_preferred_viewTracker){
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "u_preferred_view"));
+                                 
+                                        if (localU_preferred_view != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localU_preferred_view));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("u_preferred_view cannot be null!!");
                                         }
                                     } if (localU_preferred_voTracker){
                                       elementList.add(new javax.xml.namespace.QName("",
@@ -57096,6 +57813,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setU_last_rep(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","u_preferred_view").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setU_preferred_view(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
